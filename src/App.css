@@ -1,38 +1,130 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #E3DDD4;
+}
+
+
+.logo {
+  width: 183px;
+}
+
+nav {
+  background-color: black;
+  position: fixed;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+}
+
+.main-nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 100px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-header {
+  font-family: 'Neue Metana', sans-serif;
+  font-size: 80px;
+  line-height: 120px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.hero-wrapper {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.connect-btn {
+  font-size: 20px;
+  font-family: 'Basier Circle', sans-serif;
+  padding: 10px 23px;
+  border-radius: 6.49px;
+  margin-right: 50px;
+}
+
+.social-media-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+}
+
+.nav-right-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 1100px;
+  overflow: hidden;
+}
+
+.hero-subhead {
+  font-family: 'Basier Circle';
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 40px;
+  max-width: 628px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-text-wrapper { 
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.hero-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.branded-a {
+  margin: 0px 10px;
+}
+
+.branded-sun img { 
+  margin-bottom: -20px;
+  max-width: 80px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.mix-blend-overlay {
+  width: 100%;
+  position: absolute;
+  bottom:-70vh;
+  /* background-color: black; */
+  height: 100vh;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.mix-blend { 
+  mix-blend-mode: difference;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
