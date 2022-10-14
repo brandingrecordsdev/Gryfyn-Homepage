@@ -74,7 +74,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh ;
   min-height: 1100px;
   overflow: hidden;
 }
@@ -112,10 +112,22 @@ nav {
   margin-right: -10px;
 }
 
+.branded-i img {
+  width: 37px;
+  left: -8px;
+  top: -10px;
+  z-index: 6;
+  position: absolute;
+}
+
+.branded-i {
+  position: relative;
+}
+
 .mix-blend-overlay {
   width: 100%;
   position: absolute;
-  bottom:-70vh;
+  bottom: -100vh;
   /* background-color: black; */
   height: 100vh;
   z-index: -1;
@@ -127,4 +139,77 @@ nav {
 .mix-blend { 
   mix-blend-mode: difference;
   color: white;
+}
+
+.lower {
+  height: 100vh;
+  background-color: black;
+}
+
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 5s linear infinite;
+  -moz-animation: rotating 5s linear infinite;
+  -ms-animation: rotating 5s linear infinite;
+  -o-animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
+}
+
+@keyframes anim-world-beyond-o {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(90deg);
+  }
+}
+
+@keyframes anim-world-beyond-u {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-0.8rem);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.anim-world-beyond-o{
+  animation: anim-world-beyond-o 1600ms ease-out infinite;
+  animation-fill-mode: both;
+}
+
+.anim-world-beyond-u{
+  animation: anim-world-beyond-u 1400ms ease-out infinite;
+  animation-fill-mode: both;
 }
