@@ -101,7 +101,6 @@ nav {
   width: 100% !important;
 }
 
-
 .hero-subhead {
   font-family: 'Basier Circle';
   font-weight: 400;
@@ -258,3 +257,10 @@ min-width: 1200px;
   color: black !important;
 }
 
+.features {
+  height: 200vh;
+}
+
+.nft-video-section {
+  height: 200vh
+}
