@@ -142,7 +142,7 @@ nav {
   position: absolute;
   bottom: -100vh;
   /* background-color: black; */
-  height: 100vh;
+  height: 110vh;
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;

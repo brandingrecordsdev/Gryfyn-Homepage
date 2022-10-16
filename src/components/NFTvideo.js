@@ -45,7 +45,9 @@ let NFTtl = gsap.timeline({
     start: "top top",
     end: "bottom bottom",
     scrub: true,
-    markers: true
+    markers: true,
+    toggleActions: "play pause resume pause"
+
   }
 });
 
