@@ -3,8 +3,11 @@ import './App.css';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import SVG from './components/SVG'
+import VideoScroll from './components/VideoScroll'
 import PhoneHero from "./images/phone-hero.png";
 import NFTvideo from './components/NFTvideo';
+import vidGallery from './videos/out.mp4';
+import Diamond from './videos/GryfynDiamond.mp4';
 
 function App() {
   console.log(PhoneHero)
@@ -65,6 +68,10 @@ function App() {
         </div>                        
       </section>   
       <section className="features">
+        <VideoScroll vid={vidGallery} pin={'.features'}/>
+      </section>    
+      <section className="features diamond">
+        <VideoScroll vid={Diamond} pin={'.diamond'}/>
       </section>    
     </div>
   );

@@ -1,16 +1,17 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-import NFTVid from '../videos/GryfnNFT3.mp4'
 import { useRef, useEffect } from "react";
 
-const VideoScroll = ({ video }) => {
-    const NFTvid = NFTVid;
+const VideoScroll = ({ vid, pin }) => {
+    let video = vid;
+    let pinnedSection = pin;
 
-    const NFTvidRef = useRef(null);
+    const videoRef = useRef(null);
 
 useEffect(() => {
-const el = NFTvidRef.current;
+const el = videoRef.current;
 let video = el;
+console.log(video)
 let src = video.currentSrc || video.src;
 console.log(video, src);
 
@@ -37,7 +38,7 @@ gsap.registerPlugin(ScrollTrigger);
 let vidTL = gsap.timeline({
   // defaults: { duration: 2 },
   scrollTrigger: {
-    trigger: "#nft-video-section",
+    trigger: pinnedSection,
     pin: true,
     start: "top top",
     end: "bottom bottom",
@@ -65,9 +66,9 @@ once(video, "loadedmetadata", () => {
 
     return(
     <>
-        <video src={NFTvid} className="scrolling-video"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted" ref={NFTvidRef}></video>
+        <video src={video} className="scrolling-video"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted" ref={videoRef}></video>
     </>
     )
 }
 
-export default NFTVideo;
+export default VideoScroll;
