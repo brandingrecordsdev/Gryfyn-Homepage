@@ -63,7 +63,9 @@ function App() {
             Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
           </p>
         </div>                        
-      </section>       
+      </section>   
+      <section className="features">
+      </section>    
     </div>
   );
 }

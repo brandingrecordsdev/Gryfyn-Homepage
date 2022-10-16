@@ -69,7 +69,6 @@ once(video, "loadedmetadata", () => {
   );
 });
 
-
  
     },[])
 
