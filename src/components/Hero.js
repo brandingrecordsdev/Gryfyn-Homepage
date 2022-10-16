@@ -40,7 +40,7 @@ const Hero = () => {
             scale: 1
         }, 
         { 
-            y: '-100vh',
+            y: '-110vh',
             scale: 2,
             duration: 2
         }

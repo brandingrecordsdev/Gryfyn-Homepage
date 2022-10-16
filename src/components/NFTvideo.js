@@ -4,7 +4,7 @@
 // import LinkedIn from '../images/linkedin.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-import NFTVid from '../videos/out.mp4'
+import NFTVid from '../videos/GryfnNFT3.mp4'
 import { useRef, useEffect } from "react";
 
 const NFTVideo = () => {
@@ -39,7 +39,7 @@ function once(el, event, fn, opts) {
 gsap.registerPlugin(ScrollTrigger);
 
 let NFTtl = gsap.timeline({
-  defaults: { duration: 2 },
+  // defaults: { duration: 2 },
   scrollTrigger: {
     trigger: "#nft-video-section",
     start: "top top",
@@ -68,7 +68,7 @@ once(video, "loadedmetadata", () => {
 
     return(
     <>
-            <video src={NFTvid} id="nft-video" className="nft-video video-background" playsInline="true" webkit-playsinline="true" preload="auto" muted="muted" ref={NFTvidRef}></video>
+            <video src={NFTvid} id="nft-video" className="nft-video video-background" playsInline="true" preload="auto" muted="muted" ref={NFTvidRef}></video>
     </>
     )
 }

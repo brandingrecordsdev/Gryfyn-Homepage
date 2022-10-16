@@ -137,10 +137,14 @@ nav {
   background-color: #E3DDD4;
 }
 
+.bg-beige {
+  background-color: #E3DDD4;
+}
+
 .mix-blend-overlay {
   width: 100vw;
   position: absolute;
-  bottom: -100vh;
+  bottom: -110vh;
   /* background-color: black; */
   height: 110vh;
   z-index: -1;
@@ -233,4 +237,8 @@ nav {
 font-size: 75px;
 line-height: 115px;
 min-width: 1200px;
+}
+
+.text-body {
+  color: black !important;
 }
