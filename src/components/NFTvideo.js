@@ -44,9 +44,9 @@ let NFTtl = gsap.timeline({
     trigger: "#nft-video-section",
     start: "top top",
     end: "bottom bottom",
-    scrub: true,
+    scrub: 1,
     markers: true,
-    toggleActions: "play pause resume pause"
+    // toggleActions: "play pause resume pause"
 
   }
 });
@@ -68,7 +68,7 @@ once(video, "loadedmetadata", () => {
 
     return(
     <>
-            <video src={NFTvid} id="nft-video" className="nft-video video-background" playsInline="true" preload="auto" muted="muted" ref={NFTvidRef}></video>
+        <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsInline="true"playsInline="true" preload="auto" muted="muted" ref={NFTvidRef}></video>
     </>
     )
 }

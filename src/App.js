@@ -16,7 +16,7 @@ function App() {
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div> */}
       <section id="nft-video-section" className='flex flex-col items-center bg-beige gap-10 py-16 text-center  text-body nft-video-section'>
-        <NFTvideo />
+      <NFTvideo />
         <h2 className='max-w-xl text-4xl font-title nft-title'>
           All your favorite NFTs in one secure location.          
         </h2>

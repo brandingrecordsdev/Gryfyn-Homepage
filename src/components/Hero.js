@@ -24,12 +24,12 @@ const Hero = () => {
         scrollTrigger: {
           trigger: '.hero-section',
           pin: true,
+          anticipatePin: 2,
           start: "top top",
           end: "bottom bottom",
           scrub: 1,
+          duration: 50,
           markers: true,
-          duration: 10,
-          anticipatePin: 3,
           toggleActions: "restart pause resume pause"
         }
       });
@@ -40,9 +40,9 @@ const Hero = () => {
             scale: 1
         }, 
         { 
-            y: '-110vh',
+            y: '-100vh',
             scale: 2,
-            duration: 2
+            // duration: 2
         }
         )
     },[])
@@ -104,8 +104,6 @@ const Hero = () => {
                 <div className="mix-blend-overlay" style={{ backgroundImage: `url(${Semicircle})`}} ref={overlayRef}></div>
             </div>
             {/* <div className="lower"></div> */}
-        </section>
-        <section className="lower">
         </section>
         </>
     )

@@ -144,7 +144,7 @@ nav {
 .mix-blend-overlay {
   width: 100vw;
   position: absolute;
-  bottom: -110vh;
+  bottom: -100vh;
   /* background-color: black; */
   height: 110vh;
   z-index: -1;
