@@ -4,7 +4,7 @@ import Sun from '../images/branded-sun.svg';
 import AnimocaLogo from '../images/animoca-logo.svg';
 import MotoGPLogo from '../images/moto-gp.svg';
 import SandboxLogo from '../images/the-sandbox-logo.svg';
-import Semicircle from '../images/semicricle.png';
+import Semicircle from '../images/GryfynSemiCircle.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import $ from 'jquery';
@@ -22,11 +22,14 @@ const Hero = () => {
         // defaults: { duration: 100, delay:  },
         scrollTrigger: {
           trigger: '.hero-section',
-        //   pin: true,
+          pin: true,
           start: "top top",
           end: "bottom bottom",
-          scrub: 2,
+          scrub: 1,
           markers: true,
+          duration: 10,
+          anticipatePin: 3,
+          toggleActions: "restart pause resume pause"
         }
       });
 
@@ -37,7 +40,6 @@ const Hero = () => {
             scale: 1
         }, 
         { 
-            duration: 4,
             y: '-100vh',
             scale: 2,
         }

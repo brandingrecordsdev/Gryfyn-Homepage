@@ -4,9 +4,12 @@
 }
 
 body {
-  background-color: #E3DDD4;
+  background-color: black;
 }
 
+img {
+  display: inline-block;
+}
 
 .logo {
   width: 183px;
@@ -74,10 +77,15 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh ;
+  height: auto;
   min-height: 1100px;
   overflow: hidden;
 }
+
+.nft-video {
+  width: 100% !important;
+}
+
 
 .hero-subhead {
   font-family: 'Basier Circle';
@@ -113,7 +121,8 @@ nav {
 }
 
 .branded-i img {
-  width: 37px;
+  min-width: 37px;
+  width: 100%;
   left: -8px;
   top: -10px;
   z-index: 6;
@@ -122,6 +131,10 @@ nav {
 
 .branded-i {
   position: relative;
+}
+
+.rounded-border {
+  background-color: #E3DDD4;
 }
 
 .mix-blend-overlay {
@@ -134,17 +147,18 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  mix-blend-mode: difference !important;
 }
 
 .mix-blend { 
   mix-blend-mode: difference;
-  color: white;
+  color: #E3DDD4;
 }
 
-.lower {
+/* .lower {
   height: 100vh;
   background-color: black;
-}
+} */
 
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -212,4 +226,11 @@ nav {
 .anim-world-beyond-u{
   animation: anim-world-beyond-u 1400ms ease-out infinite;
   animation-fill-mode: both;
+}
+
+.nft-title {
+  font-weight: 400;
+font-size: 75px;
+line-height: 115px;
+min-width: 1200px;
 }
