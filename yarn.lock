@@ -7839,6 +7839,11 @@
     "ajv" "^6.12.2"
     "ajv-keywords" "^3.4.1"
 
+"scrollmagic@^2.0.8":
+  "integrity" "sha512-UYXEGBPVLziovXl3FjHGkY9c4UXKUKopIdXwWR2JapWxCo0U345wYegi7rcsv5vHf/ktc1bSNWy4QRFiV+Yccw=="
+  "resolved" "https://registry.npmjs.org/scrollmagic/-/scrollmagic-2.0.8.tgz"
+  "version" "2.0.8"
+
 "select-hose@^2.0.0":
   "integrity" "sha512-mEugaLK+YfkijB4fx0e6kImuJdCIt2LxCRcbEYPqRGCs4F2ogyfZU5IAZRdjCP8JPq2AtdNoC/Dux63d9Kiryg=="
   "resolved" "https://registry.npmjs.org/select-hose/-/select-hose-2.0.0.tgz"

@@ -39,17 +39,23 @@ function once(el, event, fn, opts) {
 gsap.registerPlugin(ScrollTrigger);
 
 let NFTtl = gsap.timeline({
-  // defaults: { duration: 2 },
+  defaults: { duration: 1 },
   scrollTrigger: {
     trigger: "#nft-video-section",
+    pin: true,
     start: "top top",
     end: "bottom bottom",
-    scrub: 1,
+    scrub: true,
     markers: true,
-    // toggleActions: "play pause resume pause"
-
   }
 });
+
+
+once(document.documentElement, "touchstart", function (e) {
+  video.play();
+  video.pause();
+});
+
 
 once(video, "loadedmetadata", () => {
   NFTtl.fromTo(
@@ -58,17 +64,18 @@ once(video, "loadedmetadata", () => {
       currentTime: 0
     },
     {
-      currentTime:  video.duration || 1
+      currentTime: video.duration || 1
     }
   );
 });
+
 
  
     },[])
 
     return(
     <>
-        <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsInline="true"playsInline="true" preload="auto" muted="muted" ref={NFTvidRef}></video>
+        <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted" ref={NFTvidRef}></video>
     </>
     )
 }

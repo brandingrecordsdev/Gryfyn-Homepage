@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Basier Circle';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Basier Circle'), url('https://fonts.cdnfonts.com/s/20637/BasierCircle-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Basier Square';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Basier Square'), url('https://fonts.cdnfonts.com/s/20637/BasierSquare-Regular.woff') format('woff');
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -146,7 +161,7 @@ nav {
   position: absolute;
   bottom: -100vh;
   /* background-color: black; */
-  height: 110vh;
+  height: 100vh;
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
@@ -242,3 +257,4 @@ min-width: 1200px;
 .text-body {
   color: black !important;
 }
+

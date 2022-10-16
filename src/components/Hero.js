@@ -17,24 +17,22 @@ const Hero = () => {
 
     useEffect(() => {
     const el = overlayRef.current;
-    console.log(el)
-
     let tl = gsap.timeline({    
         // defaults: { duration: 100, delay:  },
         scrollTrigger: {
           trigger: '.hero-section',
           pin: true,
-          anticipatePin: 2,
+          anticipatePin: 1,
           start: "top top",
           end: "bottom bottom",
           scrub: 1,
-          duration: 50,
+          duration: 5,
           markers: true,
           toggleActions: "restart pause resume pause"
         }
       });
 
-   tl.fromTo(el, 
+        tl.fromTo(el, 
         {
             y: 0,
             scale: 1
