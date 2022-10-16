@@ -15,18 +15,18 @@ const NFTVideo = () => {
 useEffect(() => {
 const el = NFTvidRef.current;
 let video = el;
-let src = video.currentSrc || video.src;
-console.log(video, src);
+// let src = video.currentSrc || video.src;
+// console.log(video, src);
 
 /* Make sure the video is 'activated' on iOS */
-function once(el, event, fn, opts) {
-  var onceFn = function (e) {
-    el.removeEventListener(event, onceFn);
-    fn.apply(this, arguments);
-  };
-  el.addEventListener(event, onceFn, opts);
-  return onceFn;
-}
+// function once(el, event, fn, opts) {
+//   var onceFn = function (e) {
+//     el.removeEventListener(event, onceFn);
+//     fn.apply(this, arguments);
+//   };
+//   el.addEventListener(event, onceFn, opts);
+//   return onceFn;
+// }
 
 // once(document.documentElement, "touchstart", function (e) {
 //   video.play();
@@ -39,7 +39,7 @@ function once(el, event, fn, opts) {
 gsap.registerPlugin(ScrollTrigger);
 
 let NFTtl = gsap.timeline({
-  defaults: { duration: 1 },
+  // defaults: { duration: 1 },
   scrollTrigger: {
     trigger: "#nft-video-section",
     pin: true,
@@ -50,25 +50,39 @@ let NFTtl = gsap.timeline({
   }
 });
 
+video.onloadedmetadata = function () {
+  NFTtl.to(video, { currentTime: video.duration });
+};
 
-once(document.documentElement, "touchstart", function (e) {
+// once(document.documentElement, "touchstart", function (e) {
+//   video.play();
+//   video.pause();
+// });
+
+
+// once(video, "loadedmetadata", () => {
+//   NFTtl.fromTo(
+//     video,
+//     {
+//       currentTime: 0
+//     },
+//     {
+//       currentTime: video.duration || 1
+//     }
+//   );
+// });
+
+function isTouchDevice() {
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+if (isTouchDevice()) {
   video.play();
   video.pause();
-});
-
-
-once(video, "loadedmetadata", () => {
-  NFTtl.fromTo(
-    video,
-    {
-      currentTime: 0
-    },
-    {
-      currentTime: video.duration || 1
-    }
-  );
-});
-
+}
 
  
     },[])
