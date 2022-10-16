@@ -9,7 +9,7 @@ const Nav = () => {
         <div className="main-nav-wrapper">
 
         <img alt="" className="logo" src={Logo} />
-        <div class="nav-right-wrapper">
+        <div className="nav-right-wrapper">
             <button className="connect-btn">Connect Wallet</button>
             <div class="social-media-wrapper">
                 <a href="/" className="social-icon">

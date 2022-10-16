@@ -7,7 +7,7 @@ import SandboxLogo from '../images/the-sandbox-logo.svg';
 import Semicircle from '../images/GryfynSemiCircle.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-import $ from 'jquery';
+// import $ from 'jquery';
 import { useRef, useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger)
@@ -17,8 +17,9 @@ const Hero = () => {
 
     useEffect(() => {
     const el = overlayRef.current;
+    console.log(el)
 
-    let tl = gsap.timeline({
+    let tl = gsap.timeline({    
         // defaults: { duration: 100, delay:  },
         scrollTrigger: {
           trigger: '.hero-section',
@@ -33,7 +34,6 @@ const Hero = () => {
         }
       });
 
-
    tl.fromTo(el, 
         {
             y: 0,
@@ -42,6 +42,7 @@ const Hero = () => {
         { 
             y: '-100vh',
             scale: 2,
+            duration: 2
         }
         )
     },[])
