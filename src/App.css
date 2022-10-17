@@ -4,14 +4,10 @@
   font-weight: 400;
   src: local('Basier Circle'), url('https://fonts.cdnfonts.com/s/20637/BasierCircle-Regular.woff') format('woff');
 }
-@font-face {
-  font-family: 'Basier Square';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Basier Square'), url('https://fonts.cdnfonts.com/s/20637/BasierSquare-Regular.woff') format('woff');
+
+.font-body {
+  font-family: 'Basier Circle', sans-serif !important;
 }
-
-
 
 * {
   margin: 0;
@@ -103,7 +99,7 @@ nav {
 }
 
 .hero-subhead {
-  font-family: 'Basier Circle';
+  font-family: 'Basier Circle', sans-serif;;
   font-weight: 400;
   font-size: 25px;
   line-height: 40px;
@@ -265,3 +261,110 @@ min-width: 1200px;
 .nft-video-section {
   height: 200vh
 } */
+
+.motoGp-section {
+  height: 100vh;
+}
+
+.motoGp-header {
+  font-family: 'Neue Metana';
+font-style: normal;
+font-weight: 400;
+font-size: 65px;
+line-height: 100px;
+/* or 154% */
+text-align: center;
+color: #E3DDD4 !important;
+max-width: 1000px;
+
+}
+
+.motoGp-Banner {
+  position: relative;
+  width: 100%;
+}
+
+/* .motoGp-section {
+  padding-top: 200px;
+} */
+
+.motoGpBanner-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner-1,
+.banner-2 {
+  width: 120vw;
+  transform: scale(1.2)
+}
+
+
+.motoGp-highlight {
+  color: #FFCC31 !important;
+}
+
+.motoGp-header {
+  z-index: 1;
+}
+
+.motoGp-star {
+  position: absolute;
+  top: 0px;
+  max-width: 1200px;
+}
+
+.motoGp-desc p {
+  color: #E3DDD4;
+  font-family: 'Basier Circle', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 45px;
+}
+
+.motoGp-section {
+  height: auto !important;
+}
+
+.motoGp-Banner {
+  position: relative;
+}
+
+.banner-left-wrapper {
+  transform: rotate(10deg);
+  position: relative;
+  left: -16vw;
+  min-width: 115vw;
+}
+
+.motoGp-desc {
+  padding: 0px 50px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  text-align: center;
+}
+
+.motoGp-desc-wrapper {
+  max-width: 800px;
+}
+
+.banner-right-wrapper {
+  position: absolute;
+  left: 1vw;
+  min-width: 115vw;
+  top: 0;
+  transform: rotate(-10deg);
+}
+
+.motoGpBanner-wrapper{
+  height: 130vh;
+}
+
+.image-slider {
+  height: 100vh;
+}

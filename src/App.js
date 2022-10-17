@@ -6,11 +6,15 @@ import gsap from 'gsap';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import SVG from './components/SVG'
+import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
 import PhoneHero from "./images/phone-hero.png";
 import NFTvideo from './components/NFTvideo';
 import vidGallery from './videos/out.mp4';
 import Diamond from './videos/GryfynDiamond.mp4';
+import Banner from './images/banner.png';
+import Banner2 from './images/banner.png';
+import MotoGPGraphic from './images/MotoGPBanner.png';
 import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -78,7 +82,7 @@ const initHeroGsap = () => {
       tl.fromTo(el, 
       {
           y: 0,
-          scale: 1
+          scale: 1,
       }, 
       { 
           y: '-100vh',
@@ -87,6 +91,44 @@ const initHeroGsap = () => {
       }
       )  
 }
+
+const initMotoGPGsap = () => {
+  const banner1 = document.getElementsByClassName('banner-1')
+  const banner2 = document.getElementsByClassName('banner-2')
+  let motoGPtl = gsap.timeline({    
+      // defaults: { duration: 100, delay:  },
+      scrollTrigger: {
+        trigger: '.motoGp-section',
+        pin: true,
+        start: "top top",
+        end: "+=500",
+        scrub: 0.5,
+        markers: true,
+        toggleActions: "restart pause resume pause"
+      }
+    });
+
+    motoGPtl.fromTo(banner1, 
+      {
+          x: '-100vw',
+          scale: 1
+      }, 
+      { 
+          x: '10vw',
+          // duration: 2
+      }, 0)  
+
+      motoGPtl.fromTo(banner2, 
+        {
+            x: '100vw',
+            scale: 1
+        }, 
+        { 
+            x: '-10vw',
+            // duration: 2
+        }, '0.5') 
+}
+
 
 const initNFTVideo = () => {
   function once(el, event, fn, opts) {
@@ -166,6 +208,7 @@ function App() {
     initNFTVideo()
     initVideoScrollGsap('video-1', '.features')
     initVideoScrollGsap('video-2', '.diamond')
+    initMotoGPGsap()
   })
   return (
     <div className="App">
@@ -229,10 +272,38 @@ function App() {
       <section className="features diamond">
         <VideoScroll id='video-2' vid={Diamond} pin={'.diamond'}/>
       </section>    
-      <section className="motoGp-">
-
+      <section className="motoGp-section">
+        <div className="motoGpBanner-wrapper">
+          <h1 className="motoGp-header">
+          The 
+          <span className="motoGp-highlight px-4">
+           Gryfyn x MotoGP  
+          </span>
+          VIP Experience
+          </h1>
+          <div className="motoGp-Banner">
+            <div className="banner-left-wrapper">
+            <img className="banner-1 motoGp-scroll" alt="" src={Banner}/>
+            </div>
+            <div className="banner-right-wrapper">
+            <img className="banner-2 motoGp-scroll" alt="" src={Banner2}/>
+            </div>
+          </div>
+          <img className="motoGp-star" alt="" src={MotoGPGraphic}/>
+        </div>
       </section>
-      
+      <section className="motoGp-desc">
+        <div className="motoGp-desc-wrapper">
+            <p>
+            We are proud to announce that Gryfyn is the official title sponsor of MotoGP 2022 & 2023 and a key partner of Dorna Sports, with the goal of propelling MotoGP into the vast potential of Web3 & the metaverse.
+            <br/><br/>
+            Get a chance to win a MotoGP race package that includes an all expenses paid trip to actual MotoGP races. 
+            </p>
+        </div>
+        </section>
+      <section className="image-slider">
+        <Carousel />
+      </section>
     </div>
   );
 }
