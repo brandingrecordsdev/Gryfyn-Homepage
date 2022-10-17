@@ -95,6 +95,7 @@ nav {
   height: auto;
   min-height: 1100px;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .nft-video {
@@ -108,10 +109,6 @@ nav {
   line-height: 40px;
   max-width: 628px;
   text-align: center;
-}
-
-.hero-section {
-  transform: translate(0px, 0px) !important;
 }
 
 .hero-text-wrapper { 
@@ -265,8 +262,6 @@ min-width: 1200px;
   height: 200vh;
 }
 
-#nft-video {
-  transform: none !important;
-  height: 100vh !important;
-  min-height: 1100px;
+.nft-video-section {
+  height: 200vh
 }

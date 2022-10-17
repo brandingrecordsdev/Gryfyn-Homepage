@@ -11,7 +11,7 @@ const Nav = () => {
         <img alt="" className="logo" src={Logo} />
         <div className="nav-right-wrapper">
             <button className="connect-btn">Connect Wallet</button>
-            <div class="social-media-wrapper">
+            <div className="social-media-wrapper">
                 <a href="/" className="social-icon">
                     <img alt="" src={Instagram} />
                 </a>

@@ -16,34 +16,7 @@ const Hero = () => {
     const overlayRef = useRef(null);
 
     useEffect(() => {
-    let el = overlayRef.current;
-    let tl = gsap.timeline({    
-        // defaults: { duration: 100, delay:  },
-        scrollTrigger: {
-          trigger: '.hero-section',
-          pin: true,
-          pinSpacing: false,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-          markers: true,
-          refreshPriority: -1,
-          onComplete: () => ScrollTrigger.refresh(),
-		anticipatePin: 1
-        }
-      });
 
-        tl.fromTo(el, 
-        {
-            y: 0,
-            scale: 1
-        }, 
-        { 
-            y: '-100vh',
-            scale: 2,
-            // duration: 2
-        }
-        )
     },[])
 
     return (
@@ -100,7 +73,7 @@ const Hero = () => {
                         <img alt="" src={MotoGPLogo} />
                     </div>
                 </div>
-                <div className="mix-blend-overlay" style={{ backgroundImage: `url(${Semicircle})`}} ref={overlayRef}></div>
+                <div className="mix-blend-overlay" id='mix-blend-overlay' style={{ backgroundImage: `url(${Semicircle})`}} ref={overlayRef}></div>
             </div>
             {/* <div className="lower"></div> */}
         </section>
