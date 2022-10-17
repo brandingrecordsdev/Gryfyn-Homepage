@@ -5,9 +5,10 @@ import SliderImg from '../images/SliderImg.png'
 import { Carousel } from 'react-responsive-carousel';
 
 const DemoCarousel = () => {
+
     return(
       <>
-                <Carousel>
+                <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true}>
                 <div>
                     <img alt="" src={SliderImg} />
                     {/* <p className="legend">Legend 1</p> */}
