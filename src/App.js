@@ -13,6 +13,11 @@ import vidGallery from './videos/out.mp4';
 import SunVideo from './videos/gryfyn_sun_mobile.mp4';
 import EyeVideo from './videos/gryfyn_eye_mobile.mp4';
 import DiamondVideo from './videos/gryfyn_diamond_MOBILE.mp4';
+import PhantomLogo from "./images/phantom_logo.png";
+import DustLandLogo from "./images/dustland_logo.png";
+import RevvRacingLogo from "./images/revv_racing_logo.png";
+import SandboxLogo from "./images/the-sandbox-logo 2.png";
+
 import Banner from './images/banner.png';
 import Banner2 from './images/banner.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
@@ -353,10 +358,23 @@ function App() {
       </section>   
       <div className='overflow-hidden h-[16rem] relative bg-black rotate-180'>
         <div className='rounded-full bg-beige w-[184vw] h-[184vw] relative left-[-42vw]'></div>
-      </div>     
-      <section className="features">
+      </div>
+      <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
+        <h2 className='text-4xl max-w-[30rem]'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
+        <div className='flex flex-wrap items-center justify-center gap-4'>
+          <img src={PhantomLogo} className='object-cover w-32'/>
+          <img src={SandboxLogo} className='object-cover w-32'/>
+          <img src={DustLandLogo} className='object-cover w-32'/>
+          <img src={RevvRacingLogo} className='object-cover w-32'/>
+        <div className='features'>
         <VideoScroll id='video-1' vid={vidGallery} pin={'.features'}/>
-      </section>    
+        </div>
+        </div>
+      </section>
+      <section>
+        <div className='features-1'>
+        </div>
+      </section>
       <section className="motoGp-section">
         <div className="motoGpBanner-wrapper">
           <h1 className="motoGp-header">
