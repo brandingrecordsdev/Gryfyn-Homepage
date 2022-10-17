@@ -13,7 +13,7 @@ const NFTVideo = () => {
     const NFTvidRef = useRef(null);
 
 useEffect(() => {
-const el = NFTvidRef.current;
+let el = NFTvidRef.current;
 let video = el;
 let src = video.currentSrc || video.src;
 console.log(video, src);
@@ -45,6 +45,8 @@ ScrollTrigger.create({
       // console.log(videoDuration, scrollPos, videoCurrentTime)
     }
   },
+  onComplete: () => ScrollTrigger.refresh(),
+  anticipatePin: 1
 })
  
     },[])
