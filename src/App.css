@@ -110,6 +110,10 @@ nav {
   text-align: center;
 }
 
+.hero-section {
+  transform: translate(0px, 0px) !important;
+}
+
 .hero-text-wrapper { 
   display: flex;
   align-items: center;

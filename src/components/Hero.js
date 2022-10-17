@@ -22,6 +22,7 @@ const Hero = () => {
         scrollTrigger: {
           trigger: '.hero-section',
           pin: true,
+          pinSpacing: false,
           anticipatePin: 1,
           start: "top top",
           end: "bottom bottom",
