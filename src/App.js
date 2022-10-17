@@ -8,14 +8,17 @@ import Hero from './components/Hero';
 import SVG from './components/SVG'
 import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
-import PhoneHero from "./images/phone-hero.png";
 import NFTvideo from './components/NFTvideo';
 import vidGallery from './videos/out.mp4';
-import Diamond from './videos/GryfynDiamond.mp4';
+import SunVideo from './videos/gryfyn_sun_mobile.mp4';
+import EyeVideo from './videos/gryfyn_eye_mobile.mp4';
+import DiamondVideo from './videos/gryfyn_diamond_MOBILE.mp4';
 import Banner from './images/banner.png';
 import Banner2 from './images/banner.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
 import { useEffect } from 'react';
+import initGSAPVideo from './components/initGSAPVideo'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -202,12 +205,42 @@ const initNFTVideo = () => {
   }  
 }
 
+const initServiceSectionGsap = () => {
+  gsap.to('.star', {
+    rotation: 90, repeat: -1, repeatDelay: 0.7
+  })
+  gsap.to('.sun', {
+    rotation: 359, repeat: -1, repeatDelay: 0, duration: 2,
+    ease: 'linear'
+  })  
+  let squaresTl1 = gsap.timeline({
+    repeat: -1, repeatDelay: 0,
+  });  
+  squaresTl1.fromTo('.square-1', {x: '56%'}, {x: '-56%'})
+  squaresTl1.to('.square-1', {x: '56%'})
+
+  let squaresTl2 = gsap.timeline({
+    repeat: -1, repeatDelay: 0,
+  });  
+  squaresTl2.fromTo('.square-2', {x: '-56%'}, {x: '56%'})
+  squaresTl2.to('.square-2', {x: '-56%'})  
+
+  let eyelidTl = gsap.timeline({
+    repeat: -1, repeatDelay: 0.7
+  });  
+  eyelidTl.to('.eye-lid', {transformOrigin: 'center top', rotationX: 90})
+  eyelidTl.to('.eye-lid', {rotationX: 0}) 
+}
+
 function App() {
   useEffect(() => {
     initHeroGsap()
     initNFTVideo()
+    initServiceSectionGsap()
+    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=200% bottom'})
+    initGSAPVideo(gsap, {vidSelector: '#video-3', trigger: '.video-3-section', pin: true, end: 'bottom+=200% bottom'})
+    initGSAPVideo(gsap, {vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=200% bottom'})
     initVideoScrollGsap('video-1', '.features')
-    initVideoScrollGsap('video-2', '.diamond')
     initMotoGPGsap()
   })
   return (
@@ -231,46 +264,98 @@ function App() {
           The world is within your reach. Open the door, 
           and let the experiences come to you.             
         </p>
-      </section>    
-      <section className='flex items-start justify-center py-16 text-center bg-beige gap-28 text-body'>
-        <div className='flex flex-col items-center gap-7'>
-          <SVG name='star' classes='w-40'/>
-          <h2 className='text-4xl font-title'>Create</h2>
-          <p className='font-body max-w-[13rem]'>
-            The world of the future, and witness the boundless possibilities of your mind.
-          </p>
-        </div>
-        <div className='flex flex-col items-center gap-7'>
-          <SVG name='sun' classes='w-40' fill_1='#FFCC31' fill_2='#F16B37'/>
-          <h2 className='text-4xl font-title'>Play</h2>
-          <p className='flex flex-col items-center font-body'>
-            <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
-            <span>Bring utility to its full potential.</span>
-          </p>
-        </div>
-        <div className='flex flex-col items-center gap-7'>
-          <div className='flex justify-center gap-2 py-12'>
-            <div className='w-16 h-16 bg-[#0167A2]'></div>
-            <div className='w-16 h-16 bg-[#FFCC31]'></div>
+      <div className='flex items-start justify-center w-full gap-28 tablet-below:flex-col tablet-below:items-center'>
+          <div className='flex flex-col items-center gap-7'>
+            <SVG name='star' classes='w-40 star'/>
+            <h2 className='text-4xl font-title'>Create</h2>
+            <p className='font-body max-w-[13rem]'>
+              The world of the future, and witness the boundless possibilities of your mind.
+            </p>
           </div>
-          <h2 className='text-4xl font-title'>Socialise</h2>
-          <p className='font-body max-w-[19rem]'>
-            Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
-          </p>
+          <div className='flex flex-col items-center gap-7'>
+            <SVG name='sun' classes='w-40 sun' fill_1='#FFCC31' fill_2='#F16B37'/>
+            <h2 className='text-4xl font-title'>Play</h2>
+            <p className='flex flex-col items-center font-body'>
+              <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
+              <span>Bring utility to its full potential.</span>
+            </p>
+          </div>
+          <div className='flex flex-col items-center gap-7'>
+            <div className='flex justify-center gap-2 py-12'>
+              <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
+              <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
+            </div>
+            <h2 className='text-4xl font-title'>Socialise</h2>
+            <p className='font-body max-w-[19rem]'>
+              Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
+            </p>
+          </div>
+          <div className='flex flex-col items-center gap-7'>
+            <div className='relative'>
+              <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
+              <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
+            </div>
+            <h2 className='text-4xl font-title'>Explore</h2>
+            <p className='font-body max-w-[16rem]'>
+              Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
+            </p>
+          </div>  
         </div>
-        <div className='flex flex-col items-center gap-7'>
-          <SVG name='eye' classes='w-40'/>
-          <h2 className='text-4xl font-title'>Explore</h2>
-          <p className='font-body max-w-[16rem]'>
-            Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
-          </p>
-        </div>                        
+        </section>
+      <section className='flex flex-col items-stretch min-h-screen p-16 px-24 overflow-hidden tablet-below:px-0 tablet-below:py-16 bg-beige text-body video-2-section tablet-below:items-center'>
+        <div className='w-full tablet-below:flex tablet-below:justify-center'>
+          <video className='w-[50rem] relative' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        </div>
+        <div className='relative flex justify-end w-full left-[-30rem] tablet-below:justify-center tablet-below:left-0 tablet-below:text-center'>
+          <div className='mt-[-16rem]'>
+            <h2 className='mb-12 text-4xl text-black'>Manage <br/>your portfolio</h2>
+            <p>
+            With access to the Polygon and Ethereum blockchains, Gryfyn is the perfect platform to manage and view your portfolio of NFTs in one place, as well as your coin balances. Gryfyn removes the barriers between NFTs and utility.            
+            </p>     
+            <div>
+              <span className='text-black'>Powered By</span>
+            </div>       
+          </div>
+        </div>
+      </section>        
+      <section className='flex flex-col items-center min-h-screen gap-10 py-16 overflow-hidden bg-beige text-body video-3-section'>
+        <div className='flex flex-col items-start w-[50rem] gap-10'>
+          <video className='w-[30rem] relative object-cover right-[-20rem]' id={'video-3'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          <div className='relative mt-[-16rem]'>
+            <h2 className='mb-12 text-4xl text-black'>
+              Seamless <br/> access to your <br/> gaming experience              
+            </h2>
+            <p className='max-w-xl'>
+              Execute in game transactions and NFT use directly in-game, without having to switch out of the platform. <br/><br/>
+              Verify your identity to unlock the full potential of Gryfyn, accessing, transferring and using your assets. <br/><br/>
+              With a fully integrated wallet, experience an unseen level of immersion.              
+            </p>
+          </div>
+        </div>
+      </section>     
+      <section className='flex flex-col items-stretch min-h-screen p-16 px-24 overflow-hidden tablet-below:px-0 tablet-below:py-16 bg-beige text-body video-4-section tablet-below:items-center'>
+        <div className='w-full tablet-below:flex tablet-below:justify-center'>
+          <video className='w-[50rem] relative' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        </div>
+        <div className='relative flex justify-end w-full left-[-30rem] tablet-below:justify-center tablet-below:left-0 tablet-below:text-center'>
+          <div className='mt-[-16rem]'>
+            <h2 className='mb-12 text-4xl text-black'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
+            <p>
+              Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
+              With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
+              xperience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
+            </p>     
+            <div>
+              <span className='text-black'>Powered By</span>
+            </div>       
+          </div>
+        </div>
       </section>   
+      <div className='overflow-hidden h-[16rem] relative bg-black rotate-180'>
+        <div className='rounded-full bg-beige w-[184vw] h-[184vw] relative left-[-42vw]'></div>
+      </div>     
       <section className="features">
         <VideoScroll id='video-1' vid={vidGallery} pin={'.features'}/>
-      </section>    
-      <section className="features diamond">
-        <VideoScroll id='video-2' vid={Diamond} pin={'.diamond'}/>
       </section>    
       <section className="motoGp-section">
         <div className="motoGpBanner-wrapper">
