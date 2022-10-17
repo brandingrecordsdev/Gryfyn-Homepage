@@ -261,6 +261,8 @@ min-width: 1200px;
   height: 200vh;
 }
 
-.nft-video-section {
-  height: 200vh
+#nft-video {
+  transform: none !important;
+  height: 100vh !important;
+  min-height: 1100px;
 }

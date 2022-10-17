@@ -15,75 +15,37 @@ const NFTVideo = () => {
 useEffect(() => {
 const el = NFTvidRef.current;
 let video = el;
-// let src = video.currentSrc || video.src;
-// console.log(video, src);
-
-/* Make sure the video is 'activated' on iOS */
-// function once(el, event, fn, opts) {
-//   var onceFn = function (e) {
-//     el.removeEventListener(event, onceFn);
-//     fn.apply(this, arguments);
-//   };
-//   el.addEventListener(event, onceFn, opts);
-//   return onceFn;
-// }
-
-// once(document.documentElement, "touchstart", function (e) {
-//   video.play();
-//   video.pause();
-// });
-
+let src = video.currentSrc || video.src;
+console.log(video, src);
 /* ---------------------------------- */
 /* Scroll Control! */
 
 gsap.registerPlugin(ScrollTrigger);
 
-let NFTtl = gsap.timeline({
-  // defaults: { duration: 1 },
-  scrollTrigger: {
-    trigger: "#nft-video-section",
-    pin: true,
-    start: "top top",
-    end: "bottom bottom",
-    scrub: true,
-    markers: true,
-  }
-});
 
-video.onloadedmetadata = function () {
-  NFTtl.to(video, { currentTime: video.duration });
-};
-
-// once(document.documentElement, "touchstart", function (e) {
-//   video.play();
-//   video.pause();
-// });
-
-
-// once(video, "loadedmetadata", () => {
-//   NFTtl.fromTo(
-//     video,
-//     {
-//       currentTime: 0
-//     },
-//     {
-//       currentTime: video.duration || 1
-//     }
-//   );
-// });
-
-function isTouchDevice() {
-  return (
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
-}
-if (isTouchDevice()) {
-  video.play();
-  video.pause();
-}
-
+ScrollTrigger.create({
+  trigger: video,
+  pin: true,
+  scrub: 2,
+  start: "top",
+  end: "+=650",
+  pinSpacing: false,
+  markers: true,
+  refreshPriority: 1,
+  onUpdate: function(self) { 
+    if(NFTvidRef.current) {
+      let scrollPos = self.progress;
+      let videoDuration = NFTvidRef.current.duration;
+      let videoCurrentTime = videoDuration * scrollPos;
+      
+      if(videoCurrentTime) {
+        NFTvidRef.current.currentTime = videoCurrentTime;
+      }
+      
+      // console.log(videoDuration, scrollPos, videoCurrentTime)
+    }
+  },
+})
  
     },[])
 

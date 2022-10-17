@@ -19,7 +19,9 @@ function App() {
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div> */}
       <section id="nft-video-section" className='flex flex-col items-center bg-beige gap-10 py-16 text-center text-body'>
+        <div className="nft-video-wrapper">
       <NFTvideo />
+        </div>
         <h2 className='max-w-xl text-4xl font-title nft-title'>
           All your favorite NFTs in one secure location.          
         </h2>
@@ -68,10 +70,10 @@ function App() {
         </div>                        
       </section>   
       <section className="features">
-        <VideoScroll vid={vidGallery} pin={'.features'}/>
+        {/* <VideoScroll vid={vidGallery} pin={'.features'}/> */}
       </section>    
       <section className="features diamond">
-        <VideoScroll vid={Diamond} pin={'.diamond'}/>
+        {/* <VideoScroll vid={Diamond} pin={'.diamond'}/> */}
       </section>    
     </div>
   );

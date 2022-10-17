@@ -28,6 +28,7 @@ const Hero = () => {
           scrub: 1,
           duration: 5,
           markers: true,
+          refreshPriority: -1,
           toggleActions: "restart pause resume pause"
         }
       });

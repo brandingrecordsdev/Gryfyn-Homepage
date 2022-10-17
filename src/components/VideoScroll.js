@@ -38,7 +38,7 @@ gsap.registerPlugin(ScrollTrigger);
 let vidTL = gsap.timeline({
   // defaults: { duration: 2 },
   scrollTrigger: {
-    trigger: pinnedSection,
+    trigger: '#nft-video-section',
     pin: true,
     start: "top top",
     end: "bottom bottom",
