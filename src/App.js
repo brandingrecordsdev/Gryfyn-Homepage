@@ -18,7 +18,6 @@ gsap.registerPlugin(ScrollTrigger);
 const initVideoScrollGsap = (id, pinnedSection) => {
   const el = document.getElementById(id);
   let video = el;
-  let src = video.currentSrc || video.src;
   /* Make sure the video is 'activated' on iOS */
   function once(el, event, fn, opts) {
     var onceFn = function (e) {
@@ -40,7 +39,7 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       trigger: pinnedSection,
       pin: true,
       start: "top top",
-      end: "bottom bottom",
+      end: "+=2000",
       scrub: 3,
       markers: {startColor: "white", endColor: "purple", fontSize: "14px"},
     }
@@ -90,47 +89,46 @@ const initHeroGsap = () => {
 }
 
 const initNFTVideo = () => {
+  function once(el, event, fn, opts) {
+    var onceFn = function (e) {
+      el.removeEventListener(event, onceFn);
+      fn.apply(this, arguments);
+    };
+    el.addEventListener(event, onceFn, opts);
+    return onceFn;
+  }
+
   const el = document.getElementById('nft-video');
   let video = el;
-  // let src = video.currentSrc || video.src;
-  // console.log(video, src);
-  
-  /* Make sure the video is 'activated' on iOS */
-  // function once(el, event, fn, opts) {
-  //   var onceFn = function (e) {
-  //     el.removeEventListener(event, onceFn);
-  //     fn.apply(this, arguments);
-  //   };
-  //   el.addEventListener(event, onceFn, opts);
-  //   return onceFn;
-  // }
-  
-  // once(document.documentElement, "touchstart", function (e) {
-  //   video.play();
-  //   video.pause();
-  // });
-  
   /* ---------------------------------- */
   /* Scroll Control! */
   
   gsap.registerPlugin(ScrollTrigger);
-  
+
   let NFTtl = gsap.timeline({
     // defaults: { duration: 1 },
     scrollTrigger: {
       trigger: "#nft-video-section",
       pin: true,
+      anticipatePin: 1,
       start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      markers: true,
+      end: "+=2000",
+      scrub: 2,
     }
   });
-  
-  video.onloadedmetadata = function () {
-    NFTtl.to(video, { currentTime: video.duration });
-  };
-  
+
+  once(video, "loadedmetadata", () => {
+    NFTtl.fromTo(
+      video,
+      {
+        currentTime: 0
+      },
+      {
+        currentTime: video.duration || 1
+      }
+    );
+  });  
+
   // once(document.documentElement, "touchstart", function (e) {
   //   video.play();
   //   video.pause();
@@ -231,6 +229,10 @@ function App() {
       <section className="features diamond">
         <VideoScroll id='video-2' vid={Diamond} pin={'.diamond'}/>
       </section>    
+      <section className="motoGp-">
+
+      </section>
+      
     </div>
   );
 }

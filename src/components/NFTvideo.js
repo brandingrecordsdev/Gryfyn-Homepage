@@ -4,7 +4,7 @@
 // import LinkedIn from '../images/linkedin.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-import NFTVid from '../videos/GryfnNFT3.mp4'
+import NFTVid from '../videos/NFTv1.mp4'
 import { useRef, useEffect } from "react";
 
 const NFTVideo = () => {
