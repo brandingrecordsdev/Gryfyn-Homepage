@@ -311,7 +311,7 @@ min-width: 1200px;
   height: 200vh;
 }
 .features-1{
-  height: 350vh;
+  height: 150vh;
 }
 /* 
 .nft-video-section {
@@ -350,6 +350,7 @@ max-width: 1000px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 100px;
 }
 
 .banner-1,
@@ -577,4 +578,8 @@ text-align: center;
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+#video-1 {
+  height: 100vh;
 }

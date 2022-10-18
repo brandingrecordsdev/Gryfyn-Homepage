@@ -14,7 +14,7 @@ import SVG from './components/SVG'
 import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
 import NFTvideo from './components/NFTvideo';
-import vidGallery from './videos/out.mp4';
+import vidGallery from './videos/game.mp4';
 import SunVideo from './videos/sun.mp4';
 import EyeVideo from './videos/eye.mp4';
 import PromoVid from './videos/promoVideo.mp4';
@@ -34,7 +34,6 @@ import LinkedIn from './images/linkedin.svg';
 
 import Banner from './images/banner.png';
 import Banner2 from './images/banner.png';
-import MotoGPBike from './images/motorbike-kv.png';
 import MotoGPSticker from './images/MotoGPSticker.png';
 import MotoGPTitle1 from './images/MotoGPTitle1.png';
 import MotoGPTitle2 from './images/MotoGPTitle2.png';
@@ -69,7 +68,7 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       trigger: pinnedSection,
       pin: true,
       start: "top top",
-      end: "+=500",
+      end: "+=1000",
       scrub: 3,
       markers: {startColor: "white", endColor: "purple", fontSize: "14px"},
     }
@@ -128,7 +127,7 @@ const initMotoGPGsap = ( pinnedSection ) => {
         pin: true,
         start: "top top",
         end: "+=500",
-        scrub: 0.5,
+        scrub: 1,
         markers: true,
       }
     });
