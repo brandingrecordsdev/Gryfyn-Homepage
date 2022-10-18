@@ -13,7 +13,8 @@ import Hero from './components/Hero';
 import SVG from './components/SVG'
 import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
-import NFTvideo from './components/NFTvideo';
+
+import NFTvidMobile from './videos/nftmobile.mp4';
 import NFTvid from './videos/NFTv1.mp4'
 import vidGallery from './videos/game.mp4';
 import vidGalleryMobile from './videos/gryfyn_gallery_mobile.mp4';
@@ -42,14 +43,12 @@ import MotoGPSticker from './images/MotoGPSticker.png';
 import MotoGPTitle1 from './images/MotoGPTitle1.png';
 import MotoGPTitle2 from './images/MotoGPTitle2.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
-import { useEffect } from 'react';
+import {useState, useEffect } from 'react';
 import initGSAPVideo from './components/initGSAPVideo'
 
 
 gsap.registerPlugin(ScrollTrigger);
 
-const windowWidth = window.innerWidth;
-console.log(windowWidth)
 const initVideoScrollGsap = (id, pinnedSection) => {
   const el = document.getElementById(id);
   let video = el;
@@ -76,7 +75,6 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       start: "top top",
       end: "+=1000",
       scrub: 3,
-      markers: {startColor: "white", endColor: "purple", fontSize: "14px"},
     }
   });
   console.log(vidTL)
@@ -133,7 +131,6 @@ const initMotoGPGsap = ( pinnedSection ) => {
         start: "top top",
         end: "+=500",
         scrub: 1,
-        markers: true,
       }
     });
 
@@ -184,7 +181,6 @@ const initPromoVideo = () => {
       start: "top top",
       end: "+=1000",
       scrub: 2,
-      markers: {startColor: "white", endColor: "purple", fontSize: "14px"},
     }
   });
 
@@ -202,59 +198,59 @@ const initPromoVideo = () => {
 
 }
 
-const initNFTVideo = () => {
-  function once(el, event, fn, opts) {
-    var onceFn = function (e) {
-      el.removeEventListener(event, onceFn);
-      fn.apply(this, arguments);
-    };
-    el.addEventListener(event, onceFn, opts);
-    return onceFn;
-  }
+// const initNFTVideo = () => {
+//   function once(el, event, fn, opts) {
+//     var onceFn = function (e) {
+//       el.removeEventListener(event, onceFn);
+//       fn.apply(this, arguments);
+//     };
+//     el.addEventListener(event, onceFn, opts);
+//     return onceFn;
+//   }
 
-  const el = document.getElementById('nft-video');
-  let video = el;
-  /* ---------------------------------- */
-  /* Scroll Control! */
+//   const el = document.getElementById('nft-video');
+//   let video = el;
+//   /* ---------------------------------- */
+//   /* Scroll Control! */
   
-  gsap.registerPlugin(ScrollTrigger);
+//   gsap.registerPlugin(ScrollTrigger);
 
-  let NFTtl = gsap.timeline({
-    // defaults: { duration: 1 },
-    scrollTrigger: {
-      trigger: "#nft-video-section",
-      pin: true,
-      anticipatePin: 1,
-      start: "top top",
-      end: "+=2000",
-      scrub: 2,
-    }
-  });
+//   let NFTtl = gsap.timeline({
+//     // defaults: { duration: 1 },
+//     scrollTrigger: {
+//       trigger: "#nft-video-section",
+//       pin: true,
+//       anticipatePin: 1,
+//       start: "top top",
+//       end: "+=2000",
+//       scrub: 2,
+//     }
+//   });
 
-  once(video, "loadedmetadata", () => {
-    NFTtl.fromTo(
-      video,
-      {
-        currentTime: 0
-      },
-      {
-        currentTime: video.duration || 1
-      }
-    );
-  });  
+//   once(video, "loadedmetadata", () => {
+//     NFTtl.fromTo(
+//       video,
+//       {
+//         currentTime: 0
+//       },
+//       {
+//         currentTime: video.duration || 1
+//       }
+//     );
+//   });  
 
-  function isTouchDevice() {
-    return (
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    );
-  }
-  if (isTouchDevice()) {
-    video.play();
-    video.pause();
-  }  
-}
+//   function isTouchDevice() {
+//     return (
+//       "ontouchstart" in window ||
+//       navigator.maxTouchPoints > 0 ||
+//       navigator.msMaxTouchPoints > 0
+//     );
+//   }
+//   if (isTouchDevice()) {
+//     video.play();
+//     video.pause();
+//   }  
+// }
 
 const initServiceSectionGsap = () => {
   gsap.to('.star', {
@@ -284,22 +280,45 @@ const initServiceSectionGsap = () => {
 }
 
 function App() {
+  // const [windowDimenion, detectHW] = useState({
+  //   winWidth: window.innerWidth,
+  //   winHeight: window.innerHeight,
+  // })
+
+  // const detectSize = () => {
+  //   detectHW({
+  //     winWidth: window.innerWidth,
+  //     winHeight: window.innerHeight,
+  //   })
+  // }  
+
   useEffect(() => {
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
     // initNFTVideo()
-    initGSAPVideo(gsap, {vidSelector: '#nft-video', trigger: '.video-5-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
+    initVideoScrollGsap('nft-video', '.video-nft-section')
+    initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section')
+    // initGSAPVideo(gsap, {vidSelector: '#nft-video', trigger: '.video-nft-section', pin: true, end: 'bottom bottom', scrub: 2})
+    // initGSAPVideo(gsap, {vidSelector: '#nft-mobile-video', trigger: '.video-nft-mobile-section', pin: true, end: 'bottom bottom', scrub: 2})
     initServiceSectionGsap()
-    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
-    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
-    initGSAPVideo(gsap, {vidSelector: '#video-3', trigger: '.video-3-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
-    initGSAPVideo(gsap, {vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=200% bottom', scrub: 3})
+    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=150% bottom', scrub: 2})
+    initGSAPVideo(gsap, {vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: 'bottom+=150% bottom', scrub: 3})
+    initGSAPVideo(gsap, {vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 3})
+    initGSAPVideo(gsap, {vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=150% bottom', scrub: 3})
     initVideoScrollGsap('video-1', '.features')
     initVideoScrollGsap('video-1-mobile', '.features-mobile')
-
     initMotoGPGsap('.motoGp-section')
   })
+  
+  // useEffect(()=>{
+  //   window.addEventListener('resize', detectSize)
+  //   ScrollTrigger.refresh(true)
+  //   return () => {
+  //   window.removeEventListener('resize', detectSize)
+  //   }
+  // },[windowDimenion])
+
   return (
     <div className="App">
         <Nav />
@@ -333,9 +352,13 @@ function App() {
       {/* <div className='overflow-hidden h-[16rem] rounded-border relative'>
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div> */}
-      <section id="nft-video-section" className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body min-h-[140vh] video-5-section'>
-        <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-        {/* <NFTvideo /> */}
+      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] video-nft-section'>
+        <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
+      </section>
+      <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] video-nft-mobile-section'>
+        <video src={NFTvidMobile} id="nft-mobile-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
+      </section>
+      <section className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body'>
         <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw]'>
           All your favorite NFTs in one secure location.          
         </h2>
@@ -348,7 +371,7 @@ function App() {
           The world is within your reach. Open the door, 
           and let the experiences come to you.             
         </p>
-      <div className='flex items-start justify-center w-full gap-28 tablet-below:flex-col tablet-below:items-center'>
+      <div className='flex items-start justify-center w-full gap-28 px-20 tablet-below:flex-col tablet-below:items-center '>
           <div className='flex flex-col items-center gap-7'>
             <SVG name='star' classes='w-40 star'/>
             <h2 className='text-4xl font-title'>Create</h2>
@@ -409,11 +432,11 @@ function App() {
         </div>
       </section>    
 
-       <section className='flex flex-col items-center h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-3-section'>
+       <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-section'>
         <div className='flex justify-end'>
-          <video className='relative object-cover w-[50rem] tablet-below:w-[46rem] mobile-below:w-full' id={'video-3'} src={(windowWidth>1024)?SunVideo:SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          <video className='relative object-cover w-[50rem] tablet-below:w-[46rem] mobile-below:w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         </div>
-        <div className='relative top-[-24rem] mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
+        <div className='relative top-[-30rem] mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
             <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl'>
               Seamless <br/> access to your <br/> gaming experience              
             </h2>
@@ -423,12 +446,28 @@ function App() {
               With a fully integrated wallet, experience an unseen level of immersion.              
             </p>
           </div>
-      </section>  
+      </section> 
 
-      <section className='flex flex-col items-center min-h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section'>
+      <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-mobile-section'>
+      <div className='flex justify-end'>
+          <video className='relative object-cover w-[20rem]' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        </div> 
+        <div className='relative top-[-8rem] mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
+            <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl'>
+              Seamless <br/> access to your <br/> gaming experience              
+            </h2>
+            <p className='font-body'>
+              Execute in game transactions and NFT use directly in-game, without having to switch out of the platform. <br/><br/>
+              Verify your identity to unlock the full potential of Gryfyn, accessing, transferring and using your assets. <br/><br/>
+              With a fully integrated wallet, experience an unseen level of immersion.              
+            </p>
+          </div>
+      </section> 
+
+      <section className='flex flex-col items-center min-h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section h-screen'>
         <div className='w-[56rem] flex flex-col tablet-below:w-[44rem] mobile-below:w-full'>
           <div className='flex justify-start w-full mobile-below:justify-center'>
-            <video className='relative w-[40rem] tablet-below:w-[34rem] mobile-below:w-full' id={'video-4'} src={(windowWidth>1024)?EyeVideo:EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+            <video className='relative px-2 w-[30rem] tablet-below:w-[25rem] mobile-below:w-full' id={'video-4'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
           <div className='flex justify-end w-full mt-[-12rem] relative mobile-below:justify-center mobile-below:text-center mobile-below:mt-[-7rem]'>
             <div>
@@ -444,21 +483,6 @@ function App() {
             </div>          
           </div>
         </div>
-        {/* <div className='w-full tablet-below:flex tablet-below:justify-center'>
-        </div>
-        <div className='relative flex justify-end w-full left-[-30rem] tablet-below:justify-center tablet-below:left-0 tablet-below:text-center'>
-          <div className='mt-[-16rem]'>
-            <h2 className='mb-12 text-4xl text-black'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
-            <p>
-              Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
-              With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
-              xperience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
-            </p>     
-            <div>
-              <span className='text-black'>Powered By</span>
-            </div>       
-          </div>
-        </div> */}
       </section> 
 
       <div className='overflow-hidden h-[16rem] relative bg-black rotate-180'>

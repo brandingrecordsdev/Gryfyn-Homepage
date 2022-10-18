@@ -2,8 +2,8 @@
 // import Instagram from '../images/instagram.svg';
 // import Twitter from '../images/twitter.svg';
 // import LinkedIn from '../images/linkedin.svg';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import gsap from 'gsap';
 import NFTVid from '../videos/NFTv1.mp4'
 import { useRef, useEffect } from "react";
 
