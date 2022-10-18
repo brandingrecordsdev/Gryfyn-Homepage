@@ -99,6 +99,7 @@ nav {
   border-radius: 6.49px;
   margin-right: 50px;
   color: black;
+  margin-right: 0 !important;
 }
 
 .social-media-wrapper {
@@ -153,6 +154,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  column-gap: 20px;
 }
 
 .branded-a {
@@ -370,7 +372,7 @@ max-width: 1000px;
 
 .motoGp-star {
   position: absolute;
-  top: 0px;
+  top: 100px;
   max-width: 1200px;
 }
 
@@ -399,8 +401,7 @@ line-height: 45px;
 }
 
 .motoGp-desc {
-  padding: 0px 50px;
-  padding-bottom: 100px;
+  padding: 100px 50px;
   display: flex;
   align-items: top;
   justify-content: center;
@@ -529,7 +530,7 @@ text-align: center;
 }
 
 .motoGP-title-1 {
-  max-width: 400px;
+  width: 45%;
   margin-bottom: 40px;
 }
 
@@ -561,8 +562,8 @@ text-align: center;
 
 .motoGPSticker {
   position: absolute;
-  top: 30vh;
-  right: 30vh;
+  top: 40vh;
+  right: 40vh;
   max-width: 350px;
 }
 
@@ -582,4 +583,242 @@ text-align: center;
 
 #video-1, #video-1-mobile {
   height: 100vh;
+}
+
+.hero-container {
+  padding: 100px;
+}
+
+@media only screen and (max-width: 1500px) {
+ 
+  .motoGPSticker {
+    right: 30vh;
+  }
+
+  .motoGp-star {
+    top: 150px;
+    max-width: 1000px;
+  }
+
+}
+
+
+@media only screen and (max-width: 1180px) {
+
+  .motoGPSticker {
+    position: absolute;
+    top: 40vh;
+    right: 20vh;
+    max-width: 300px;
+}
+
+  .branded-sun img {
+    max-width: 60px;
+  }
+  .hero-wrapper {
+    max-width: 700px;
+  }
+
+  .hero-header {
+    font-size: 54px;
+    line-height: 72px;
+  }
+
+  .branded-i img {
+    min-width: 30px !important;
+  }
+
+  .branded-a {
+    margin: 0 3px !important;
+  }
+
+  .branded-a img {
+    max-width: 37px;
+  }
+
+  .promo-desc,
+  .hero-subhead {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .hero-subhead {
+    max-width: 450px;
+  }
+
+  .hero-logo-wrapper img {
+    max-width: 150px;
+  }
+
+  .hero-container {
+    padding: 0;
+  }
+
+  .promo-desc {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+}
+
+@media only screen and (max-width: 860px) {
+
+
+  .social-media-wrapper {
+    column-gap: 15px !important;
+  }
+
+  .connect-btn {
+    font-size: 16px;
+  }
+
+  .motoGPSticker {
+    position: absolute;
+    top: 50vh;
+    right: 10vh;
+    max-width: 250px;
+}
+
+  .branded-sun img {
+    max-width: 60px;
+  }
+  .hero-wrapper {
+    max-width: 500px;
+  }
+
+  .hero-header {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .hero-container {
+    padding: 50px;
+  }
+
+  .main-nav-wrapper {
+  padding: 23px 50px  !important;
+}
+
+  .branded-i img {
+    min-width: 25px !important;
+  }
+
+  .branded-a img {
+    max-width: 27px;
+  }
+
+  .branded-sun img {
+    max-width: 50px;
+  }
+
+  .branded-a {
+    margin: 0 2px !important;
+  }
+
+  .hero-logo-wrapper img {
+    max-width: 130px;
+  }
+
+
+}
+
+@media only screen and (max-width: 590px) {
+
+  .motoGPSticker {
+    position: absolute;
+    top: 50vh;
+    right: 0;
+}
+
+  .branded-sun img {
+    max-width: 60px;
+  }
+  .hero-wrapper {
+    max-width: 450px;
+  }
+
+  .hero-header {
+    font-size: 36px;
+    line-height: 55px;
+  }
+
+  .hero-container {
+    padding: 20px;
+  }
+
+  .branded-i img {
+    min-width: 23px !important;
+  }
+
+  .branded-a img {
+    max-width: 24px;
+  }
+
+  .branded-sun img {
+    max-width: 40px;
+  }
+
+  .branded-a {
+    margin: 0 1px !important;
+  }
+
+  .hero-logo-wrapper img {
+    max-width: 80px;
+  }
+
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  .branded-sun img {
+    max-width: 60px;
+  }
+  .hero-wrapper {
+    max-width: 300px;
+  }
+
+  .hero-header {
+    font-size: 24px;
+    line-height: 45px;
+  }
+
+  .hero-container {
+    padding: 20px;
+  }
+
+  .branded-i img {
+    min-width: 13px !important;
+    left: -3px;
+    top: -4px;
+  }
+
+  .branded-a img {
+    max-width: 15px;
+  }
+
+  .branded-sun img {
+    max-width: 30px;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .branded-a {
+    margin: 0 1px !important;
+  }
+
+  .hero-logo-wrapper img {
+    max-width: 80px;
+  }
+
+  .promo-desc,
+  .hero-subhead {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .hero-subhead {
+    max-width: 450px;
+  }
+
 }
