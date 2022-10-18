@@ -17,6 +17,7 @@ import NFTvideo from './components/NFTvideo';
 import vidGallery from './videos/out.mp4';
 import SunVideo from './videos/sun.mp4';
 import EyeVideo from './videos/eye.mp4';
+import PromoVid from './videos/promoVideo.mp4';
 import DiamondVideo from './videos/diamond.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
 import DustLandLogo from "./images/dustland_logo.png";
@@ -153,6 +154,49 @@ const initMotoGPGsap = ( pinnedSection ) => {
         }, '0.5') 
 }
 
+const initPromoVideo = () => {
+  const el = document.getElementById('promo-vid');
+  let video = el;
+  /* Make sure the video is 'activated' on iOS */
+  function once(el, event, fn, opts) {
+    var onceFn = function (e) {
+      el.removeEventListener(event, onceFn);
+      fn.apply(this, arguments);
+    };
+    el.addEventListener(event, onceFn, opts);
+    return onceFn;
+  }
+  // once(document.documentElement, "touchstart", function (e) {
+  //   video.play();
+  //   video.pause();
+  // });
+  /* ---------------------------------- */
+  /* Scroll Control! */
+  let promoTL = gsap.timeline({
+    // defaults: { duration: 2 },
+    scrollTrigger: {
+      trigger: '.promo-hero-section',
+      pin: true,
+      start: "top top",
+      end: "+=1000",
+      scrub: 2,
+      markers: {startColor: "white", endColor: "purple", fontSize: "14px"},
+    }
+  });
+
+  once(video, "loadedmetadata", () => {
+    promoTL.fromTo(
+      video,
+      {
+        currentTime: 0
+      },
+      {
+        currentTime: video.duration || 1
+      }
+    );
+  });  
+
+}
 
 const initNFTVideo = () => {
   function once(el, event, fn, opts) {
@@ -195,24 +239,6 @@ const initNFTVideo = () => {
     );
   });  
 
-  // once(document.documentElement, "touchstart", function (e) {
-  //   video.play();
-  //   video.pause();
-  // });
-  
-  
-  // once(video, "loadedmetadata", () => {
-  //   NFTtl.fromTo(
-  //     video,
-  //     {
-  //       currentTime: 0
-  //     },
-  //     {
-  //       currentTime: video.duration || 1
-  //     }
-  //   );
-  // });
-  
   function isTouchDevice() {
     return (
       "ontouchstart" in window ||
@@ -255,6 +281,7 @@ const initServiceSectionGsap = () => {
 
 function App() {
   useEffect(() => {
+    initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
     initNFTVideo()
@@ -269,7 +296,8 @@ function App() {
     <div className="App">
         <Nav />
       <section className="promo-hero-section">
-      <img alt="" className="motoGPBike" src={MotoGPBike}/>
+        <video className='promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
       <img alt="" className="motoGPSticker" src={MotoGPSticker}/>
       <div class="promo-hero-wrapper">
         <img alt="" className="motoGP-title-1" src={MotoGPTitle1}/>
@@ -404,10 +432,10 @@ function App() {
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
         <h2 className='text-4xl max-w-[30rem]'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
         <div className='flex flex-wrap items-center justify-center gap-4'>
-          <img src={PhantomLogo} className='object-cover w-32'/>
-          <img src={SandboxLogo} className='object-cover w-32'/>
-          <img src={DustLandLogo} className='object-cover w-32'/>
-          <img src={RevvRacingLogo} className='object-cover w-32'/>
+          <img alt="" src={PhantomLogo} className='object-cover w-32'/>
+          <img alt="" src={SandboxLogo} className='object-cover w-32'/>
+          <img alt="" src={DustLandLogo} className='object-cover w-32'/>
+          <img alt="" src={RevvRacingLogo} className='object-cover w-32'/>
         <div className='features'>
         <VideoScroll id='video-1' vid={vidGallery} pin={'.features'}/>
         </div>
