@@ -21,7 +21,7 @@ const Nav = () => {
             </div>
         </div>
         <img alt="" className="logo" src={Logo} />
-        <button className="connect-btn">Connect Wallet</button>
+        <button className="connect-btn">Connect Your Wallet</button>
         </div>
     </nav>
     )

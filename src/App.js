@@ -529,7 +529,10 @@ function App() {
           <span className="px-4 motoGp-highlight">
            Gryfyn x MotoGP  
           </span>
+          <br></br>
+          <span>
           VIP Experience
+          </span>
           </h1>
           <div className="motoGp-Banner">
             <div className="banner-left-wrapper">
