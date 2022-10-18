@@ -1,3 +1,8 @@
+import './fonts/NeueMetana-Bold.otf';
+import './fonts/NeueMetana-Regular.otf';
+import './fonts/Basier Circle Regular.otf';
+import './fonts/Basier Circle Bold.otf';
+
 // import logo from './logo.svg';
 import './App.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,6 +22,13 @@ import PhantomLogo from "./images/phantom_logo.png";
 import DustLandLogo from "./images/dustland_logo.png";
 import RevvRacingLogo from "./images/revv_racing_logo.png";
 import SandboxLogo from "./images/the-sandbox-logo 2.png";
+import Sun from './images/branded-sun.svg';
+import GreenDiamond from './images/GreenDiamond.svg';
+import YellowDiamond from './images/YellowDiamond.svg';
+import Logo from './images/logo.svg'
+import Instagram from './images/instagram.svg';
+import Twitter from './images/twitter.svg';
+import LinkedIn from './images/linkedin.svg';
 
 import Banner from './images/banner.png';
 import Banner2 from './images/banner.png';
@@ -398,15 +410,59 @@ function App() {
       <section className="motoGp-desc">
         <div className="motoGp-desc-wrapper">
             <p>
-            We are proud to announce that Gryfyn is the official title sponsor of MotoGP 2022 & 2023 and a key partner of Dorna Sports, with the goal of propelling MotoGP into the vast potential of Web3 & the metaverse.
+            <span>We are proud to announce that Gryfyn is the </span>
+            <span className="header-bold">
+            official title sponsor of MotoGP 2022 & 2023
+            </span> and a key partner of Dorna Sports, with the goal of propelling MotoGP into the vast potential of Web3 & the metaverse.
             <br/><br/>
-            Get a chance to win a MotoGP race package that includes an all expenses paid trip to actual MotoGP races. 
+            <span>Get a chance to win </span>
+           <span className="header-highlight">
+           2x VIP all inclusive tickets 
+           </span>
+           <span> to the Spain MotoGP event.</span>
             </p>
         </div>
         </section>
       <section className="image-slider">
         <Carousel />
       </section>
+      <section className="enter-raffles-section">
+        <div className="raffles-wrapper">
+        <h1>How to enter?</h1>
+        <p>From now to March 2023, connect to our non custodian wallet and follow our verification process to enter the raffle.</p>
+        <button className="motogp-cta-btn connect-btn">Connect Wallet</button>
+        </div>
+      </section>
+      <section className="bottom-banner">
+                            <h1 className="bottom-header">
+                              A w
+                              <span className="branded-sun"><img className="rotating" alt="" src={Sun}/></span>
+                              rld 
+                              <br />
+                              beyond yo
+                              <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond}/>u</span>
+                              r 
+                              <br />
+                              <span className="branded-i"><img className="anim-world-beyond-o" alt="" src={YellowDiamond}/>i</span>
+                              magination awaits
+                            </h1>
+      </section>
+      <footer className="site-footer">
+        <div className="footer-wrapper">
+        <img alt="" className="logo footer-logo" src={Logo} />
+        <div className="social-media-wrapper">
+                <a href="/" className="social-icon">
+                    <img alt="" src={Instagram} />
+                </a>
+                <a href="/" className="social-icon">
+                    <img alt="" src={Twitter} />
+                </a>
+                <a href="/" className="social-icon">
+                    <img alt="" src={LinkedIn} />
+                </a>
+            </div>
+        </div>
+      </footer>
     </div>
   );
 }

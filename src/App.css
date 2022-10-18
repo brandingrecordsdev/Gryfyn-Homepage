@@ -1,8 +1,31 @@
+
+@font-face {
+  font-family: 'Neue Metana';
+  font-style: normal;
+  font-weight:400;
+  src:local('Neue Metana'), url('./fonts/NeueMetana-Regular.otf') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Metana';
+  font-style: normal;
+  font-weight:700;
+  src:local('Neue Metana'), url('./fonts/NeueMetana-Bold.otf') format('woff');
+}
+
+
 @font-face {
   font-family: 'Basier Circle';
   font-style: normal;
-  font-weight: 400;
-  src: local('Basier Circle'), url('https://fonts.cdnfonts.com/s/20637/BasierCircle-Regular.woff') format('woff');
+  font-weight:400;
+  src:local('Basier Circle'), url('./fonts/Basier Circle Regular.otf') format('woff');
+}
+
+@font-face {
+  font-family: 'Basier Circle';
+  font-style: normal;
+  font-weight: 700;
+  src:local('Basier Circle'), url('./fonts/Basier Circle Bold.otf') format('woff');
 }
 
 .font-body {
@@ -12,6 +35,16 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: 'Neue Metana';
+font-weight: 700;
+
+}
+
+button {
+  background-color: #E3DDD4;
 }
 
 body {
@@ -64,6 +97,7 @@ nav {
   padding: 10px 23px;
   border-radius: 6.49px;
   margin-right: 50px;
+  color: black;
 }
 
 .social-media-wrapper {
@@ -129,6 +163,7 @@ nav {
   max-width: 80px;
   margin-left: -10px;
   margin-right: -10px;
+  margin-top: -20px;
 }
 
 .branded-i img {
@@ -138,6 +173,17 @@ nav {
   top: -10px;
   z-index: 6;
   position: absolute;
+}
+
+.branded-i-sm img {
+  min-width: 31px;
+  width: 100%;
+  left: -8px;
+  top: -10px;
+}
+
+.branded-i img {
+  min-width: 31px !important;
 }
 
 .branded-i {
@@ -267,6 +313,7 @@ min-width: 1200px;
 
 .motoGp-section {
   height: 100vh;
+  overflow: hidden;
 }
 
 .motoGp-header {
@@ -353,7 +400,7 @@ line-height: 45px;
 }
 
 .motoGp-desc-wrapper {
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .banner-right-wrapper {
@@ -368,6 +415,84 @@ line-height: 45px;
   height: 130vh;
 }
 
-.image-slider {
-  height: 100vh;
+.header-bold {
+  font-weight: 700 !important;
+}
+
+.header-highlight {
+  color: #FFCD32;
+}
+
+.enter-raffles-section {
+  padding: 140px 50px;
+  color: #E3DDD4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-header {
+  color: #E3DDD4;
+  font-family: 'Neue Metana';
+font-style: normal;
+font-weight: 400;
+font-size: 65px;
+line-height: 100px;
+
+}
+
+.bottom-banner {
+  padding: 60px 100px;
+}
+
+.raffles-wrapper {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.raffles-wrapper h1 {
+  font-family: 'Neue Metana';
+  margin-bottom: 40px;
+  font-size: 60px;
+line-height: 89px;
+text-align: center;
+}
+
+.raffles-wrapper p {
+  font-size: 25px;
+line-height: 45px;
+text-align: center;
+}
+
+.motogp-cta-btn {
+  margin-top: 40px;
+}
+
+.branded-u {
+  position: relative;
+}
+
+.branded-u img {
+  position: absolute;
+  width: 100%;
+  max-width: 45px;
+  left: 4px;
+}
+
+.site-footer {
+  padding: 0px 100px;
+}
+
+.footer-logo {
+  max-width: 180px;
+}
+
+.footer-wrapper {
+  padding: 60px 0;
+  border-top: 3px solid #E3DDD4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
