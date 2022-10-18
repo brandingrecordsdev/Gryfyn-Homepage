@@ -15,9 +15,9 @@ import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
 import NFTvideo from './components/NFTvideo';
 import vidGallery from './videos/out.mp4';
-import SunVideo from './videos/gryfyn_sun_mobile.mp4';
-import EyeVideo from './videos/gryfyn_eye_mobile.mp4';
-import DiamondVideo from './videos/gryfyn_diamond_MOBILE.mp4';
+import SunVideo from './videos/sun.mp4';
+import EyeVideo from './videos/eye.mp4';
+import DiamondVideo from './videos/diamond.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
 import DustLandLogo from "./images/dustland_logo.png";
 import RevvRacingLogo from "./images/revv_racing_logo.png";
@@ -25,6 +25,7 @@ import SandboxLogo from "./images/the-sandbox-logo 2.png";
 import Sun from './images/branded-sun.svg';
 import GreenDiamond from './images/GreenDiamond.svg';
 import YellowDiamond from './images/YellowDiamond.svg';
+import BrandedALower from './images/branded-a-lower.svg';
 import Logo from './images/logo.svg'
 import Instagram from './images/instagram.svg';
 import Twitter from './images/twitter.svg';
@@ -67,7 +68,7 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       trigger: pinnedSection,
       pin: true,
       start: "top top",
-      end: "+=2000",
+      end: "+=500",
       scrub: 3,
       markers: {startColor: "white", endColor: "purple", fontSize: "14px"},
     }
@@ -95,7 +96,7 @@ const initHeroGsap = () => {
         pin: true,
         anticipatePin: 1,
         start: "top top",
-        end: "bottom bottom",
+        end: "+=2000",
         scrub: 1,
         duration: 5,
         markers: true,
@@ -350,7 +351,7 @@ function App() {
         </section>
       <section className='flex flex-col items-stretch min-h-screen p-16 px-24 overflow-hidden tablet-below:px-0 tablet-below:py-16 bg-beige text-body video-2-section tablet-below:items-center'>
         <div className='w-full tablet-below:flex tablet-below:justify-center'>
-          <video className='w-[50rem] relative' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          <video className='w-100 relative' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         </div>
         <div className='relative flex justify-end w-full left-[-30rem] tablet-below:justify-center tablet-below:left-0 tablet-below:text-center'>
           <div className='mt-[-16rem]'>
@@ -365,8 +366,8 @@ function App() {
         </div>
       </section>        
       <section className='flex flex-col items-center min-h-screen gap-10 py-16 overflow-hidden bg-beige text-body video-3-section'>
-        <div className='flex flex-col items-start w-[50rem] gap-10'>
-          <video className='w-[30rem] relative object-cover right-[-20rem]' id={'video-3'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        <div className='flex flex-col items-start w-100 gap-10'>
+          <video className='w-100 relative object-cover right-[-20rem]' id={'video-3'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           <div className='relative mt-[-16rem]'>
             <h2 className='mb-12 text-4xl text-black'>
               Seamless <br/> access to your <br/> gaming experience              
@@ -381,7 +382,7 @@ function App() {
       </section>     
       <section className='flex flex-col items-stretch min-h-screen p-16 px-24 overflow-hidden tablet-below:px-0 tablet-below:py-16 bg-beige text-body video-4-section tablet-below:items-center'>
         <div className='w-full tablet-below:flex tablet-below:justify-center'>
-          <video className='w-[50rem] relative' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          <video className='w-100 relative' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         </div>
         <div className='relative flex justify-end w-full left-[-30rem] tablet-below:justify-center tablet-below:left-0 tablet-below:text-center'>
           <div className='mt-[-16rem]'>
@@ -463,18 +464,20 @@ function App() {
         </div>
       </section>
       <section className="bottom-banner">
-                            <h1 className="bottom-header">
-                              A w
-                              <span className="branded-sun"><img className="rotating" alt="" src={Sun}/></span>
-                              rld 
-                              <br />
-                              beyond yo
-                              <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond}/>u</span>
-                              r 
-                              <br />
-                              <span className="branded-i-sm"><img className="anim-world-beyond-o" alt="" src={YellowDiamond}/>i</span>
-                              magination awaits
-                            </h1>
+          <h1 className="bottom-header">
+            A w
+            <span className="branded-sun"><img className="rotating" alt="" src={Sun}/></span>
+            rld 
+            <br />
+            beyond yo
+            <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond}/>u</span>
+            r 
+            <br />
+            <span className="branded-i-sm"><img className="anim-world-beyond-o" alt="" src={YellowDiamond}/>i</span>
+            <span>magination </span>
+            <span className="branded-a-lower"><img alt="" src={BrandedALower}/></span>
+            waits
+          </h1>
       </section>
       <footer className="site-footer">
         <div className="footer-wrapper">
