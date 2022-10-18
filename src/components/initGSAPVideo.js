@@ -36,7 +36,7 @@ export default function initGSAPVideo(gsap, settings){
             start: settings.start ? settings.start : 'top top',
             end: settings.end ? settings.end : 'bottom bottom',
             scrub: settings.scrub ? settings.scrub : true,
-            markers: true,
+            anticipatePin: 1,
         }
     });
     

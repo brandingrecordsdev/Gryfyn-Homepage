@@ -130,7 +130,7 @@ nav {
 }
 
 .nft-video {
-  width: 100% !important;
+  width: 80% !important;
 }
 
 .hero-subhead {
@@ -307,7 +307,7 @@ min-width: 1200px;
   color: black !important;
 }
 
-.features {
+.features, .features-mobile {
   height: 200vh;
 }
 .features-1{
@@ -510,7 +510,7 @@ text-align: center;
 }
 
 .promo-hero-section {
-  height: 100vh;
+  min-height: 100vh;
   color: #E3DDD4;
   display: flex;
   align-items: end;
@@ -580,7 +580,7 @@ text-align: center;
   height: 100%;
 }
 
-#video-1 {
+#video-1, #video-1-mobile {
   height: 100vh;
 }
 
