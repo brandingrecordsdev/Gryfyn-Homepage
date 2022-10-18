@@ -506,7 +506,7 @@ text-align: center;
 }
 
 .motoGpBanner-promo {
-  max-height: 50vh !important;
+  height: 50vh !important;
 }
 
 .promo-hero-section {
@@ -582,4 +582,43 @@ text-align: center;
 
 #video-1 {
   height: 100vh;
+}
+
+.hero-container {
+  padding: 100px;
+}
+
+@media only screen and (max-width: 1180px) {
+
+  .branded-sun img {
+    max-width: 60px;
+  }
+  .hero-wrapper {
+    max-width: 700px;
+  }
+
+  .hero-header {
+    font-size: 54px;
+    line-height: 72px;
+  }
+
+  .branded-i img {
+    min-width: 30px !important;
+  }
+
+  .branded-a {
+    margin: 0 3px !important;
+  }
+
+  .branded-a img {
+    max-width: 37px;
+  }
+
+  .hero-subhead {
+    font-size: 18px;
+    line-height: 30px;
+    max-width: 450px;
+  }
+
+
 }

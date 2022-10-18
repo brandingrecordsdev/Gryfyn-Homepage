@@ -7,10 +7,7 @@ const Nav = () => {
     return(
     <nav className="main-nav">
         <div className="main-nav-wrapper">
-
-        <img alt="" className="logo" src={Logo} />
-        <div className="nav-right-wrapper">
-            <button className="connect-btn">Connect Wallet</button>
+        <div className="nav-left-wrapper">
             <div className="social-media-wrapper">
                 <a href="/" className="social-icon">
                     <img alt="" src={Instagram} />
@@ -23,6 +20,8 @@ const Nav = () => {
                 </a>
             </div>
         </div>
+        <img alt="" className="logo" src={Logo} />
+        <button className="connect-btn">Connect Wallet</button>
         </div>
     </nav>
     )
