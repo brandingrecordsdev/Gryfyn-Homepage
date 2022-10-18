@@ -202,6 +202,44 @@ const initPromoVideo = () => {
 
 }
 
+const initScrollDetection = ( element1, element2 ) => {
+
+  let a = element1;
+  let b = element2;
+  var ac = a.getBoundingClientRect(); // coordinates for element 'a'
+var bc = b.getBoundingClientRect(); // and 'b'
+
+// assuming both boxes are same size...
+// if not, use your existing collision code.
+
+if(Math.abs(ac.top - bc.top) < ac.height && Math.abs(ac.left - bc.left) < ac.width) {
+// collision here...
+
+    if(Math.abs(ac.top - bc.top) < Math.abs(ac.left - bc.left)) {
+    // vartical offset is smaller, so snap 'y's
+
+        if(ac.top < bc.top) { // a is above b, so snap a's bottom to b's top
+            a.style.top = bc.top - ac.height - 1 + 'px';
+        }
+        else {
+            a.style.top = bc.top + bc.height + 1 + 'px';
+        }
+
+    }
+    else { // here, horizontal offset is smaller, so snap 'x's
+
+        if(ac.left < bc.left) { // a is to the left of b, so snap a's right to b's left
+            a.style.left = bc.left - ac.width - 1 + 'px';
+        }
+        else {
+            a.style.left = bc.left + bc.width + 1 + 'px';
+        }
+
+    }
+
+}
+}
+
 const initNFTVideo = () => {
   function once(el, event, fn, opts) {
     var onceFn = function (e) {
@@ -285,6 +323,7 @@ const initServiceSectionGsap = () => {
 
 function App() {
   useEffect(() => {
+    // initScrollDetection()
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
