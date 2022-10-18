@@ -14,9 +14,13 @@ import SVG from './components/SVG'
 import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
 import NFTvideo from './components/NFTvideo';
+import NFTvid from './videos/NFTv1.mp4'
 import vidGallery from './videos/game.mp4';
+import vidGalleryMobile from './videos/gryfyn_gallery_mobile.mp4';
 import SunVideo from './videos/sun.mp4';
 import EyeVideo from './videos/eye.mp4';
+import SunVideoMobile from './videos/gryfyn_sun_mobile.mp4';
+import EyeVideoMobile from './videos/gryfyn_eye_mobile.mp4';
 import PromoVid from './videos/promoVideo.mp4';
 import DiamondVideo from './videos/diamond.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
@@ -44,6 +48,8 @@ import initGSAPVideo from './components/initGSAPVideo'
 
 gsap.registerPlugin(ScrollTrigger);
 
+const windowWidth = window.innerWidth;
+console.log(windowWidth)
 const initVideoScrollGsap = (id, pinnedSection) => {
   const el = document.getElementById(id);
   let video = el;
@@ -99,7 +105,6 @@ const initHeroGsap = () => {
         end: "+=2000",
         scrub: 1,
         duration: 5,
-        markers: true,
         toggleActions: "restart pause resume pause"
       }
     });
@@ -283,12 +288,16 @@ function App() {
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
-    initNFTVideo()
+    // initNFTVideo()
+    initGSAPVideo(gsap, {vidSelector: '#nft-video', trigger: '.video-5-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
     initServiceSectionGsap()
-    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=200% bottom'})
-    initGSAPVideo(gsap, {vidSelector: '#video-3', trigger: '.video-3-section', pin: true, end: 'bottom+=200% bottom'})
-    initGSAPVideo(gsap, {vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=200% bottom'})
+    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
+    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
+    initGSAPVideo(gsap, {vidSelector: '#video-3', trigger: '.video-3-section', pin: true, end: 'bottom+=200% bottom', scrub: 2})
+    initGSAPVideo(gsap, {vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=200% bottom', scrub: 3})
     initVideoScrollGsap('video-1', '.features')
+    initVideoScrollGsap('video-1-mobile', '.features-mobile')
+
     initMotoGPGsap('.motoGp-section')
   })
   return (
@@ -298,7 +307,7 @@ function App() {
         <video className='promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
       {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
       <img alt="" className="motoGPSticker" src={MotoGPSticker}/>
-      <div class="promo-hero-wrapper">
+      <div className="promo-hero-wrapper">
         <img alt="" className="motoGP-title-1" src={MotoGPTitle1}/>
         <img alt="" className="motoGP-title-2" src={MotoGPTitle2}/>
         <p className="promo-desc">
@@ -324,9 +333,10 @@ function App() {
       {/* <div className='overflow-hidden h-[16rem] rounded-border relative'>
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div> */}
-      <section id="nft-video-section" className='flex flex-col items-center gap-10 py-16 text-center bg-beige text-body'>
-        <NFTvideo />
-        <h2 className='max-w-xl text-4xl font-title nft-title'>
+      <section id="nft-video-section" className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body min-h-[140vh] video-5-section'>
+        <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        {/* <NFTvideo /> */}
+        <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw]'>
           All your favorite NFTs in one secure location.          
         </h2>
         <p className='max-w-3xl font-body'>
@@ -375,41 +385,66 @@ function App() {
             </p>
           </div>  
         </div>
-        </section>
-      <section className='flex flex-col items-stretch min-h-screen p-16 px-24 overflow-hidden tablet-below:px-0 tablet-below:py-16 bg-beige text-body video-2-section tablet-below:items-center'>
-        <div className='w-full tablet-below:flex tablet-below:justify-center'>
-          <video className='w-100 relative' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-        </div>
-        <div className='relative flex justify-end w-full left-[-30rem] tablet-below:justify-center tablet-below:left-0 tablet-below:text-center'>
-          <div className='mt-[-16rem]'>
-            <h2 className='mb-12 text-4xl text-black'>Manage <br/>your portfolio</h2>
-            <p>
-            With access to the Polygon and Ethereum blockchains, Gryfyn is the perfect platform to manage and view your portfolio of NFTs in one place, as well as your coin balances. Gryfyn removes the barriers between NFTs and utility.            
-            </p>     
-            <div>
-              <span className='text-black'>Powered By</span>
-            </div>       
+      </section>
+
+      <section className='flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section h-screen'>
+        <div className='w-[60rem] flex flex-col tablet-below:w-[55rem] mobile-below:w-full'>
+          <div className='flex justify-start w-full mobile-below:justify-center'>
+            <video className='w-[66rem] tablet-below:w-[46rem] mobile-below:w-full mobile-below:relative mobile-below:left-[16%]' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          </div>
+          <div className='flex flex-col items-end mt-[-34rem] tablet-below:mt-[-23rem] w-full font-body mobile-below:mt-[-8rem] mobile-below:items-center mobile-below:text-center mobile-below:relative'>
+            <div className='w-[35rem] mobile-below:w-full'>
+              <h2 className='mb-8 text-4xl text-black font-title'>Manage <br/>your portfolio</h2>
+              <p>
+              With access to the Polygon and Ethereum blockchains,<br/>
+              Gryfyn is the perfect platform to manage and view your <br/>
+              portfolio of NFTs in one place, as well as your coin balances. <br/><br/>
+              Gryfyn removes the barriers between NFTs and utility.<br/> <br/>           
+              </p>     
+              <div>
+                <span className='text-black'>Powered By</span>
+              </div>       
+            </div>
           </div>
         </div>
-      </section>        
-      <section className='flex flex-col items-center min-h-screen gap-10 py-16 overflow-hidden bg-beige text-body video-3-section'>
-        <div className='flex flex-col items-start w-100 gap-10'>
-          <video className='w-100 relative object-cover right-[-20rem]' id={'video-3'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-          <div className='relative mt-[-16rem]'>
-            <h2 className='mb-12 text-4xl text-black'>
+      </section>    
+
+       <section className='flex flex-col items-center h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-3-section'>
+        <div className='flex justify-end'>
+          <video className='relative object-cover w-[50rem] tablet-below:w-[46rem] mobile-below:w-full' id={'video-3'} src={(windowWidth>1024)?SunVideo:SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        </div>
+        <div className='relative top-[-24rem] mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
+            <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl'>
               Seamless <br/> access to your <br/> gaming experience              
             </h2>
-            <p className='max-w-xl'>
+            <p className='font-body'>
               Execute in game transactions and NFT use directly in-game, without having to switch out of the platform. <br/><br/>
               Verify your identity to unlock the full potential of Gryfyn, accessing, transferring and using your assets. <br/><br/>
               With a fully integrated wallet, experience an unseen level of immersion.              
             </p>
           </div>
+      </section>  
+
+      <section className='flex flex-col items-center min-h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section'>
+        <div className='w-[56rem] flex flex-col tablet-below:w-[44rem] mobile-below:w-full'>
+          <div className='flex justify-start w-full mobile-below:justify-center'>
+            <video className='relative w-[40rem] tablet-below:w-[34rem] mobile-below:w-full' id={'video-4'} src={(windowWidth>1024)?EyeVideo:EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          </div>
+          <div className='flex justify-end w-full mt-[-12rem] relative mobile-below:justify-center mobile-below:text-center mobile-below:mt-[-7rem]'>
+            <div>
+              <h2 className='mb-12 text-4xl font-title'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
+              <p className='font-body'>
+                Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
+                With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
+                xperience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
+              </p>     
+              <div>
+                <span className='text-black'>Powered By</span>
+              </div>  
+            </div>          
+          </div>
         </div>
-      </section>     
-      <section className='flex flex-col items-stretch min-h-screen p-16 px-24 overflow-hidden tablet-below:px-0 tablet-below:py-16 bg-beige text-body video-4-section tablet-below:items-center'>
-        <div className='w-full tablet-below:flex tablet-below:justify-center'>
-          <video className='w-100 relative' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        {/* <div className='w-full tablet-below:flex tablet-below:justify-center'>
         </div>
         <div className='relative flex justify-end w-full left-[-30rem] tablet-below:justify-center tablet-below:left-0 tablet-below:text-center'>
           <div className='mt-[-16rem]'>
@@ -423,10 +458,11 @@ function App() {
               <span className='text-black'>Powered By</span>
             </div>       
           </div>
-        </div>
-      </section>   
+        </div> */}
+      </section> 
+
       <div className='overflow-hidden h-[16rem] relative bg-black rotate-180'>
-        <div className='rounded-full bg-beige w-[184vw] h-[184vw] relative left-[-42vw]'></div>
+        <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
         <h2 className='text-4xl max-w-[30rem]'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
@@ -435,9 +471,12 @@ function App() {
           <img alt="" src={SandboxLogo} className='object-cover w-32'/>
           <img alt="" src={DustLandLogo} className='object-cover w-32'/>
           <img alt="" src={RevvRacingLogo} className='object-cover w-32'/>
-        <div className='features'>
-        <VideoScroll id='video-1' vid={vidGallery} pin={'.features'}/>
-        </div>
+          <div className='tablet-below:hidden tablet-below:h-[1px] features'>
+            <VideoScroll id='video-1' vid={vidGallery} pin={'.features'}/>
+          </div>
+          <div className='tablet-above:hidden tablet-above:h-[1px] features-mobile'>
+            <VideoScroll id='video-1-mobile' vid={vidGalleryMobile} pin={'.features-mobile'}/>
+          </div>          
         </div>
       </section>
       <section>
@@ -448,7 +487,7 @@ function App() {
         <div className="motoGpBanner-wrapper">
           <h1 className="motoGp-header">
           The 
-          <span className="motoGp-highlight px-4">
+          <span className="px-4 motoGp-highlight">
            Gryfyn x MotoGP  
           </span>
           VIP Experience

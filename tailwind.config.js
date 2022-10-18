@@ -19,6 +19,12 @@ module.exports = {
         'body': '#E3DDD4',
       },        
     },
+    screens: {
+      "tablet-above": {"min": "1101px"},
+      'tablet-below': {'max': '1100px'},
+      'mobile-below': {'max': '700px'},
+      
+    }      
   },
   plugins: [],
 }
