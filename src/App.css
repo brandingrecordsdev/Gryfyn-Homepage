@@ -60,7 +60,7 @@ img {
 }
 
 nav {
-  background-color: black;
+  /* background-color: black; */
   position: fixed;
   width: 100vw;
   margin-left: auto;
@@ -78,6 +78,7 @@ nav {
     margin-right: auto;
 }
 
+.promo-header,
 .hero-header {
   font-family: 'Neue Metana', sans-serif;
   font-size: 80px;
@@ -178,12 +179,18 @@ nav {
 .branded-i-sm img {
   min-width: 31px;
   width: 100%;
+  width: 100%;
   left: -8px;
   top: -10px;
+  position: absolute;
+}
+
+.branded-i-sm {
+  position: relative;
 }
 
 .branded-i img {
-  min-width: 31px !important;
+  min-width: 37px !important;
 }
 
 .branded-i {
@@ -495,4 +502,69 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.motoGpBanner-promo {
+  max-height: 50vh !important;
+}
+
+.promo-hero-section {
+  height: 100vh;
+  color: #E3DDD4;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.promo-hero-wrapper {
+  max-width: 900px;
+}
+
+.promo-header {
+  font-size: 72px;
+    line-height: 90px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.motoGP-title-1 {
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.motoGP-title-2 {
+ margin-bottom: 70px;
+}
+
+.promo-hero-section {
+  padding: 100px;
+  height: 170vh;
+}
+
+.promo-desc {
+  font-family: 'Basier Circle';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  /* or 129% */
+  color: #E3DDD4;
+}
+
+.motoGPBike {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+}
+
+.motoGPSticker {
+  position: absolute;
+  top: 25vh;
+  right: 25vh;
+  max-width: 350px;
+}
+
+.promo-hero-wrapper {
+  position: relative;
 }

@@ -32,6 +32,10 @@ import LinkedIn from './images/linkedin.svg';
 
 import Banner from './images/banner.png';
 import Banner2 from './images/banner.png';
+import MotoGPBike from './images/motorbike-kv.png';
+import MotoGPSticker from './images/MotoGPSticker.png';
+import MotoGPTitle1 from './images/MotoGPTitle1.png';
+import MotoGPTitle2 from './images/MotoGPTitle2.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
 import { useEffect } from 'react';
 import initGSAPVideo from './components/initGSAPVideo'
@@ -112,19 +116,18 @@ const initHeroGsap = () => {
       )  
 }
 
-const initMotoGPGsap = () => {
-  const banner1 = document.getElementsByClassName('banner-1')
-  const banner2 = document.getElementsByClassName('banner-2')
+const initMotoGPGsap = ( pinnedSection ) => {
+  const banner1 = document.querySelectorAll(`${pinnedSection} .banner-1`)
+  const banner2 = document.querySelectorAll(`${pinnedSection} .banner-2`)
   let motoGPtl = gsap.timeline({    
       // defaults: { duration: 100, delay:  },
       scrollTrigger: {
-        trigger: '.motoGp-section',
+        trigger: pinnedSection,
         pin: true,
         start: "top top",
         end: "+=500",
         scrub: 0.5,
         markers: true,
-        toggleActions: "restart pause resume pause"
       }
     });
 
@@ -251,6 +254,7 @@ const initServiceSectionGsap = () => {
 
 function App() {
   useEffect(() => {
+    initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
     initNFTVideo()
     initServiceSectionGsap()
@@ -258,11 +262,36 @@ function App() {
     initGSAPVideo(gsap, {vidSelector: '#video-3', trigger: '.video-3-section', pin: true, end: 'bottom+=200% bottom'})
     initGSAPVideo(gsap, {vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=200% bottom'})
     initVideoScrollGsap('video-1', '.features')
-    initMotoGPGsap()
+    initMotoGPGsap('.motoGp-section')
   })
   return (
     <div className="App">
-      <Nav />
+        <Nav />
+      <section className="promo-hero-section">
+      <img alt="" className="motoGPBike" src={MotoGPBike}/>
+      <img alt="" className="motoGPSticker" src={MotoGPSticker}/>
+      <div class="promo-hero-wrapper">
+        <img alt="" className="motoGP-title-1" src={MotoGPTitle1}/>
+        <img alt="" className="motoGP-title-2" src={MotoGPTitle2}/>
+        <p className="promo-desc">
+        Join the Gryfyn community and win endless experiences both online & offline.
+        </p>
+        <button className="motogp-cta-btn connect-btn">Enter The Raffle</button>
+      </div>
+      </section>
+      <section className="motoGp-promo-section">
+        <div className="motoGpBanner-promo">
+          <div className="motoGp-Banner">
+            <div className="banner-left-wrapper">
+            <img className="banner-1 motoGp-scroll" alt="" src={Banner}/>
+            </div>
+            <div className="banner-right-wrapper">
+            <img className="banner-2 motoGp-scroll" alt="" src={Banner2}/>
+            </div>
+          </div>
+          {/* <img className="motoGp-star" alt="" src={MotoGPGraphic}/> */}
+        </div>
+      </section>
       <Hero />
       {/* <div className='overflow-hidden h-[16rem] rounded-border relative'>
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
@@ -443,7 +472,7 @@ function App() {
                               <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond}/>u</span>
                               r 
                               <br />
-                              <span className="branded-i"><img className="anim-world-beyond-o" alt="" src={YellowDiamond}/>i</span>
+                              <span className="branded-i-sm"><img className="anim-world-beyond-o" alt="" src={YellowDiamond}/>i</span>
                               magination awaits
                             </h1>
       </section>
