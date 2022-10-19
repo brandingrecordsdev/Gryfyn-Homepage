@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import SliderImg1 from '../images/SliderImg1.jpg';
 import SliderImg2 from '../images/SliderImg2.jpg';

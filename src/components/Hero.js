@@ -7,7 +7,6 @@ import SandboxLogo from '../images/the-sandbox-logo.svg';
 import Semicircle from '../images/GryfynSemiCircle.svg';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-// import $ from 'jquery';
 import { useRef, useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger)
@@ -75,7 +74,6 @@ const Hero = () => {
                 </div>
                 <div className="mix-blend-overlay" id='mix-blend-overlay' style={{ backgroundImage: `url(${Semicircle})`}} ref={overlayRef}></div>
             </div>
-            {/* <div className="lower"></div> */}
         </section>
         </>
     )

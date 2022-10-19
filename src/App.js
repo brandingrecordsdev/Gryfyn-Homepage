@@ -3,7 +3,6 @@ import './fonts/NeueMetana-Regular.otf';
 import './fonts/Basier Circle Regular.otf';
 import './fonts/Basier Circle Bold.otf';
 
-// import logo from './logo.svg';
 import './App.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
@@ -50,7 +49,7 @@ import MotoGPSticker from './images/MotoGPSticker.png';
 import MotoGPTitle1 from './images/MotoGPTitle1.png';
 import MotoGPTitle2 from './images/MotoGPTitle2.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import initGSAPVideo from './components/initGSAPVideo'
 import $ from 'jquery';
 
@@ -76,18 +75,15 @@ const initVideoScrollGsap = (id, pinnedSection) => {
   /* ---------------------------------- */
   /* Scroll Control! */
   let vidTL = gsap.timeline({
-    // defaults: { duration: 2 },
     scrollTrigger: {
       trigger: pinnedSection,
       pin: true,
       start: "top top",
       end: "+=1000",
       scrub: 3,
-      markers: true,
       toggleActions: "play reset none reset"
     }
   });
-  // console.log(vidTL)
   once(video, "loadedmetadata", () => {
     vidTL.fromTo(
       video,
@@ -104,7 +100,6 @@ const initVideoScrollGsap = (id, pinnedSection) => {
 const initHeroGsap = () => {
   const el = document.getElementById('mix-blend-overlay')
   let tl = gsap.timeline({
-    // defaults: { duration: 100, delay:  },
     scrollTrigger: {
       trigger: '.hero-section',
       pin: true,
@@ -125,7 +120,6 @@ const initHeroGsap = () => {
     {
       y: '-100vh',
       scale: 2,
-      // duration: 2
     }
   )
 }
@@ -134,7 +128,6 @@ const initMotoGPGsap = (pinnedSection) => {
   const banner1 = document.querySelectorAll(`${pinnedSection} .banner-1`)
   const banner2 = document.querySelectorAll(`${pinnedSection} .banner-2`)
   let motoGPtl = gsap.timeline({
-    // defaults: { duration: 100, delay:  },
     scrollTrigger: {
       trigger: pinnedSection,
       pin: true,
@@ -152,7 +145,6 @@ const initMotoGPGsap = (pinnedSection) => {
     },
     {
       x: '10vw',
-      // duration: 2
     }, 0)
 
   motoGPtl.fromTo(banner2,
@@ -162,7 +154,6 @@ const initMotoGPGsap = (pinnedSection) => {
     },
     {
       x: '-10vw',
-      // duration: 2
     }, '0.5')
 }
 
@@ -210,90 +201,6 @@ const initPromoVideo = () => {
 
 }
 
-// const initScrollDetection = (element1, element2) => {
-//     // Div 1 data
-//     let div1 = $(element1);
-//     let div2 = $(element2);
-  
-//     let isColliding = function (div1, div2) {
-
-//       let d1Offset = div1.offset();
-//       let d1Height = div1.outerHeight(true);
-//       let d1Width = div1.outerWidth(true);
-//       let d1Top = d1Offset.top + d1Height;
-//       let d1Left = d1Offset.left + d1Width;
-  
-//       let d2Offset = div2.offset();
-//       let d2Height = div2.outerHeight(true);
-//       let d2Width = div2.outerWidth(true);
-//       let d2Top = d2Offset.top + d2Height;
-//       let d2Left = d2Offset.left + d2Width;
-  
-//       return !(d1Top < d2Offset.top || d1Offset.top > d2Top || d1Left < d2Offset.left || d1Offset.left > d2Left);
-//   };
-  
-//   if (isColliding(div1, div2) === true) {
-//     $('.main-nav').css('background-color', 'black')
-// } else {
-//   $('.main-nav').css('background-color', 'transparent')
-// }
-
-// }
-
-const initNFTVideo = () => {
-  function once(el, event, fn, opts) {
-    var onceFn = function (e) {
-      el.removeEventListener(event, onceFn);
-      fn.apply(this, arguments);
-    };
-    el.addEventListener(event, onceFn, opts);
-    return onceFn;
-  }
-}
-//   const el = document.getElementById('nft-video');
-//   let video = el;
-//   /* ---------------------------------- */
-//   /* Scroll Control! */
-
-//   gsap.registerPlugin(ScrollTrigger);
-
-//   let NFTtl = gsap.timeline({
-//     // defaults: { duration: 1 },
-//     scrollTrigger: {
-//       trigger: "#nft-video-section",
-//       pin: true,
-//       anticipatePin: 1,
-//       start: "top top",
-//       end: "+=2000",
-//       scrub: 2,
-//     }
-//   });
-
-//   once(video, "loadedmetadata", () => {
-//     NFTtl.fromTo(
-//       video,
-//       {
-//         currentTime: 0
-//       },
-//       {
-//         currentTime: video.duration || 1
-//       }
-//     );
-//   });  
-
-//   function isTouchDevice() {
-//     return (
-//       "ontouchstart" in window ||
-//       navigator.maxTouchPoints > 0 ||
-//       navigator.msMaxTouchPoints > 0
-//     );
-//   }
-//   if (isTouchDevice()) {
-//     video.play();
-//     video.pause();
-//   }  
-// }
-
 const initServiceSectionGsap = () => {
   gsap.to('.star', {
     rotation: 90, repeat: -1, repeatDelay: 0.7
@@ -322,20 +229,8 @@ const initServiceSectionGsap = () => {
 }
 
 function App() {
-  // const [windowDimenion, detectHW] = useState({
-  //   winWidth: window.innerWidth,
-  //   winHeight: window.innerHeight,
-  // })
-
-  // const detectSize = () => {
-  //   detectHW({
-  //     winWidth: window.innerWidth,
-  //     winHeight: window.innerHeight,
-  //   })
-  // }  
 
   useEffect(() => {
-    // initScrollDetection()
 
     var isColliding = function(el1, el2) {
       let $div1 = $(el1);
@@ -359,13 +254,9 @@ function App() {
 
   
     const handleScroll = event => {
-      // console.log('window.scrollY', window.scrollY);
-
       if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
-      // console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
-    // console.log('not colliding')
     $('.main-nav').css('background-color', 'transparent')
   }
 
@@ -378,7 +269,6 @@ function App() {
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
-    // initNFTVideo()
     initVideoScrollGsap('nft-video', '.video-nft-section')
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section')
     initServiceSectionGsap()
@@ -447,18 +337,11 @@ function App() {
 
   })
 
-  // useEffect(()=>{
-  //   window.addEventListener('resize', detectSize)
-  //   ScrollTrigger.refresh(true)
-  //   return () => {
-  //   window.removeEventListener('resize', detectSize)
-  //   }
-  // },[windowDimenion])
-
   return (
     <>
     <Helmet>
       <title>Gryfyn | Your key to the (un)known</title>
+      <meta id="meta-description" name="description" content="An NFT wallet by Animoca Brands & Hex Trust - Find new ways to connect and interact through NFT's across a variety of Web3 experiences. Store your NFT's in one secure non custodian digital wallet." />
     </Helmet>
     <div className="overflow-x-hidden App">
         <Nav />
@@ -468,7 +351,6 @@ function App() {
       </section>
       <section className="promo-hero-section">
       <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-        {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
         <img alt="" className="motoGPSticker stickerDesktop" src={MotoGPSticker} />
         <div className="promo-hero-wrapper">
           <img alt="" className="motoGP-title-1" src={MotoGPTitle1} />
@@ -489,13 +371,9 @@ function App() {
               <img className="banner-2 motoGp-scroll" alt="" src={Banner2} />
             </div>
           </div>
-          {/* <img className="motoGp-star" alt="" src={MotoGPGraphic}/> */}
         </div>
       </section>
       <Hero />
-      {/* <div className='overflow-hidden h-[16rem] rounded-border relative'>
-        <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
-      </div> */}
       <div className='bg-[#E3DDD4]'>
         <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[100vh] h-full video-nft-section'>
           <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
