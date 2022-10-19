@@ -50,6 +50,7 @@ import MotoGPTitle2 from './images/MotoGPTitle2.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
 import { useState, useEffect } from 'react';
 import initGSAPVideo from './components/initGSAPVideo'
+import $ from 'jquery';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -203,43 +204,35 @@ const initPromoVideo = () => {
 
 }
 
-const initScrollDetection = (element1, element2) => {
+// const initScrollDetection = (element1, element2) => {
+//     // Div 1 data
+//     let div1 = $(element1);
+//     let div2 = $(element2);
+  
+//     let isColliding = function (div1, div2) {
 
-  let a = element1;
-  let b = element2;
-  var ac = a.getBoundingClientRect(); // coordinates for element 'a'
-  var bc = b.getBoundingClientRect(); // and 'b'
+//       let d1Offset = div1.offset();
+//       let d1Height = div1.outerHeight(true);
+//       let d1Width = div1.outerWidth(true);
+//       let d1Top = d1Offset.top + d1Height;
+//       let d1Left = d1Offset.left + d1Width;
+  
+//       let d2Offset = div2.offset();
+//       let d2Height = div2.outerHeight(true);
+//       let d2Width = div2.outerWidth(true);
+//       let d2Top = d2Offset.top + d2Height;
+//       let d2Left = d2Offset.left + d2Width;
+  
+//       return !(d1Top < d2Offset.top || d1Offset.top > d2Top || d1Left < d2Offset.left || d1Offset.left > d2Left);
+//   };
+  
+//   if (isColliding(div1, div2) === true) {
+//     $('.main-nav').css('background-color', 'black')
+// } else {
+//   $('.main-nav').css('background-color', 'transparent')
+// }
 
-  // assuming both boxes are same size...
-  // if not, use your existing collision code.
-
-  if (Math.abs(ac.top - bc.top) < ac.height && Math.abs(ac.left - bc.left) < ac.width) {
-    // collision here...
-
-    if (Math.abs(ac.top - bc.top) < Math.abs(ac.left - bc.left)) {
-      // vartical offset is smaller, so snap 'y's
-
-      if (ac.top < bc.top) { // a is above b, so snap a's bottom to b's top
-        a.style.top = bc.top - ac.height - 1 + 'px';
-      }
-      else {
-        a.style.top = bc.top + bc.height + 1 + 'px';
-      }
-
-    }
-    else { // here, horizontal offset is smaller, so snap 'x's
-
-      if (ac.left < bc.left) { // a is to the left of b, so snap a's right to b's left
-        a.style.left = bc.left - ac.width - 1 + 'px';
-      }
-      else {
-        a.style.left = bc.left + bc.width + 1 + 'px';
-      }
-
-    }
-
-  }
-}
+// }
 
 const initNFTVideo = () => {
   function once(el, event, fn, opts) {
@@ -337,6 +330,44 @@ function App() {
 
   useEffect(() => {
     // initScrollDetection()
+
+    var isColliding = function(el1, el2) {
+      let $div1 = $(el1);
+      let $div2 = $(el2);
+
+      var x1 = $div1.offset().left;
+      var y1 = $div1.offset().top;
+      var h1 = $div1.outerHeight(true);
+      var w1 = $div1.outerWidth(true);
+      var b1 = y1 + h1;
+      var r1 = x1 + w1;
+      var x2 = $div2.offset().left;
+      var y2 = $div2.offset().top;
+      var h2 = $div2.outerHeight(true);
+      var w2 = $div2.outerWidth(true);
+      var b2 = y2 + h2;
+      var r2 = x2 + w2;
+      if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+      return true;
+    };
+
+  
+    const handleScroll = event => {
+      console.log('window.scrollY', window.scrollY);
+
+    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section')) {
+      console.log('colliding')
+      $('.main-nav').css('background-color', 'black')
+  } else {
+    console.log('not colliding')
+    $('.main-nav').css('background-color', 'transparent')
+  }
+
+
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
@@ -356,6 +387,11 @@ function App() {
     initVideoScrollGsap('video-1', '.features')
     initVideoScrollGsap('video-1-mobile', '.features-mobile')
     initMotoGPGsap('.motoGp-section')
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
   })
 
   // useEffect(()=>{
@@ -370,7 +406,8 @@ function App() {
     <div className="overflow-x-hidden App">
         <Nav />
       <section className="promo-hero-section">
-        <video className='promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      <video className='tablet-above:hidden tablet-above:h-[1px] promo-vid' id="promo-vid" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
         <img alt="" className="motoGPSticker" src={MotoGPSticker} />
         <div className="promo-hero-wrapper">
