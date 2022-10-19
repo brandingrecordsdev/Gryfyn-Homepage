@@ -23,6 +23,7 @@ import SunVideoMobile from './videos/gryfyn_sun_mobile.mp4';
 import EyeVideo from './videos/eye.mp4';
 import EyeVideoMobile from './videos/gryfyn_eye_mobile.mp4';
 import PromoVid from './videos/promoVideo.mp4';
+import PromoVidMobile from './videos/kvmobile.mp4';
 import DiamondVideo from './videos/diamond.mp4';
 import DiamondVideoMobile from './videos/gryfyn_diamond_mobile.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
@@ -37,6 +38,7 @@ import Logo from './images/logo.svg'
 import Instagram from './images/instagram.svg';
 import Twitter from './images/twitter.svg';
 import LinkedIn from './images/linkedin.svg';
+
 
 import AnimocaLogo from './images/animoca-logo.png';
 import HexLogo from './images/hex-trust-logo.png';
@@ -367,7 +369,7 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
+    initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 2})
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
@@ -405,11 +407,14 @@ function App() {
   return (
     <div className="overflow-x-hidden App">
         <Nav />
+       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
+        <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
+        <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile}webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+       </section>
       <section className="promo-hero-section">
       <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-      <video className='tablet-above:hidden tablet-above:h-[1px] promo-vid' id="promo-vid" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
-        <img alt="" className="motoGPSticker" src={MotoGPSticker} />
+        <img alt="" className="motoGPSticker stickerDesktop" src={MotoGPSticker} />
         <div className="promo-hero-wrapper">
           <img alt="" className="motoGP-title-1" src={MotoGPTitle1} />
           <img alt="" className="motoGP-title-2" src={MotoGPTitle2} />
