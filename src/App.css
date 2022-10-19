@@ -43,6 +43,14 @@ font-weight: 700;
 
 }
 
+.logo {
+  width: 183px;
+  position: relative;
+  top: 5px;
+}
+
+
+
 button {
   background-color: #E3DDD4;
 }
@@ -332,7 +340,7 @@ min-width: 1200px;
 } */
 
 .motoGp-section {
-  height: 100vh;
+  height: 130vh;
   overflow: hidden;
 }
 
@@ -397,9 +405,6 @@ font-size: 25px;
 line-height: 45px;
 }
 
-.motoGp-section {
-  height: auto !important;
-}
 
 .motoGp-Banner {
   position: relative;
@@ -414,6 +419,7 @@ line-height: 45px;
 
 .motoGp-desc {
   padding: 100px 50px;
+  padding-top: 50px;
   display: flex;
   align-items: top;
   justify-content: center;
@@ -647,15 +653,17 @@ line-height: 25px;
     right: 30vh;
   }
 
-  .motoGp-star {
-    top: 150px;
-    max-width: 1000px;
-  }
 
 }
 
 
 @media only screen and (max-width: 1180px) {
+
+  .promo-hero-section {
+    height: 150vh;
+  }
+  
+
 
   .motoGPSticker {
     position: absolute;
@@ -669,8 +677,14 @@ line-height: 25px;
   }
   .hero-wrapper {
     max-width: 700px;
+    
   }
 
+  .raffles-wrapper h1 {
+    font-size: 40px;
+  }
+
+  .motoGp-header,
   .hero-header {
     font-size: 54px;
     line-height: 72px;
@@ -688,6 +702,7 @@ line-height: 25px;
     max-width: 37px;
   }
 
+  .motoGp-desc p,
   .promo-desc,
   .hero-subhead {
     font-size: 18px;
@@ -711,14 +726,44 @@ line-height: 25px;
     line-height: 40px;
   }
 
+  .social-media-wrapper {
+    column-gap: 15px !important;
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+  .motoGp-star {
+    max-width: 800px !important;
+  }
+
+  .motoGp-section {
+    height: 90vh;
+  }
+
+
+ .main-nav {
+  background-color: black !important;
+ }
+  
+ .connect-btn {
+  font-size: 16px;
+}
+
 }
 
 @media only screen and (max-width: 860px) {
 
 
-  .social-media-wrapper {
-    column-gap: 15px !important;
+  .logo {
+    max-width: 170px;
   }
+
+  .nav-left-wrapper {
+    display: none;
+  }
+
 
   .connect-btn {
     font-size: 16px;
@@ -738,13 +783,19 @@ line-height: 25px;
     max-width: 500px;
   }
 
+  .motoGp-header,
   .hero-header {
     font-size: 40px;
     line-height: 60px;
   }
 
+  .promo-hero-section,
   .hero-container {
-    padding: 50px;
+    padding: 50px ;
+  }
+
+  .promo-hero-section {
+    height: 120vh;
   }
 
   .main-nav-wrapper {
@@ -782,6 +833,27 @@ line-height: 25px;
     right: 0;
 }
 
+.motoGp-section {
+  padding-top: 50px;
+}
+
+.motoGp-desc {
+  padding: 50px 20px;
+}
+
+
+.motoGp-section {
+  height: 80vh;
+}
+
+.motoGp-star {
+  max-width: 650px !important;
+}
+
+.promo-hero-section {
+  height: 140vh;
+}
+
   .branded-sun img {
     max-width: 60px;
   }
@@ -789,6 +861,7 @@ line-height: 25px;
     max-width: 450px;
   }
 
+  .motoGp-header,
   .hero-header {
     font-size: 36px;
     line-height: 55px;
@@ -797,6 +870,10 @@ line-height: 25px;
   .hero-container {
     padding: 20px;
   }
+
+  .main-nav-wrapper {
+    padding: 23px 20px !important;
+}
 
   .branded-i img {
     min-width: 23px !important;
@@ -818,10 +895,61 @@ line-height: 25px;
     max-width: 80px;
   }
 
+  .promo-hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
 
 }
 
 @media only screen and (max-width: 480px) {
+
+  .motoGp-section {
+    padding-top: 50px;
+  }
+
+  .motoGp-star {
+    max-width: 500px !important;
+}
+
+.motoGp-section {
+  height: 65vh;
+}
+
+ .motoGp-header {
+  font-size: 28px;
+    line-height: 40px;
+ }
+
+  .promo-desc {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.mobile-connect {
+  display: none;
+}
+
+.connect-btn {
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+.logo {
+  max-width: 140px;
+}
+
+.promo-hero-section {
+  padding: 20px;
+}
+
+.main-nav-wrapper {
+  padding: 23px 20px !important;
+}
 
   .branded-sun img {
     max-width: 60px;
@@ -863,6 +991,7 @@ line-height: 25px;
     max-width: 80px;
   }
 
+  .motoGp-desc p,
   .promo-desc,
   .hero-subhead {
     font-size: 14px;
@@ -871,6 +1000,15 @@ line-height: 25px;
 
   .hero-subhead {
     max-width: 450px;
+  }
+
+}
+
+
+@media only screen and (max-width: 330px) {
+
+  .hero-header {
+    font-size: 23px;
   }
 
 }

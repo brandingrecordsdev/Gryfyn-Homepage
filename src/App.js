@@ -355,7 +355,7 @@ function App() {
     const handleScroll = event => {
       console.log('window.scrollY', window.scrollY);
 
-    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section')) {
+    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section')) {
       console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
@@ -680,7 +680,7 @@ function App() {
         </div>
       </section>       
 
-      <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent'>
+      <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent rounded-section'>
         <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
