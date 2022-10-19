@@ -459,7 +459,7 @@ function App() {
         <Nav />
       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
       <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
-      <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile}webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
       </section>
       <section className="promo-hero-section">
       <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
