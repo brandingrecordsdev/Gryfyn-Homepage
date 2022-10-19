@@ -627,6 +627,14 @@ line-height: 25px;
   max-width: 150px;
 }
 
+.video-nft-section {
+  height: 170vh;
+}
+
+.video-nft-section section{
+  height: 70vh;
+}
+
 /* .vector-mw{
   max-width: 1024px;
 } */

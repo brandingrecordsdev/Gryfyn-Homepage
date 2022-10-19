@@ -24,7 +24,7 @@ import EyeVideo from './videos/eye.mp4';
 import EyeVideoMobile from './videos/gryfyn_eye_mobile.mp4';
 import PromoVid from './videos/promoVideo.mp4';
 import DiamondVideo from './videos/diamond.mp4';
-import DiamondVideoMobile from './videos/gryfyn_diamond_mobile.mp4';
+import DiamondVideoMobile from './videos/gryfyn_diamond_MOBILE.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
 import DustLandLogo from "./images/dustland_logo.png";
 import RevvRacingLogo from "./images/revv_racing_logo.png";
@@ -399,7 +399,7 @@ function App() {
       {/* <div className='overflow-hidden h-[16rem] rounded-border relative'>
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div> */}
-      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] video-nft-section'>
+      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center bg-[#E3DDD4] video-nft-section'>
         <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
         <section className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body w-full'>
           <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw]'>
