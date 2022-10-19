@@ -356,7 +356,8 @@ function App() {
     const handleScroll = event => {
       console.log('window.scrollY', window.scrollY);
 
-    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section')) {
+    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.icons-section')
+    ) {
       console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
@@ -500,7 +501,7 @@ function App() {
             </p>
           </section>
         </section>
-          <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex items-start justify-center w-full px-24 tablet-below:flex-col tablet-below:items-center '>
+          <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex items-start justify-center w-full px-24 tablet-below:flex-col tablet-below:items-center icons-section'>
             <div className='flex flex-col items-center px-14'>
               <SVG name='star' classes='svg-mw star'/>
               <h2 className='text-4xl font-title'>Create</h2>
