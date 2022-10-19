@@ -1,6 +1,6 @@
 export default function initGSAPVideo(gsap, settings){
-    console.log(gsap)
-    console.log(settings)
+    // console.log(gsap)
+    // console.log(settings)
     /* The encoding is super important here to enable frame-by-frame scrubbing. */
     
     // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
@@ -21,8 +21,8 @@ export default function initGSAPVideo(gsap, settings){
     }
     
     once(document.documentElement, "touchstart", function (e) {
-      video.play();
-      video.pause();
+        video.play();
+        video.pause();
     });
     
     /* ---------------------------------- */
@@ -37,6 +37,9 @@ export default function initGSAPVideo(gsap, settings){
             end: settings.end ? settings.end : 'bottom bottom',
             scrub: settings.scrub ? settings.scrub : true,
             anticipatePin: 1,
+            onLeave: settings.onLeave ? settings.onLeave : () => {},
+            onLeaveBack: settings.onLeaveBack ? settings.onLeaveBack : () => {},
+            toggleActions: "play reset none reset"
         }
     });
     
@@ -47,23 +50,23 @@ export default function initGSAPVideo(gsap, settings){
     });
     
     /* When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability? */
-    setTimeout(function () {
-        if (window["fetch"]) {
-            fetch(src)
-            .then((response) => response.blob())
-            .then((response) => {
-                var blobURL = URL.createObjectURL(response);
+    // setTimeout(function () {
+    //     if (window["fetch"]) {
+    //         fetch(src)
+    //         .then((response) => response.blob())
+    //         .then((response) => {
+    //             var blobURL = URL.createObjectURL(response);
         
-                var t = video.currentTime;
-                once(document.documentElement, "touchstart", function (e) {
-                video.play();
-                video.pause();
-                });
+    //             var t = video.currentTime;
+    //             once(document.documentElement, "touchstart", function (e) {
+    //             video.play();
+    //             video.pause();
+    //             });
         
-                video.setAttribute("src", blobURL);
-                video.currentTime = t + 0.01;
-            });
-        }
-    }, 1000);
+    //             video.setAttribute("src", blobURL);
+    //             video.currentTime = t + 0.01;
+    //         });
+    //     }
+    // }, 1000);
     
 }
