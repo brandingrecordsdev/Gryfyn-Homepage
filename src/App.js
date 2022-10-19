@@ -24,7 +24,7 @@ import EyeVideo from './videos/eye.mp4';
 import EyeVideoMobile from './videos/gryfyn_eye_mobile.mp4';
 import PromoVid from './videos/promoVideo.mp4';
 import DiamondVideo from './videos/diamond.mp4';
-import DiamondVideoMobile from './videos/gryfyn_diamond_mobile.mp4';
+import DiamondVideoMobile from './videos/gryfyn_diamond_.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
 import DustLandLogo from "./images/dustland_logo.png";
 import RevvRacingLogo from "./images/revv_racing_logo.png";
