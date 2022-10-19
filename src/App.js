@@ -204,37 +204,35 @@ const initPromoVideo = () => {
 
 }
 
-const initScrollDetection = (element1, element2) => {
-    // Div 1 data
-    let div1 = $(element1);
-    let div2 = $(element2);
-
-    console.log('running scroll detect')
+// const initScrollDetection = (element1, element2) => {
+//     // Div 1 data
+//     let div1 = $(element1);
+//     let div2 = $(element2);
   
-    let isColliding = function (div1, div2) {
+//     let isColliding = function (div1, div2) {
 
-      let d1Offset = div1.offset();
-      let d1Height = div1.outerHeight(true);
-      let d1Width = div1.outerWidth(true);
-      let d1Top = d1Offset.top + d1Height;
-      let d1Left = d1Offset.left + d1Width;
+//       let d1Offset = div1.offset();
+//       let d1Height = div1.outerHeight(true);
+//       let d1Width = div1.outerWidth(true);
+//       let d1Top = d1Offset.top + d1Height;
+//       let d1Left = d1Offset.left + d1Width;
   
-      let d2Offset = div2.offset();
-      let d2Height = div2.outerHeight(true);
-      let d2Width = div2.outerWidth(true);
-      let d2Top = d2Offset.top + d2Height;
-      let d2Left = d2Offset.left + d2Width;
+//       let d2Offset = div2.offset();
+//       let d2Height = div2.outerHeight(true);
+//       let d2Width = div2.outerWidth(true);
+//       let d2Top = d2Offset.top + d2Height;
+//       let d2Left = d2Offset.left + d2Width;
   
-      return !(d1Top < d2Offset.top || d1Offset.top > d2Top || d1Left < d2Offset.left || d1Offset.left > d2Left);
-  };
+//       return !(d1Top < d2Offset.top || d1Offset.top > d2Top || d1Left < d2Offset.left || d1Offset.left > d2Left);
+//   };
+  
+//   if (isColliding(div1, div2) === true) {
+//     $('.main-nav').css('background-color', 'black')
+// } else {
+//   $('.main-nav').css('background-color', 'transparent')
+// }
 
-  if (isColliding(div1, div2) === true){
-      $('.main-nav').css('background-color', 'black')
-  } else {
-    $('.main-nav').css('background-color', 'transparent')
-  }
-
-}
+// }
 
 const initNFTVideo = () => {
   function once(el, event, fn, opts) {
@@ -332,10 +330,37 @@ function App() {
 
   useEffect(() => {
     // initScrollDetection()
+
+    let isColliding = function (el1, el2) {
+      let div1 = $(el1);
+      let div2 = $(el2);
+
+      let d1Offset = div1.offset();
+      let d1Height = div1.outerHeight(true);
+      let d1Width = div1.outerWidth(true);
+      let d1Top = d1Offset.top + d1Height;
+      let d1Left = d1Offset.left + d1Width;
+  
+      let d2Offset = div2.offset();
+      let d2Height = div2.outerHeight(true);
+      let d2Width = div2.outerWidth(true);
+      let d2Top = d2Offset.top + d2Height;
+      let d2Left = d2Offset.left + d2Width;
+  
+      return !(d1Top < d2Offset.top || d1Offset.top > d2Top || d1Left < d2Offset.left || d1Offset.left > d2Left);
+  };
+  
     const handleScroll = event => {
       console.log('window.scrollY', window.scrollY);
 
-      console.log(initScrollDetection('.main-nav', '.hero-section'))
+    if (isColliding('.main-nav', '.hero-section') || isColliding('.main-nav', '.video-nft-section') || isColliding('.main-nav', '.video-2-section') || isColliding('.main-nav', '.video-sun-section') ) {
+      console.log('colliding')
+      $('.main-nav').css('background-color', 'black')
+  } else {
+    $('.main-nav').css('background-color', 'transparent')
+  }
+
+
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -516,7 +541,7 @@ function App() {
         </section>        
       </section>
 
-      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section'>
+      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body'>
         <div className='w-[60rem] flex flex-col tablet-below:w-[55rem] mobile-below:w-full'>
           <div className='flex justify-start w-full mobile-below:justify-center'>
             <video className='w-full tablet-below:w-[46rem] mobile-below:w-full mobile-below:relative mobile-below:left-[16%]' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
@@ -570,7 +595,7 @@ function App() {
         </div>
       </section>       
 
-      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-section'>
+      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-section' >
         <div className='flex justify-end'>
           <video className='relative object-cover w-full tablet-below:w-[46rem] mobile-below:w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         </div>
