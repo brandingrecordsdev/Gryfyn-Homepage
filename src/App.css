@@ -223,7 +223,7 @@ line-height: 115px;
   position: absolute;
   bottom: -100vh;
   /* background-color: black; */
-  height: 100vh;
+  height: 100%;
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
@@ -622,6 +622,14 @@ line-height: 70px;
   font-size: 15px;
 line-height: 25px;
 }
+
+.svg-mw{
+  max-width: 150px;
+}
+
+/* .vector-mw{
+  max-width: 1024px;
+} */
 
 /* Mobile Queries */
 

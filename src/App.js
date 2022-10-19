@@ -414,23 +414,23 @@ function App() {
             The world is within your reach. Open the door, 
             and let the experiences come to you.             
           </p>
-          <div className='flex items-start justify-center w-full px-20 gap-28 tablet-below:flex-col tablet-below:items-center '>
-            <div className='flex flex-col items-center gap-7'>
-              <SVG name='star' classes='w-40 star'/>
+          <div className='flex items-start justify-center w-full px-24 tablet-below:flex-col tablet-below:items-center '>
+            <div className='flex flex-col items-center px-14'>
+              <SVG name='star' classes='svg-mw star'/>
               <h2 className='text-4xl font-title'>Create</h2>
               <p className='font-body max-w-[13rem]'>
                 The world of the future, and witness the boundless possibilities of your mind.
               </p>
             </div>
-            <div className='flex flex-col items-center gap-7'>
-              <SVG name='sun' classes='w-40 sun' fill_1='#FFCC31' fill_2='#F16B37'/>
+            <div className='flex flex-col items-center px-14'>
+              <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
               <h2 className='text-4xl font-title'>Play</h2>
               <p className='flex flex-col items-center font-body'>
                 <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
                 <span>Bring utility to its full potential.</span>
               </p>
             </div>
-            <div className='flex flex-col items-center gap-7'>
+            <div className='flex flex-col items-center px-14'>
               <div className='flex justify-center gap-2 py-12'>
                 <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
                 <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
@@ -440,7 +440,7 @@ function App() {
                 Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
               </p>
             </div>
-            <div className='flex flex-col items-center gap-7'>
+            <div className='flex flex-col items-center px-14'>
               <div className='relative'>
                 <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
                 <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
@@ -508,12 +508,12 @@ function App() {
         </section>        
       </section>
 
-      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section h-screen'>
+      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section'>
         <div className='w-[60rem] flex flex-col tablet-below:w-[55rem] mobile-below:w-full'>
           <div className='flex justify-start w-full mobile-below:justify-center'>
             <video className='w-[66rem] tablet-below:w-[46rem] mobile-below:w-full mobile-below:relative mobile-below:left-[16%]' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
-          <div className='flex flex-col items-end mt-[-34rem] tablet-below:mt-[-23rem] w-full font-body mobile-below:mt-[-8rem] mobile-below:items-center mobile-below:text-center mobile-below:relative'>
+          <div className='flex flex-col items-end mt-[-26rem] max-w-7xl tablet-below:mt-[-23rem] w-full font-body mobile-below:mt-[-8rem] mobile-below:items-center mobile-below:text-center mobile-below:relative'>
             <div className='w-[35rem] mobile-below:w-full'>
               <h2 className='mb-8 text-4xl text-black font-title'>Manage <br />your portfolio</h2>
               <p>
@@ -537,8 +537,8 @@ function App() {
 
       <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section-mobile mobile-below:min-h-[250vw] tablet-below:min-h-[186vw] text-center'>
         <div className='flex flex-col w-full'>
-          <div className='flex justify-center w-full'>
-            <video className='w-full' id={'video-2-mobile'} src={DiamondVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          <div className='flex justify-center w-full '>
+            <video className='w-full max-w-sm' id={'video-2-mobile'} src={DiamondVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
           <div className='flex flex-col items-center w-full font-body'>
             <div className='w-full mobile-below:text-[3vw]'>
@@ -566,11 +566,11 @@ function App() {
         <div className='flex justify-end'>
           <video className='relative object-cover w-[50rem] tablet-below:w-[46rem] mobile-below:w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         </div>
-        <div className='relative top-[-30rem] mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
-          <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl'>
+        <div className='relative top-[-30rem] max-w-7xl	mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
+          <h2 className='mb-12 text-4xl text-black max-w-7xl font-title tablet-below:text-3xl'>
             Seamless <br /> access to your <br /> gaming experience
           </h2>
-          <p className='font-body'>
+          <p className='max-w-7xl	font-body'>
             Execute in game transactions and NFT use directly in-game, without having to switch out of the platform. <br /><br />
             Verify your identity to unlock the full potential of Gryfyn, accessing, transferring and using your assets. <br /><br />
             With a fully integrated wallet, experience an unseen level of immersion.
@@ -578,9 +578,9 @@ function App() {
         </div>
       </section>
 
-      <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center tablet-below:h-[120vh] mobile-below:h-[180vh] py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-mobile-section text-center'>
+      <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center tablet-below:h-[120vh] mobile-below:h-[180vh] py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-mobile-section text-center h-screen'>
       <div className='flex justify-center'>
-          <video className='object-cover w-[20rem]' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+          <video className='object-cover w-[20rem] max-w-lg' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         </div> 
         <div className='flex flex-col items-center p-6 mobile-below:text-[3vw]'>
             <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl mobile-below:text-[6.2vw]'>
@@ -622,7 +622,7 @@ function App() {
       <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center tablet-below:min-h-[160vw] mobile-below:min-h-[200vw] py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section-mobile text-center'>
         <div className='flex flex-col items-center w-full'>
           <div className='flex justify-center w-full'>
-            <video className='w-full' id={'video-4-mobile'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+            <video className='w-full max-w-lg' id={'video-4-mobile'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
           <div className='flex justify-center w-full font-body relative top-[-26vw]'>
             <div className='mobile-below:text-[3vw]'>
