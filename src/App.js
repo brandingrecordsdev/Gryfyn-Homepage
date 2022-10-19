@@ -23,7 +23,6 @@ import SunVideoMobile from './videos/gryfyn_sun_mobile.mp4';
 import EyeVideo from './videos/eye.mp4';
 import EyeVideoMobile from './videos/gryfyn_eye_mobile.mp4';
 import PromoVid from './videos/promoVideo.mp4';
-import PromoVidMobile from './videos/kvmobile.mp4';
 import DiamondVideo from './videos/diamond.mp4';
 import DiamondVideoMobile from './videos/gryfyn_diamond_mobile.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
@@ -38,7 +37,6 @@ import Logo from './images/logo.svg'
 import Instagram from './images/instagram.svg';
 import Twitter from './images/twitter.svg';
 import LinkedIn from './images/linkedin.svg';
-
 
 import AnimocaLogo from './images/animoca-logo.png';
 import HexLogo from './images/hex-trust-logo.png';
@@ -83,6 +81,7 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       start: "top top",
       end: "+=1000",
       scrub: 3,
+      markers: true
     }
   });
   console.log(vidTL)
@@ -357,7 +356,7 @@ function App() {
     const handleScroll = event => {
       console.log('window.scrollY', window.scrollY);
 
-    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
+    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section')) {
       console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
@@ -369,7 +368,7 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 2})
+    
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
@@ -377,13 +376,61 @@ function App() {
     initVideoScrollGsap('nft-video', '.video-nft-section')
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section')
     initServiceSectionGsap()
-    initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=150% bottom', scrub: 2})
-    initGSAPVideo(gsap, {vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 2})
+    initGSAPVideo(gsap, {
+      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=150% bottom', scrub: 2,
+      onLeave: () => {
+        document.getElementById('diamond-desc').classList.toggle('opacity-0')
+      }, 
+      onLeaveBack: () => {
+        document.getElementById('diamond-desc').classList.toggle('opacity-0')
+      }
+    })
+    initGSAPVideo(gsap, {
+      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 2,
+      onLeave: () => {
+        document.getElementById('diamond-desc-mobile').classList.toggle('opacity-0')
+      }, 
+      onLeaveBack: () => {
+        document.getElementById('diamond-desc-mobile').classList.toggle('opacity-0')
+      }      
+    })
 
-    initGSAPVideo(gsap, {vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: 'bottom+=150% bottom', scrub: 3})
-    initGSAPVideo(gsap, {vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 3})
-    initGSAPVideo(gsap, {vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=150% bottom', scrub: 3})
-    initGSAPVideo(gsap, {vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 3})
+    initGSAPVideo(gsap, {
+      vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      onLeave: () => {
+        document.getElementById('sun-desc').classList.toggle('opacity-0')
+      }, 
+      onLeaveBack: () => {
+        document.getElementById('sun-desc').classList.toggle('opacity-0')
+      }      
+    })
+    initGSAPVideo(gsap, {
+      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      onLeave: () => {
+        document.getElementById('sun-desc-mobile').classList.toggle('opacity-0')
+      }, 
+      onLeaveBack: () => {
+        document.getElementById('sun-desc-mobile').classList.toggle('opacity-0')
+      }         
+    })
+    initGSAPVideo(gsap, {
+      vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      onLeave: () => {
+        document.getElementById('eye-desc').classList.toggle('opacity-0')
+      }, 
+      onLeaveBack: () => {
+        document.getElementById('eye-desc').classList.toggle('opacity-0')
+      }       
+    })
+    initGSAPVideo(gsap, {
+      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      onLeave: () => {
+        document.getElementById('eye-desc-mobile').classList.toggle('opacity-0')
+      }, 
+      onLeaveBack: () => {
+        document.getElementById('eye-desc-mobile').classList.toggle('opacity-0')
+      }      
+    })
     initVideoScrollGsap('video-1', '.features')
     initVideoScrollGsap('video-1-mobile', '.features-mobile')
     initMotoGPGsap('.motoGp-section')
@@ -405,14 +452,10 @@ function App() {
   return (
     <div className="overflow-x-hidden App">
         <Nav />
-       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
-        <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
-        <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile}webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-       </section>
       <section className="promo-hero-section">
-      <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        <video className='promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
-        <img alt="" className="motoGPSticker stickerDesktop" src={MotoGPSticker} />
+        <img alt="" className="motoGPSticker" src={MotoGPSticker} />
         <div className="promo-hero-wrapper">
           <img alt="" className="motoGP-title-1" src={MotoGPTitle1} />
           <img alt="" className="motoGP-title-2" src={MotoGPTitle2} />
@@ -440,7 +483,7 @@ function App() {
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div> */}
       <div className='bg-[#E3DDD4]'>
-        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] h-full video-nft-section'>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[100vh] h-full video-nft-section'>
           <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
           <section className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body w-full'>
             <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw]'>
@@ -455,46 +498,46 @@ function App() {
               The world is within your reach. Open the door, 
               and let the experiences come to you.             
             </p>
-            <div className='flex items-start justify-center w-full px-24 tablet-below:flex-col tablet-below:items-center '>
-              <div className='flex flex-col items-center px-14'>
-                <SVG name='star' classes='svg-mw star'/>
-                <h2 className='text-4xl font-title'>Create</h2>
-                <p className='font-body max-w-[13rem]'>
-                  The world of the future, and witness the boundless possibilities of your mind.
-                </p>
-              </div>
-              <div className='flex flex-col items-center px-14'>
-                <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
-                <h2 className='text-4xl font-title'>Play</h2>
-                <p className='flex flex-col items-center font-body'>
-                  <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
-                  <span>Bring utility to its full potential.</span>
-                </p>
-              </div>
-              <div className='flex flex-col items-center px-14'>
-                <div className='flex justify-center gap-2 py-12'>
-                  <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
-                  <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
-                </div>
-                <h2 className='text-4xl font-title'>Socialise</h2>
-                <p className='font-body max-w-[19rem]'>
-                  Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
-                </p>
-              </div>
-              <div className='flex flex-col items-center px-14'>
-                <div className='relative'>
-                  <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
-                  <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
-                </div>
-                <h2 className='text-4xl font-title'>Explore</h2>
-                <p className='font-body max-w-[16rem]'>
-                  Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
-                </p>
-              </div>  
-            </div>
-          </section>        
+          </section>
         </section>
-        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] h-full video-nft-mobile-section '>
+          <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex items-start justify-center w-full px-24 tablet-below:flex-col tablet-below:items-center '>
+            <div className='flex flex-col items-center px-14'>
+              <SVG name='star' classes='svg-mw star'/>
+              <h2 className='text-4xl font-title'>Create</h2>
+              <p className='font-body max-w-[13rem]'>
+                The world of the future, and witness the boundless possibilities of your mind.
+              </p>
+            </div>
+            <div className='flex flex-col items-center px-14'>
+              <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
+              <h2 className='text-4xl font-title'>Play</h2>
+              <p className='flex flex-col items-center font-body'>
+                <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
+                <span>Bring utility to its full potential.</span>
+              </p>
+            </div>
+            <div className='flex flex-col items-center px-14'>
+              <div className='flex justify-center gap-2 py-12'>
+                <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
+                <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
+              </div>
+              <h2 className='text-4xl font-title'>Socialise</h2>
+              <p className='font-body max-w-[19rem]'>
+                Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
+              </p>
+            </div>
+            <div className='flex flex-col items-center px-14'>
+              <div className='relative'>
+                <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
+                <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
+              </div>
+              <h2 className='text-4xl font-title'>Explore</h2>
+              <p className='font-body max-w-[16rem]'>
+                Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
+              </p>
+            </div>  
+          </section>
+        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[200vh] h-full video-nft-mobile-section '>
           <video src={NFTvidMobile} id="nft-mobile-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
           <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full mobile-below:text-[3vw]'>
             <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[6vw]'>
@@ -555,7 +598,7 @@ function App() {
               <video className='w-full' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='relative flex flex-col items-end w-full font-body top-[-52vw] pr-[14vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem]'>
-              <div className='w-[35rem]'>
+              <div className={`w-[35rem] transition-opacity duration-300 opacity-0`} id='diamond-desc'>
                 <h2 className='mb-8 text-4xl text-black font-title'>Manage <br />your portfolio</h2>
                 <p>
                 With access to the Polygon and Ethereum blockchains,<br/>
@@ -582,7 +625,7 @@ function App() {
               <video className='w-full' id={'video-2-mobile'} src={DiamondVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='flex flex-col items-center w-full font-body'>
-              <div className='w-full mobile-below:text-[3vw]'>
+              <div className={`w-full mobile-below:text-[3vw] transition-opacity duration-300 opacity-0`} id='diamond-desc-mobile'>
                 <h2 className='mb-8 text-4xl text-black font-title mobile-below:text-[6.2vw]'>Manage <br/>your portfolio</h2>
                 <p>
                 With access to the Polygon and Ethereum blockchains,<br/>
@@ -607,7 +650,7 @@ function App() {
           <div className='flex justify-end w-full max-w-[1500px]'>
             <video className='relative object-cover w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
-          <div className='relative top-[-50vw] w-full max-w-[1500px] pl-[6vw] desktop-2-above-new:pl-[3rem] desktop-2-above-new:top-[-52rem]'>
+          <div id='sun-desc' className='relative top-[-50vw] w-full max-w-[1500px] pl-[6vw] desktop-2-above-new:pl-[3rem] desktop-2-above-new:top-[-52rem] transition-opacity duration-300 opacity-0'>
             <h2 className='mb-12 text-4xl text-black max-w-7xl font-title'>
               Seamless <br /> access to your <br /> gaming experience
             </h2>
@@ -623,7 +666,7 @@ function App() {
           <div className='flex justify-center'>
             <video className='object-cover w-full' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div> 
-          <div className='flex flex-col items-center p-6 mobile-below:text-[3vw]'>
+          <div id='sun-desc-mobile' className='flex flex-col items-center p-6 mobile-below:text-[3vw] transition-opacity duration-300 opacity-0'>
               <h2 className='mb-12 text-4xl text-black font-title tablet-below-new:text-3xl mobile-below:text-[6.2vw]'>
                 Seamless <br/> access to your <br/> gaming experience              
               </h2>
@@ -641,7 +684,7 @@ function App() {
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='relative flex justify-end w-full top-[-44vw] desktop-2-above-new:top-[-40rem]'>
-              <div className='pr-[18vw] desktop-2-above-new:pr-[16rem]'>
+              <div id='eye-desc' className='pr-[18vw] desktop-2-above-new:pr-[16rem] transition-opacity duration-300 opacity-0'>
                 <h2 className='mb-12 text-4xl font-title'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
                 <p className='font-body'>
                   Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
@@ -666,7 +709,7 @@ function App() {
               <video className='w-full' id={'video-4-mobile'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='flex justify-center w-full font-body relative top-[-26vw]'>
-              <div className='mobile-below:text-[3vw]'>
+              <div id='eye-desc-mobile' className='mobile-below:text-[3vw] transition-opacity duration-300 opacity-0'>
                 <h2 className='mb-12 text-4xl font-title mobile-below:text-[6.2vw]'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
                 <p>
                   Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
@@ -686,7 +729,7 @@ function App() {
         </section>     
       </div>  
 
-      <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent rounded-section'>
+      <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent'>
         <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
