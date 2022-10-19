@@ -374,8 +374,6 @@ function App() {
     // initNFTVideo()
     initVideoScrollGsap('nft-video', '.video-nft-section')
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section')
-    // initGSAPVideo(gsap, {vidSelector: '#nft-video', trigger: '.video-nft-section', pin: true, end: 'bottom bottom', scrub: 2})
-    // initGSAPVideo(gsap, {vidSelector: '#nft-mobile-video', trigger: '.video-nft-mobile-section', pin: true, end: 'bottom bottom', scrub: 2})
     initServiceSectionGsap()
     initGSAPVideo(gsap, {vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=150% bottom', scrub: 2})
     initGSAPVideo(gsap, {vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 2})
@@ -406,8 +404,7 @@ function App() {
     <div className="overflow-x-hidden App">
         <Nav />
       <section className="promo-hero-section">
-      <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-      <video className='tablet-above:hidden tablet-above:h-[1px] promo-vid' id="promo-vid" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        <video className='promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
         <img alt="" className="motoGPSticker" src={MotoGPSticker} />
         <div className="promo-hero-wrapper">
@@ -437,7 +434,7 @@ function App() {
         <div className='rounded-full bg-black w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div> */}
       <div className='bg-[#E3DDD4]'>
-        <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] video-nft-section'>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] h-full video-nft-section'>
           <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
           <section className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body w-full'>
             <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw]'>
@@ -491,32 +488,32 @@ function App() {
             </div>
           </section>        
         </section>
-        <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] video-nft-mobile-section'>
+        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[140vh] h-full video-nft-mobile-section '>
           <video src={NFTvidMobile} id="nft-mobile-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
-          <section className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body w-full tablet-below:mt-[-22vw] mobile-below:text-[3vw]'>
+          <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full mobile-below:text-[3vw]'>
             <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[6vw]'>
               All your favorite NFTs in one secure location.          
             </h2>
-            <p className='max-w-3xl font-body'>
+            <p className='max-w-3xl font-body mobile-below:text-[3vw] mobile-below:px-2'>
               As an intuitive, integrated and open solution, Gryfyn is the key to connect the curious minds 
               to navigate across the virtual realms. You are promised with absolute freedom in where you are going, 
               and have total control in who you are becoming.        
             </p>
-            <p>
+            <p className='font-body mobile-below:text-[3vw] mobile-below:px-2'>
               The world is within your reach. Open the door, 
               and let the experiences come to you.             
             </p>
-            <div className='flex items-start justify-center w-full px-20 gap-28 tablet-below:flex-col tablet-below:items-center '>
+            <div className='flex items-start justify-center w-full px-20 gap-28 tablet-below:flex-col tablet-below:items-center mobile-below:px-2 mobile-below:gap-10'>
               <div className='flex flex-col items-center gap-7'>
                 <SVG name='star' classes='w-40 star'/>
-                <h2 className='text-4xl font-title'>Create</h2>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Create</h2>
                 <p className='font-body max-w-[13rem]'>
                   The world of the future, and witness the boundless possibilities of your mind.
                 </p>
               </div>
               <div className='flex flex-col items-center gap-7'>
                 <SVG name='sun' classes='w-40 sun' fill_1='#FFCC31' fill_2='#F16B37'/>
-                <h2 className='text-4xl font-title'>Play</h2>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Play</h2>
                 <p className='flex flex-col items-center font-body'>
                   <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
                   <span>Bring utility to its full potential.</span>
@@ -527,7 +524,7 @@ function App() {
                   <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
                   <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
                 </div>
-                <h2 className='text-4xl font-title'>Socialise</h2>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Socialise</h2>
                 <p className='font-body max-w-[19rem]'>
                   Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
                 </p>
@@ -537,7 +534,7 @@ function App() {
                   <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
                   <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
                 </div>
-                <h2 className='text-4xl font-title'>Explore</h2>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Explore</h2>
                 <p className='font-body max-w-[16rem]'>
                   Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
                 </p>
@@ -546,13 +543,13 @@ function App() {
           </section>        
         </section>
 
-        <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section min-h-[60rem]'>
-          <div className='w-[60rem] flex flex-col tablet-below:w-[55rem] mobile-below:w-full'>
-            <div className='flex justify-start w-full mobile-below:justify-center'>
-              <video className='w-full tablet-below:w-[46rem] mobile-below:w-full mobile-below:relative mobile-below:left-[16%]' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center py-16 bg-[#E3DDD4] text-body video-2-section h-full'>
+          <div className='flex flex-col w-full max-w-[1500px]'>
+            <div className='flex justify-start w-full'>
+              <video className='w-full' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='flex flex-col items-end mt-[-26rem] max-w-7xl tablet-below:mt-[-23rem] w-full font-body mobile-below:mt-[-8rem] mobile-below:items-center mobile-below:text-center mobile-below:relative'>
-              <div className='w-[35rem] mobile-below:w-full'>
+            <div className='relative flex flex-col items-end w-full font-body top-[-52vw] pr-[14vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem]'>
+              <div className='w-[35rem]'>
                 <h2 className='mb-8 text-4xl text-black font-title'>Manage <br />your portfolio</h2>
                 <p>
                 With access to the Polygon and Ethereum blockchains,<br/>
@@ -573,7 +570,7 @@ function App() {
           </div>
         </section>
 
-        <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section-mobile mobile-below:min-h-[250vw] tablet-below:min-h-[186vw] text-center'>
+        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center py-16 bg-[#E3DDD4] text-body video-2-section-mobile mobile-below-new:min-h-[250vw] tablet-below-new:min-h-[186vw] text-center'>
           <div className='flex flex-col w-full'>
             <div className='flex justify-center w-full '>
               <video className='w-full' id={'video-2-mobile'} src={DiamondVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
@@ -600,12 +597,12 @@ function App() {
           </div>
         </section>       
 
-        <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center min-h-[70rem] py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-section'>
-          <div className='flex justify-end'>
-            <video className='relative object-cover w-full tablet-below:w-[46rem] mobile-below:w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-[70rem] py-16 bg-[#E3DDD4] text-black video-sun-section  h-full'>
+          <div className='flex justify-end w-full max-w-[1500px]'>
+            <video className='relative object-cover w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
-          <div className='relative top-[-36rem] max-w-7xl	mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
-            <h2 className='mb-12 text-4xl text-black max-w-7xl font-title tablet-below:text-3xl'>
+          <div className='relative top-[-50vw] w-full max-w-[1500px] pl-[6vw] desktop-2-above-new:pl-[3rem] desktop-2-above-new:top-[-52rem]'>
+            <h2 className='mb-12 text-4xl text-black max-w-7xl font-title'>
               Seamless <br /> access to your <br /> gaming experience
             </h2>
             <p className='max-w-7xl font-body'>
@@ -616,12 +613,12 @@ function App() {
           </div>
         </section>
 
-        <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center tablet-below:h-[120vh] mobile-below:h-[180vh] py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-mobile-section text-center h-screen'>
-        <div className='flex justify-center'>
-            <video className='object-cover w-full max-w-lg' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center tablet-below-new:h-[180vw] mobile-below-new:h-[180vh] py-16 bg-[#E3DDD4] text-black video-sun-mobile-section text-center h-screen'>
+          <div className='flex justify-center'>
+            <video className='object-cover w-full' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div> 
           <div className='flex flex-col items-center p-6 mobile-below:text-[3vw]'>
-              <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl mobile-below:text-[6.2vw]'>
+              <h2 className='mb-12 text-4xl text-black font-title tablet-below-new:text-3xl mobile-below:text-[6.2vw]'>
                 Seamless <br/> access to your <br/> gaming experience              
               </h2>
               <p className='font-body'>
@@ -632,13 +629,13 @@ function App() {
             </div>
         </section> 
 
-        <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center min-h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section h-screen'>
-          <div className='w-[56rem] flex flex-col tablet-below:w-[44rem] mobile-below:w-full'>
-            <div className='flex justify-start w-full mobile-below:justify-center'>
-              <video className='relative px-2 w-full tablet-below:w-[25rem] mobile-below:w-full' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section h-screen h-full'>
+          <div className='flex flex-col w-full max-w-[1500px]'>
+            <div className='flex justify-start w-full'>
+              <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='flex justify-end w-full mt-[-24rem] relative mobile-below:justify-center mobile-below:text-center mobile-below:mt-[-7rem]'>
-              <div>
+            <div className='relative flex justify-end w-full top-[-44vw] desktop-2-above-new:top-[-40rem]'>
+              <div className='pr-[18vw] desktop-2-above-new:pr-[16rem]'>
                 <h2 className='mb-12 text-4xl font-title'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
                 <p className='font-body'>
                   Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
@@ -657,7 +654,7 @@ function App() {
           </div>
         </section>
 
-        <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center tablet-below:min-h-[160vw] mobile-below:min-h-[200vw] py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section-mobile text-center'>
+        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center tablet-below-new:min-h-[160vw] mobile-below-new:min-h-[200vw] py-16 bg-[#E3DDD4] text-black video-4-section-mobile text-center h-full'>
           <div className='flex flex-col items-center w-full'>
             <div className='flex justify-center w-full'>
               <video className='w-full' id={'video-4-mobile'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>

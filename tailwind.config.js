@@ -20,9 +20,14 @@ module.exports = {
       },        
     },
     screens: {
+      "desktop-2-above": {"min": "1500px"},
       "tablet-above": {"min": "1101px"},
       'tablet-below': {'max': '1100px'},
+      "tablet-above-new": {"min": "861px"},
+      'tablet-below-new': {'max': '860px'},      
       'mobile-below': {'max': '700px'},
+      'mobile-below-new': {'max': '700px'},
+
       
     }      
   },
