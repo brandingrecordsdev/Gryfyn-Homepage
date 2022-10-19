@@ -357,7 +357,7 @@ function App() {
     const handleScroll = event => {
       console.log('window.scrollY', window.scrollY);
 
-    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section')) {
+    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
       console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
