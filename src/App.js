@@ -331,32 +331,35 @@ function App() {
   useEffect(() => {
     // initScrollDetection()
 
-    let isColliding = function (el1, el2) {
-      let div1 = $(el1);
-      let div2 = $(el2);
+    var isColliding = function(el1, el2) {
+      let $div1 = $(el1);
+      let $div2 = $(el2);
 
-      let d1Offset = div1.offset();
-      let d1Height = div1.outerHeight(true);
-      let d1Width = div1.outerWidth(true);
-      let d1Top = d1Offset.top + d1Height;
-      let d1Left = d1Offset.left + d1Width;
-  
-      let d2Offset = div2.offset();
-      let d2Height = div2.outerHeight(true);
-      let d2Width = div2.outerWidth(true);
-      let d2Top = d2Offset.top + d2Height;
-      let d2Left = d2Offset.left + d2Width;
-  
-      return !(d1Top < d2Offset.top || d1Offset.top > d2Top || d1Left < d2Offset.left || d1Offset.left > d2Left);
-  };
+      var x1 = $div1.offset().left;
+      var y1 = $div1.offset().top;
+      var h1 = $div1.outerHeight(true);
+      var w1 = $div1.outerWidth(true);
+      var b1 = y1 + h1;
+      var r1 = x1 + w1;
+      var x2 = $div2.offset().left;
+      var y2 = $div2.offset().top;
+      var h2 = $div2.outerHeight(true);
+      var w2 = $div2.outerWidth(true);
+      var b2 = y2 + h2;
+      var r2 = x2 + w2;
+      if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+      return true;
+    };
+
   
     const handleScroll = event => {
       console.log('window.scrollY', window.scrollY);
 
-    if (isColliding('.main-nav', '.hero-section') || isColliding('.main-nav', '.video-nft-section') || isColliding('.main-nav', '.video-2-section') || isColliding('.main-nav', '.video-sun-section') ) {
+    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section')) {
       console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
+    console.log('not colliding')
     $('.main-nav').css('background-color', 'transparent')
   }
 
@@ -541,7 +544,7 @@ function App() {
         </section>        
       </section>
 
-      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body'>
+      <section className='tablet-below:hidden tablet-below:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section'>
         <div className='w-[60rem] flex flex-col tablet-below:w-[55rem] mobile-below:w-full'>
           <div className='flex justify-start w-full mobile-below:justify-center'>
             <video className='w-full tablet-below:w-[46rem] mobile-below:w-full mobile-below:relative mobile-below:left-[16%]' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
