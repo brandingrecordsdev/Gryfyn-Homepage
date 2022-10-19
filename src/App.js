@@ -13,6 +13,7 @@ import Hero from './components/Hero';
 import SVG from './components/SVG'
 import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
+import PromoVidMobile from './videos/kvmobile.mp4';
 
 import NFTvidMobile from './videos/nftmobile.mp4';
 import NFTvid from './videos/NFTv1.mp4'
@@ -356,8 +357,7 @@ function App() {
     const handleScroll = event => {
       console.log('window.scrollY', window.scrollY);
 
-    if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.icons-section')
-    ) {
+      if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
       console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
@@ -370,6 +370,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     
+    initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 2})
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
@@ -453,10 +454,14 @@ function App() {
   return (
     <div className="overflow-x-hidden App">
         <Nav />
+      <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
+      <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
+      <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile}webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      </section>
       <section className="promo-hero-section">
-        <video className='promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
-        <img alt="" className="motoGPSticker" src={MotoGPSticker} />
+        <img alt="" className="motoGPSticker stickerDesktop" src={MotoGPSticker} />
         <div className="promo-hero-wrapper">
           <img alt="" className="motoGP-title-1" src={MotoGPTitle1} />
           <img alt="" className="motoGP-title-2" src={MotoGPTitle2} />
@@ -730,7 +735,7 @@ function App() {
         </section>     
       </div>  
 
-      <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent'>
+      <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent rounded-section'>
         <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
