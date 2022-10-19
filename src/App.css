@@ -340,7 +340,7 @@ min-width: 1200px;
 
 .motoGp-section {
   height: auto;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .motoGp-header {
@@ -931,6 +931,11 @@ line-height: 25px;
 }
 
 @media only screen and (max-width: 590px) {
+
+  .raffles-wrapper h1 {
+      font-size: 30px;
+      margin-bottom: 0;
+  }
 
   .motoGPSticker {
     position: absolute;

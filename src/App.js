@@ -499,7 +499,7 @@ function App() {
                 Gryfyn removes the barriers between NFTs and utility.<br/> <br/>           
                 </p>     
                 <div className='flex flex-col'>
-                  <span className='text-black'>Supported Netwroks</span>
+                  <span className='text-black'>Supported Networks</span>
                   <div className='flex gap-4'>
                     <img alt="" src={EthereumLogo} className='object-contain w-32'/>
                     <img alt="" src={PolygonLogo} className='object-contain w-32'/>
