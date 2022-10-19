@@ -48,7 +48,7 @@ import MotoGPSticker from './images/MotoGPSticker.png';
 import MotoGPTitle1 from './images/MotoGPTitle1.png';
 import MotoGPTitle2 from './images/MotoGPTitle2.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
-import {useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import initGSAPVideo from './components/initGSAPVideo'
 
 
@@ -93,71 +93,71 @@ const initVideoScrollGsap = (id, pinnedSection) => {
         currentTime: video.duration || 1
       }
     );
-  });  
+  });
 }
 
 const initHeroGsap = () => {
   const el = document.getElementById('mix-blend-overlay')
-  let tl = gsap.timeline({    
-      // defaults: { duration: 100, delay:  },
-      scrollTrigger: {
-        trigger: '.hero-section',
-        pin: true,
-        anticipatePin: 1,
-        start: "top top",
-        end: "+=2000",
-        scrub: 1,
-        duration: 5,
-        toggleActions: "restart pause resume pause"
-      }
-    });
+  let tl = gsap.timeline({
+    // defaults: { duration: 100, delay:  },
+    scrollTrigger: {
+      trigger: '.hero-section',
+      pin: true,
+      anticipatePin: 1,
+      start: "top top",
+      end: "+=2000",
+      scrub: 1,
+      duration: 5,
+      toggleActions: "restart pause resume pause"
+    }
+  });
 
-      tl.fromTo(el, 
-      {
-          y: 0,
-          scale: 1,
-      }, 
-      { 
-          y: '-100vh',
-          scale: 2,
-          // duration: 2
-      }
-      )  
+  tl.fromTo(el,
+    {
+      y: 0,
+      scale: 1,
+    },
+    {
+      y: '-100vh',
+      scale: 2,
+      // duration: 2
+    }
+  )
 }
 
-const initMotoGPGsap = ( pinnedSection ) => {
+const initMotoGPGsap = (pinnedSection) => {
   const banner1 = document.querySelectorAll(`${pinnedSection} .banner-1`)
   const banner2 = document.querySelectorAll(`${pinnedSection} .banner-2`)
-  let motoGPtl = gsap.timeline({    
-      // defaults: { duration: 100, delay:  },
-      scrollTrigger: {
-        trigger: pinnedSection,
-        pin: true,
-        start: "top top",
-        end: "+=500",
-        scrub: 1,
-      }
-    });
+  let motoGPtl = gsap.timeline({
+    // defaults: { duration: 100, delay:  },
+    scrollTrigger: {
+      trigger: pinnedSection,
+      pin: true,
+      start: "top top",
+      end: "+=500",
+      scrub: 1,
+    }
+  });
 
-    motoGPtl.fromTo(banner1, 
-      {
-          x: '-100vw',
-          scale: 1
-      }, 
-      { 
-          x: '10vw',
-          // duration: 2
-      }, 0)  
+  motoGPtl.fromTo(banner1,
+    {
+      x: '-100vw',
+      scale: 1
+    },
+    {
+      x: '10vw',
+      // duration: 2
+    }, 0)
 
-      motoGPtl.fromTo(banner2, 
-        {
-            x: '100vw',
-            scale: 1
-        }, 
-        { 
-            x: '-10vw',
-            // duration: 2
-        }, '0.5') 
+  motoGPtl.fromTo(banner2,
+    {
+      x: '100vw',
+      scale: 1
+    },
+    {
+      x: '-10vw',
+      // duration: 2
+    }, '0.5')
 }
 
 const initPromoVideo = () => {
@@ -199,46 +199,46 @@ const initPromoVideo = () => {
         currentTime: video.duration || 1
       }
     );
-  });  
+  });
 
 }
 
-const initScrollDetection = ( element1, element2 ) => {
+const initScrollDetection = (element1, element2) => {
 
   let a = element1;
   let b = element2;
   var ac = a.getBoundingClientRect(); // coordinates for element 'a'
-var bc = b.getBoundingClientRect(); // and 'b'
+  var bc = b.getBoundingClientRect(); // and 'b'
 
-// assuming both boxes are same size...
-// if not, use your existing collision code.
+  // assuming both boxes are same size...
+  // if not, use your existing collision code.
 
-if(Math.abs(ac.top - bc.top) < ac.height && Math.abs(ac.left - bc.left) < ac.width) {
-// collision here...
+  if (Math.abs(ac.top - bc.top) < ac.height && Math.abs(ac.left - bc.left) < ac.width) {
+    // collision here...
 
-    if(Math.abs(ac.top - bc.top) < Math.abs(ac.left - bc.left)) {
-    // vartical offset is smaller, so snap 'y's
+    if (Math.abs(ac.top - bc.top) < Math.abs(ac.left - bc.left)) {
+      // vartical offset is smaller, so snap 'y's
 
-        if(ac.top < bc.top) { // a is above b, so snap a's bottom to b's top
-            a.style.top = bc.top - ac.height - 1 + 'px';
-        }
-        else {
-            a.style.top = bc.top + bc.height + 1 + 'px';
-        }
+      if (ac.top < bc.top) { // a is above b, so snap a's bottom to b's top
+        a.style.top = bc.top - ac.height - 1 + 'px';
+      }
+      else {
+        a.style.top = bc.top + bc.height + 1 + 'px';
+      }
 
     }
     else { // here, horizontal offset is smaller, so snap 'x's
 
-        if(ac.left < bc.left) { // a is to the left of b, so snap a's right to b's left
-            a.style.left = bc.left - ac.width - 1 + 'px';
-        }
-        else {
-            a.style.left = bc.left + bc.width + 1 + 'px';
-        }
+      if (ac.left < bc.left) { // a is to the left of b, so snap a's right to b's left
+        a.style.left = bc.left - ac.width - 1 + 'px';
+      }
+      else {
+        a.style.left = bc.left + bc.width + 1 + 'px';
+      }
 
     }
 
-}
+  }
 }
 
 const initNFTVideo = () => {
@@ -255,7 +255,7 @@ const initNFTVideo = () => {
 //   let video = el;
 //   /* ---------------------------------- */
 //   /* Scroll Control! */
-  
+
 //   gsap.registerPlugin(ScrollTrigger);
 
 //   let NFTtl = gsap.timeline({
@@ -302,24 +302,24 @@ const initServiceSectionGsap = () => {
   gsap.to('.sun', {
     rotation: 359, repeat: -1, repeatDelay: 0, duration: 2,
     ease: 'linear'
-  })  
+  })
   let squaresTl1 = gsap.timeline({
     repeat: -1, repeatDelay: 0,
-  });  
-  squaresTl1.fromTo('.square-1', {x: '56%'}, {x: '-56%'})
-  squaresTl1.to('.square-1', {x: '56%'})
+  });
+  squaresTl1.fromTo('.square-1', { x: '56%' }, { x: '-56%' })
+  squaresTl1.to('.square-1', { x: '56%' })
 
   let squaresTl2 = gsap.timeline({
     repeat: -1, repeatDelay: 0,
-  });  
-  squaresTl2.fromTo('.square-2', {x: '-56%'}, {x: '56%'})
-  squaresTl2.to('.square-2', {x: '-56%'})  
+  });
+  squaresTl2.fromTo('.square-2', { x: '-56%' }, { x: '56%' })
+  squaresTl2.to('.square-2', { x: '-56%' })
 
   let eyelidTl = gsap.timeline({
     repeat: -1, repeatDelay: 0.7
-  });  
-  eyelidTl.to('.eye-lid', {transformOrigin: 'center top', rotationX: 90})
-  eyelidTl.to('.eye-lid', {rotationX: 0}) 
+  });
+  eyelidTl.to('.eye-lid', { transformOrigin: 'center top', rotationX: 90 })
+  eyelidTl.to('.eye-lid', { rotationX: 0 })
 }
 
 function App() {
@@ -357,7 +357,7 @@ function App() {
     initVideoScrollGsap('video-1-mobile', '.features-mobile')
     initMotoGPGsap('.motoGp-section')
   })
-  
+
   // useEffect(()=>{
   //   window.addEventListener('resize', detectSize)
   //   ScrollTrigger.refresh(true)
@@ -371,25 +371,25 @@ function App() {
         <Nav />
       <section className="promo-hero-section">
         <video className='promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
-      {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
-      <img alt="" className="motoGPSticker" src={MotoGPSticker}/>
-      <div className="promo-hero-wrapper">
-        <img alt="" className="motoGP-title-1" src={MotoGPTitle1}/>
-        <img alt="" className="motoGP-title-2" src={MotoGPTitle2}/>
-        <p className="promo-desc">
-        Join the Gryfyn community and win endless experiences both online & offline.
-        </p>
-        <button className="motogp-cta-btn connect-btn">Enter The Raffle</button>
-      </div>
+        {/* <img alt="" className="motoGPBike" src={MotoGPBike}/> */}
+        <img alt="" className="motoGPSticker" src={MotoGPSticker} />
+        <div className="promo-hero-wrapper">
+          <img alt="" className="motoGP-title-1" src={MotoGPTitle1} />
+          <img alt="" className="motoGP-title-2" src={MotoGPTitle2} />
+          <p className="promo-desc">
+            Join the Gryfyn community and win endless experiences both online & offline.
+          </p>
+          <button className="motogp-cta-btn connect-btn">Enter The Raffle</button>
+        </div>
       </section>
       <section className="motoGp-promo-section">
         <div className="motoGpBanner-promo">
           <div className="motoGp-Banner">
             <div className="banner-left-wrapper">
-            <img className="banner-1 motoGp-scroll" alt="" src={Banner}/>
+              <img className="banner-1 motoGp-scroll" alt="" src={Banner} />
             </div>
             <div className="banner-right-wrapper">
-            <img className="banner-2 motoGp-scroll" alt="" src={Banner2}/>
+              <img className="banner-2 motoGp-scroll" alt="" src={Banner2} />
             </div>
           </div>
           {/* <img className="motoGp-star" alt="" src={MotoGPGraphic}/> */}
@@ -515,7 +515,7 @@ function App() {
           </div>
           <div className='flex flex-col items-end mt-[-34rem] tablet-below:mt-[-23rem] w-full font-body mobile-below:mt-[-8rem] mobile-below:items-center mobile-below:text-center mobile-below:relative'>
             <div className='w-[35rem] mobile-below:w-full'>
-              <h2 className='mb-8 text-4xl text-black font-title'>Manage <br/>your portfolio</h2>
+              <h2 className='mb-8 text-4xl text-black font-title'>Manage <br />your portfolio</h2>
               <p>
               With access to the Polygon and Ethereum blockchains,<br/>
               Gryfyn is the perfect platform to manage and view your <br/>
@@ -533,7 +533,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>    
+      </section>
 
       <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center py-16 overflow-hidden bg-[#E3DDD4] text-body video-2-section-mobile mobile-below:min-h-[250vw] tablet-below:min-h-[186vw] text-center'>
         <div className='flex flex-col w-full'>
@@ -567,16 +567,16 @@ function App() {
           <video className='relative object-cover w-[50rem] tablet-below:w-[46rem] mobile-below:w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
         </div>
         <div className='relative top-[-30rem] mobile-below:top-[-10rem] p-6 mobile-below:text-center mobile-below:flex mobile-below:flex-col mobile-below:items-center'>
-            <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl'>
-              Seamless <br/> access to your <br/> gaming experience              
-            </h2>
-            <p className='font-body'>
-              Execute in game transactions and NFT use directly in-game, without having to switch out of the platform. <br/><br/>
-              Verify your identity to unlock the full potential of Gryfyn, accessing, transferring and using your assets. <br/><br/>
-              With a fully integrated wallet, experience an unseen level of immersion.              
-            </p>
-          </div>
-      </section> 
+          <h2 className='mb-12 text-4xl text-black font-title tablet-below:text-3xl'>
+            Seamless <br /> access to your <br /> gaming experience
+          </h2>
+          <p className='font-body'>
+            Execute in game transactions and NFT use directly in-game, without having to switch out of the platform. <br /><br />
+            Verify your identity to unlock the full potential of Gryfyn, accessing, transferring and using your assets. <br /><br />
+            With a fully integrated wallet, experience an unseen level of immersion.
+          </p>
+        </div>
+      </section>
 
       <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center tablet-below:h-[120vh] mobile-below:h-[180vh] py-16 overflow-hidden bg-[#E3DDD4] text-black video-sun-mobile-section text-center'>
       <div className='flex justify-center'>
@@ -601,7 +601,7 @@ function App() {
           </div>
           <div className='flex justify-end w-full mt-[-24rem] relative mobile-below:justify-center mobile-below:text-center mobile-below:mt-[-7rem]'>
             <div>
-              <h2 className='mb-12 text-4xl font-title'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
+              <h2 className='mb-12 text-4xl font-title'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
               <p className='font-body'>
                 Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
                 With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
@@ -617,7 +617,7 @@ function App() {
             </div>          
           </div>
         </div>
-      </section> 
+      </section>
 
       <section className='tablet-above:hidden tablet-above:h-[1px] flex flex-col items-center tablet-below:min-h-[160vw] mobile-below:min-h-[200vw] py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section-mobile text-center'>
         <div className='flex flex-col items-center w-full'>
@@ -650,16 +650,16 @@ function App() {
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
         <h2 className='text-4xl max-w-[30rem]'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
         <div className='flex flex-wrap items-center justify-center gap-4'>
-          <img alt="" src={PhantomLogo} className='object-cover w-32'/>
-          <img alt="" src={SandboxLogo} className='object-cover w-32'/>
-          <img alt="" src={DustLandLogo} className='object-cover w-32'/>
-          <img alt="" src={RevvRacingLogo} className='object-cover w-32'/>
+          <img alt="" src={PhantomLogo} className='object-cover w-32' />
+          <img alt="" src={SandboxLogo} className='object-cover w-32' />
+          <img alt="" src={DustLandLogo} className='object-cover w-32' />
+          <img alt="" src={RevvRacingLogo} className='object-cover w-32' />
           <div className='tablet-below:hidden tablet-below:h-[1px] features'>
-            <VideoScroll id='video-1' vid={vidGallery} pin={'.features'}/>
+            <VideoScroll id='video-1' vid={vidGallery} pin={'.features'} />
           </div>
           <div className='tablet-above:hidden tablet-above:h-[1px] features-mobile'>
-            <VideoScroll id='video-1-mobile' vid={vidGalleryMobile} pin={'.features-mobile'}/>
-          </div>          
+            <VideoScroll id='video-1-mobile' vid={vidGalleryMobile} pin={'.features-mobile'} />
+          </div>
         </div>
       </section>
       <section>
@@ -669,82 +669,82 @@ function App() {
       <section className="motoGp-section">
         <div className="motoGpBanner-wrapper">
           <h1 className="motoGp-header">
-          The 
-          <span className="px-4 motoGp-highlight">
-           Gryfyn x MotoGP  
-          </span>
-          <br></br>
-          <span>
-          VIP Experience
-          </span>
+            The
+            <span className="px-4 motoGp-highlight">
+              Gryfyn x MotoGP
+            </span>
+            <br></br>
+            <span>
+              VIP Experience
+            </span>
           </h1>
           <div className="motoGp-Banner">
             <div className="banner-left-wrapper">
-            <img className="banner-1 motoGp-scroll" alt="" src={Banner}/>
+              <img className="banner-1 motoGp-scroll" alt="" src={Banner} />
             </div>
             <div className="banner-right-wrapper">
-            <img className="banner-2 motoGp-scroll" alt="" src={Banner2}/>
+              <img className="banner-2 motoGp-scroll" alt="" src={Banner2} />
             </div>
           </div>
-          <img className="motoGp-star" alt="" src={MotoGPGraphic}/>
+          <img className="motoGp-star" alt="" src={MotoGPGraphic} />
         </div>
       </section>
       <section className="motoGp-desc">
         <div className="motoGp-desc-wrapper">
-            <p>
+          <p>
             <span>We are proud to announce that Gryfyn is the </span>
             <span className="header-bold">
-            official title sponsor of MotoGP 2022 & 2023
+              official title sponsor of MotoGP 2022 & 2023
             </span> and a key partner of Dorna Sports, with the goal of propelling MotoGP into the vast potential of Web3 & the metaverse.
-            <br/><br/>
+            <br /><br />
             <span>Get a chance to win </span>
-           <span className="header-highlight">
-           2x VIP all inclusive tickets 
-           </span>
-           <span> to the Spain MotoGP event.</span>
-            </p>
+            <span className="header-highlight">
+              2x VIP all inclusive tickets
+            </span>
+            <span> to the Spain MotoGP event.</span>
+          </p>
         </div>
-        </section>
+      </section>
       <section className="image-slider">
         <Carousel />
       </section>
       <section className="enter-raffles-section">
         <div className="raffles-wrapper">
-        <h1>How to enter?</h1>
-        <p>From now to March 2023, connect to our non custodian wallet and follow our verification process to enter the raffle.</p>
-        <button className="motogp-cta-btn connect-btn">Connect Wallet</button>
+          <h1>How to enter?</h1>
+          <p>From now to March 2023, connect to our non custodian wallet and follow our verification process to enter the raffle.</p>
+          <button className="motogp-cta-btn connect-btn">Connect Wallet</button>
         </div>
       </section>
       <section className="bottom-banner">
-          <h1 className="bottom-header">
-            A w
-            <span className="branded-sun"><img className="rotating" alt="" src={Sun}/></span>
-            rld 
-            <br />
-            beyond yo
-            <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond}/>u</span>
-            r 
-            <br />
-            <span className="branded-i-sm"><img className="anim-world-beyond-o" alt="" src={YellowDiamond}/>i</span>
-            <span>magination </span>
-            <span className="branded-a-lower"><img alt="" src={BrandedALower}/></span>
-            waits
-          </h1>
+        <h1 className="bottom-header">
+          A w
+          <span className="branded-sun"><img className="rotating" alt="" src={Sun} /></span>
+          rld
+          <br />
+          beyond yo
+          <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond} />u</span>
+          r
+          <br />
+          <span className="branded-i-sm"><img className="anim-world-beyond-o" alt="" src={YellowDiamond} />i</span>
+          <span>magination </span>
+          <span className="branded-a-lower"><img alt="" src={BrandedALower} /></span>
+          waits
+        </h1>
       </section>
       <footer className="site-footer">
         <div className="footer-wrapper">
-        <img alt="" className="logo footer-logo" src={Logo} />
-        <div className="social-media-wrapper">
-                <a href="/" className="social-icon">
-                    <img alt="" src={Instagram} />
-                </a>
-                <a href="/" className="social-icon">
-                    <img alt="" src={Twitter} />
-                </a>
-                <a href="/" className="social-icon">
-                    <img alt="" src={LinkedIn} />
-                </a>
-            </div>
+          <img alt="" className="logo footer-logo" src={Logo} />
+          <div className="social-media-wrapper">
+            <a href="/" className="social-icon">
+              <img alt="" src={Instagram} />
+            </a>
+            <a href="/" className="social-icon">
+              <img alt="" src={Twitter} />
+            </a>
+            <a href="/" className="social-icon">
+              <img alt="" src={LinkedIn} />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
