@@ -7,6 +7,7 @@ import './fonts/Basier Circle Bold.otf';
 import './App.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
+import { Helmet } from 'react-helmet'
 
 import Nav from './components/Nav';
 import Hero from './components/Hero';
@@ -455,11 +456,15 @@ function App() {
   // },[windowDimenion])
 
   return (
+    <>
+    <Helmet>
+      <title>Gryfyn | Your key to the (un)known</title>
+    </Helmet>
     <div className="overflow-x-hidden App">
         <Nav />
       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
       <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
-      <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile}webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
       </section>
       <section className="promo-hero-section">
       <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
@@ -547,6 +552,7 @@ function App() {
             </div>  
           </section>
         <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[200vh] h-full video-nft-mobile-section '>
+          <video src={NFTvidMobile} id="nft-mobile-video" className="z-index nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted='muted'></video>        
           <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full mobile-below:text-[3vw]'>
             <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[6vw]'>
               All your favorite NFTs in one secure location.          
@@ -841,6 +847,7 @@ function App() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 
