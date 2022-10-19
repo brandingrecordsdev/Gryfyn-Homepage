@@ -131,7 +131,18 @@ nav {
 }
 
 .nft-video {
-  width: 90% !important;
+  width: 100%;
+  height: 100vh;
+}
+
+.nft-header {
+  font-size: 75px;
+line-height: 115px;
+}
+
+.nft-desc {
+  font-size: 25px;
+  line-height: 35px;
 }
 
 .hero-subhead {
@@ -341,6 +352,7 @@ max-width: 1000px;
 .motoGp-Banner {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 /* .motoGp-section {
@@ -588,6 +600,30 @@ text-align: center;
 .hero-container {
   padding: 100px;
 }
+
+.nft-content-section {
+  padding: 0px 100px;
+}
+
+.nft-desc-wrapper {
+  max-width: 1280px;
+}
+
+.looping-icons-wrapper {
+  padding: 120px 0;;
+}
+
+.features-title {
+  font-size: 35px;
+line-height: 70px;
+}
+
+.features-desc {
+  font-size: 15px;
+line-height: 25px;
+}
+
+/* Mobile Queries */
 
 @media only screen and (max-width: 1500px) {
  
