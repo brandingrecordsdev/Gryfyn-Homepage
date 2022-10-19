@@ -50,6 +50,7 @@ import MotoGPTitle2 from './images/MotoGPTitle2.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
 import { useState, useEffect } from 'react';
 import initGSAPVideo from './components/initGSAPVideo'
+import $ from 'jquery';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -204,41 +205,35 @@ const initPromoVideo = () => {
 }
 
 const initScrollDetection = (element1, element2) => {
+    // Div 1 data
+    let div1 = $(element1);
+    let div2 = $(element2);
 
-  let a = element1;
-  let b = element2;
-  var ac = a.getBoundingClientRect(); // coordinates for element 'a'
-  var bc = b.getBoundingClientRect(); // and 'b'
+    console.log('running scroll detect')
+  
+    let isColliding = function (div1, div2) {
 
-  // assuming both boxes are same size...
-  // if not, use your existing collision code.
+      let d1Offset = div1.offset();
+      let d1Height = div1.outerHeight(true);
+      let d1Width = div1.outerWidth(true);
+      let d1Top = d1Offset.top + d1Height;
+      let d1Left = d1Offset.left + d1Width;
+  
+      let d2Offset = div2.offset();
+      let d2Height = div2.outerHeight(true);
+      let d2Width = div2.outerWidth(true);
+      let d2Top = d2Offset.top + d2Height;
+      let d2Left = d2Offset.left + d2Width;
+  
+      return !(d1Top < d2Offset.top || d1Offset.top > d2Top || d1Left < d2Offset.left || d1Offset.left > d2Left);
+  };
 
-  if (Math.abs(ac.top - bc.top) < ac.height && Math.abs(ac.left - bc.left) < ac.width) {
-    // collision here...
-
-    if (Math.abs(ac.top - bc.top) < Math.abs(ac.left - bc.left)) {
-      // vartical offset is smaller, so snap 'y's
-
-      if (ac.top < bc.top) { // a is above b, so snap a's bottom to b's top
-        a.style.top = bc.top - ac.height - 1 + 'px';
-      }
-      else {
-        a.style.top = bc.top + bc.height + 1 + 'px';
-      }
-
-    }
-    else { // here, horizontal offset is smaller, so snap 'x's
-
-      if (ac.left < bc.left) { // a is to the left of b, so snap a's right to b's left
-        a.style.left = bc.left - ac.width - 1 + 'px';
-      }
-      else {
-        a.style.left = bc.left + bc.width + 1 + 'px';
-      }
-
-    }
-
+  if (isColliding(div1, div2) === true){
+      $('.main-nav').css('background-color', 'black')
+  } else {
+    $('.main-nav').css('background-color', 'transparent')
   }
+
 }
 
 const initNFTVideo = () => {
@@ -337,6 +332,14 @@ function App() {
 
   useEffect(() => {
     // initScrollDetection()
+    const handleScroll = event => {
+      console.log('window.scrollY', window.scrollY);
+
+      console.log(initScrollDetection('.main-nav', '.hero-section'))
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
@@ -356,6 +359,11 @@ function App() {
     initVideoScrollGsap('video-1', '.features')
     initVideoScrollGsap('video-1-mobile', '.features-mobile')
     initMotoGPGsap('.motoGp-section')
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
   })
 
   // useEffect(()=>{

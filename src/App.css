@@ -628,11 +628,11 @@ line-height: 25px;
 }
 
 .video-nft-section {
-  height: 170vh;
+  height: 180vh;
 }
 
 .video-nft-section section{
-  height: 70vh;
+  height: auto !important;
 }
 
 /* .vector-mw{
