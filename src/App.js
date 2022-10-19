@@ -68,10 +68,10 @@ const initVideoScrollGsap = (id, pinnedSection) => {
     el.addEventListener(event, onceFn, opts);
     return onceFn;
   }
-  // once(document.documentElement, "touchstart", function (e) {
-  //   video.play();
-  //   video.pause();
-  // });
+  once(document.documentElement, "touchstart", function (e) {
+    video.play();
+    video.pause();
+  });
   /* ---------------------------------- */
   /* Scroll Control! */
   let vidTL = gsap.timeline({
@@ -82,10 +82,11 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       start: "top top",
       end: "+=1000",
       scrub: 3,
-      markers: true
+      markers: true,
+      toggleActions: "play reset none reset"
     }
   });
-  console.log(vidTL)
+  // console.log(vidTL)
   once(video, "loadedmetadata", () => {
     vidTL.fromTo(
       video,
@@ -139,6 +140,7 @@ const initMotoGPGsap = (pinnedSection) => {
       start: "top top",
       end: "+=500",
       scrub: 1,
+      toggleActions: "play reset none reset"
     }
   });
 
@@ -175,10 +177,10 @@ const initPromoVideo = () => {
     el.addEventListener(event, onceFn, opts);
     return onceFn;
   }
-  // once(document.documentElement, "touchstart", function (e) {
-  //   video.play();
-  //   video.pause();
-  // });
+  once(document.documentElement, "touchstart", function (e) {
+    video.play();
+    video.pause();
+  });
   /* ---------------------------------- */
   /* Scroll Control! */
   let promoTL = gsap.timeline({
@@ -189,6 +191,7 @@ const initPromoVideo = () => {
       start: "top top",
       end: "+=1000",
       scrub: 2,
+      toggleActions: "play reset none reset"
     }
   });
 
@@ -355,13 +358,13 @@ function App() {
 
   
     const handleScroll = event => {
-      console.log('window.scrollY', window.scrollY);
+      // console.log('window.scrollY', window.scrollY);
 
       if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
-      console.log('colliding')
+      // console.log('colliding')
       $('.main-nav').css('background-color', 'black')
   } else {
-    console.log('not colliding')
+    // console.log('not colliding')
     $('.main-nav').css('background-color', 'transparent')
   }
 
@@ -544,7 +547,6 @@ function App() {
             </div>  
           </section>
         <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[200vh] h-full video-nft-mobile-section '>
-          <video src={NFTvidMobile} id="nft-mobile-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
           <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full mobile-below:text-[3vw]'>
             <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[6vw]'>
               All your favorite NFTs in one secure location.          
