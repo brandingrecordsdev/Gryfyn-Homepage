@@ -949,7 +949,7 @@ line-height: 25px;
 
 
 .stickerMobile {
-  top: 10vh;
+  top: 15vh;
   right: 5vh;
   max-width: 150px;
 }
@@ -1030,7 +1030,7 @@ line-height: 25px;
 
   .motoGPSticker {
     position: absolute;
-    top: 10vh;
+    top: 15vh;
     right: 5vh;
     max-width:120px;
 }
