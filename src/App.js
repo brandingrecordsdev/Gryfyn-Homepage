@@ -132,7 +132,7 @@ const initMotoGPGsap = (pinnedSection) => {
     scrollTrigger: {
       trigger: pinnedSection,
       pin: true,
-      start: "top top",
+      start: "top +=50%",
       end: "+=500",
       scrub: 1,
       toggleActions: "play reset none reset"
