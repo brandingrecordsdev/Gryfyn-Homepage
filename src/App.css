@@ -339,7 +339,7 @@ min-width: 1200px;
 } */
 
 .motoGp-section {
-  height: auto;
+  height: 130vh;
   overflow: hidden;
 }
 
@@ -754,9 +754,9 @@ line-height: 25px;
     max-width: 800px !important;
   }
 
-  /* .motoGp-section {
+  .motoGp-section {
     height: 90vh;
-  } */
+  }
 
   .stickerMobile {
     top: 20vh;
@@ -967,10 +967,10 @@ line-height: 25px;
   padding: 50px 20px;
 }
 
-/* 
+
 .motoGp-section {
   height: 80vh;
-} */
+}
 
 .motoGp-star {
   max-width: 650px !important;
@@ -1072,9 +1072,9 @@ branded-u img {
     max-width: 500px !important;
 }
 
-/* .motoGp-section {
+.motoGp-section {
   height: 65vh;
-} */
+}
 
  .motoGp-header {
   font-size: 28px;
