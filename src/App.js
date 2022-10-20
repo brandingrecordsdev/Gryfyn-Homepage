@@ -73,8 +73,9 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
   if(id === 'promo-vid-mobile'){
     console.log('match promo vid mobile')
     video.autoplay = true;
+    video.load();
         video.play();
-// vid.play()
+//vid.play()
   }
 
   once(document.documentElement, "touchstart", function (e) {
