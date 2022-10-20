@@ -73,8 +73,7 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
   if(id === 'promo-vid-mobile'){
     console.log('match promo vid mobile')
     video.autoplay = true;
-//     video.load();
-//         video.play();
+        video.play();
 // vid.play()
   }
 
