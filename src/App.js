@@ -272,7 +272,7 @@ function App() {
     
     initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "bottom+=100% bottom")
     initPromoVideo()
-    initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1000')
+    initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1500')
     initHeroGsap()
     initVideoScrollGsap('nft-video', '.video-nft-section', "bottom+=100% bottom")
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', "bottom+=100% bottom")
@@ -316,7 +316,7 @@ function App() {
     })
     initVideoScrollGsap('video-1', '.features', 'bottom bottom')
     initVideoScrollGsap('video-1-mobile', '.features-mobile', 'bottom bottom')
-    initMotoGPGsap('.motoGp-section', 'top top', '+=500')
+    initMotoGPGsap('.motoGp-section', 'top top', '+=3000')
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
