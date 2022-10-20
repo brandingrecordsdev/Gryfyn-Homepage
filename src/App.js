@@ -75,6 +75,7 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
   });
 
   video.play();
+  video.play();
   /* ---------------------------------- */
   /* Scroll Control! */
   let vidTL = gsap.timeline({
