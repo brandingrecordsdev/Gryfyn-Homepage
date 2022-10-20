@@ -38,7 +38,7 @@ export default function initGSAPVideo(gsap, settings){
     
     once(video, "loadedmetadata", () => {
         tl.fromTo(
-            video, {currentTime: 1}, {currentTime: video.duration || 1}
+            video, {currentTime: 0}, {currentTime: video.duration || 1}
         );
     });
     
