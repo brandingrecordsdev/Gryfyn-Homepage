@@ -425,30 +425,30 @@ function App() {
         <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[200vh] h-full video-nft-mobile-section '>
           <video src={NFTvidMobile} id="nft-mobile-video" className="z-index nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted='muted'></video>        
           <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full mobile-below:text-[3vw]'>
-            <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[6vw]'>
+            <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[6vw] mobile-nft-header'>
               All your favorite NFTs in one secure location.          
             </h2>
-            <p className='max-w-3xl font-body mobile-below:text-[3vw] mobile-below:px-2'>
+            <p className='max-w-3xl font-body mobile-below:text-[3vw] mobile-below:px-2 nft-text'>
               As an intuitive, integrated and open solution, Gryfyn is the key to connect the curious minds 
               to navigate across the virtual realms. You are promised with absolute freedom in where you are going, 
               and have total control in who you are becoming.        
             </p>
-            <p className='font-body mobile-below:text-[3vw] mobile-below:px-2'>
+            <p className='font-body mobile-below:text-[3vw] mobile-below:px-2 nft-text'>
               The world is within your reach. Open the door, 
               and let the experiences come to you.             
             </p>
             <div className='flex items-start justify-center w-full px-20 gap-28 tablet-below:flex-col tablet-below:items-center mobile-below:px-2 mobile-below:gap-10'>
               <div className='flex flex-col items-center gap-7'>
                 <SVG name='star' classes='w-40 star'/>
-                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Create</h2>
-                <p className='font-body max-w-[13rem]'>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Create</h2>
+                <p className='font-body max-w-[13rem] mobile-icon-text'>
                   The world of the future, and witness the boundless possibilities of your mind.
                 </p>
               </div>
               <div className='flex flex-col items-center gap-7'>
                 <SVG name='sun' classes='w-40 sun' fill_1='#FFCC31' fill_2='#F16B37'/>
-                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Play</h2>
-                <p className='flex flex-col items-center font-body'>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Play</h2>
+                <p className='flex flex-col items-center font-body mobile-icon-text'>
                   <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
                   <span>Bring utility to its full potential.</span>
                 </p>
@@ -458,8 +458,8 @@ function App() {
                   <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
                   <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
                 </div>
-                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Socialise</h2>
-                <p className='font-body max-w-[19rem]'>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Socialise</h2>
+                <p className='font-body max-w-[19rem] mobile-icon-text'>
                   Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
                 </p>
               </div>
@@ -468,8 +468,8 @@ function App() {
                   <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
                   <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
                 </div>
-                <h2 className='text-4xl font-title mobile-below:text-[6vw]'>Explore</h2>
-                <p className='font-body max-w-[16rem]'>
+                <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Explore</h2>
+                <p className='font-body max-w-[16rem] mobile-icon-text'>
                   Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
                 </p>
               </div>  
@@ -512,17 +512,19 @@ function App() {
               <video className='w-full' id={'video-2-mobile'} src={DiamondVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='flex flex-col items-center w-full font-body'>
-              <div className={`w-full mobile-below:text-[3vw] transition-opacity duration-300 opacity-0`} id='diamond-desc-mobile'>
-                <h2 className='mb-8 text-4xl text-black font-title mobile-below:text-[6.2vw]'>Manage <br/>your portfolio</h2>
-                <p>
-                With access to the Polygon and Ethereum blockchains,<br/>
-                Gryfyn is the perfect platform to manage and view your <br/>
-                portfolio of NFTs in one place, as well as your coin balances. <br/><br/>
-                Gryfyn removes the barriers between NFTs and utility.<br/> <br/>           
+              <div className={`w-full mobile-below:text-[3vw] transition-opacity duration-300 opacity-0 mobile-feature-wrapper`} id='diamond-desc-mobile'>
+              <h2 className='mb-8 text-4xl text-black font-title features-header'>Manage <br />your portfolio</h2>
+                <p className="features-desc">
+                With access to the Polygon and Ethereum blockchains,
+                Gryfyn is the perfect platform to manage and view your
+                portfolio of NFTs in one place, as well as your coin balances.
+                <br></br>
+                <br></br>
+                Gryfyn removes the barriers between NFTs and utility.         
                 </p>     
-                <div className='flex flex-col items-center'>
-                  <span className='text-black'>Supported Netwroks</span>
-                  <div className='flex gap-4'>
+                <div className='flex flex-col'>
+                  <span className='text-black supported-head'>Supported Networks</span>
+                  <div className='flex justify-center gap-4'>
                     <img alt="" src={EthereumLogo} className='object-contain w-32 mobile-below:w-[26.2vw]'/>
                     <img alt="" src={PolygonLogo} className='object-contain w-32 mobile-below:w-[26.2vw]'/>
 
@@ -553,11 +555,11 @@ function App() {
           <div className='flex justify-center'>
             <video className='object-cover w-full' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div> 
-          <div id='sun-desc-mobile' className='flex flex-col items-center p-6 mobile-below:text-[3vw] transition-opacity duration-300 opacity-0'>
-              <h2 className='mb-12 text-4xl text-black font-title features-desc tablet-below-new:text-3xl mobile-below:text-[6.2vw]'>
+          <div id='sun-desc-mobile' className='flex flex-col items-center p-6 mobile-below:text-[3vw] transition-opacity duration-300 opacity-0 mobile-feature-wrapper'>
+              <h2 className='mobile-feature-header mb-12 text-4xl text-black font-title tablet-below-new:text-3xl mobile-below:text-[6.2vw]'>
                 Seamless <br/> access to your <br/> gaming experience              
               </h2>
-              <p className='font-body'>
+              <p className='font-body mobile-feature-desc'>
                 Execute in game transactions and NFT use directly in-game, without having to switch out of the platform.
                 Verify your identity to unlock the full potential of Gryfyn, accessing, transferring and using your assets.
                 With a fully integrated wallet, experience an unseen level of immersion.              
@@ -570,7 +572,7 @@ function App() {
             <div className='flex justify-start w-full'>
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex justify-end w-full top-[-40vw] desktop-2-above-new:top-[-40rem] eye-wrapper'>
+            <div className='relative flex justify-end w-full top-[-40vw] desktop-2-above-new:top-[-40rem] eye-wrapper '>
               <div id='eye-desc' className=''>
                 <h2 className='mb-12 text-4xl font-title features-header'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
                 <p className='font-body features-desc'>
@@ -596,18 +598,18 @@ function App() {
               <video className='w-full' id={'video-4-mobile'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='flex justify-center w-full font-body relative top-[-26vw]'>
-              <div id='eye-desc-mobile' className='mobile-below:text-[3vw] transition-opacity duration-300 opacity-0'>
-                <h2 className='mb-12 text-4xl font-title mobile-below:text-[6.2vw]'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
-                <p>
-                  Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
+              <div id='eye-desc-mobile' className='mobile-below:text-[3vw] transition-opacity duration-300 opacity-0  mobile-feature-wrapper'>
+                <h2 className='mobile-feature-header mb-12 text-4xl font-title mobile-below:text-[6.2vw]'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
+                <p className="mobile-feature-desc">
+                Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
                   With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
-                  xperience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
+                  Experience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.               
                 </p><br/>
                 <div className='flex flex-col items-center gap-2'>
-                  <span className='text-black'>Powered By</span>
+                  <span className='text-black pb-4'>Powered By</span>
                   <div className='flex justify-center gap-4'>
-                    <img alt="" src={AnimocaLogo} className='object-contain w-[20vw]'/>
-                    <img alt="" src={HexLogo} className='object-contain w-[26vw]'/>
+                    <img alt="" src={AnimocaLogo} className='object-contain w-[20vw] animoca-logo-mobile'/>
+                    <img alt="" src={HexLogo} className='object-contain w-[26vw] hex-logo-mobile'/>
                   </div>
                 </div>  
               </div>          

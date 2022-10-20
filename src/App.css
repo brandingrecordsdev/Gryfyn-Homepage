@@ -500,6 +500,7 @@ line-height: 45px;
 }
 
 
+
 .motoGp-desc {
   padding: 100px 50px;
   padding-top: 50px;
@@ -519,6 +520,11 @@ line-height: 45px;
   min-width: 115vw;
   top: 0;
   transform: rotate(-10deg);
+}
+
+
+.mobile-feature-wrapper {
+  padding: 0 50px;
 }
 
 .motoGpBanner-wrapper{
@@ -763,6 +769,11 @@ line-height: 89px;
   max-width: 250px !important;
 }
 
+/* .mobile-feature-desc {
+    margin-bottom
+} */
+
+
 /* .vector-mw{
   max-width: 1024px;
 } */
@@ -806,6 +817,19 @@ line-height: 89px;
   .promo-hero-section {
     height: 150vh;
   }
+
+  .icons-section {
+    padding: 50px 50px;
+}
+.video-nft-section {
+  padding: 50px 0;
+}
+
+
+.game-wrapper {
+  column-gap: 30px;
+  margin-bottom: 50px;
+}
 
   .eye-wrapper {
     max-width: 1000px;
@@ -918,13 +942,15 @@ line-height: 89px;
     max-width: 37px;
   }
 
+  .mobile-feature-desc,
+  .mobile-icon-text,
   .features-desc,
   .nft-text,
   .raffles-wrapper p,
   .motoGp-desc p,
   .promo-desc,
   .hero-subhead {
-    font-size: 18px;
+    font-size: 16px !important;
     line-height: 30px;
   }
 
@@ -952,6 +978,35 @@ line-height: 89px;
 }
 
 @media only screen and (max-width: 1100px) {
+
+  .gallery-section {
+    padding: 0 50px;
+  }
+
+.video-nft-mobile-section {
+  padding: 0 50px;
+}
+
+.mobile-feature-header,
+.mobile-nft-header {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+
+
+
+
+
+  .animoca-logo-mobile {
+    max-width: 100px;
+  }
+
+  .hex-logo-mobile {
+    max-width: 180px;
+  }
+  
+
 
   .motoGp-star {
     max-width: 800px !important;
@@ -1000,6 +1055,7 @@ line-height: 89px;
 }
 
 
+
 }
 
 @media only screen and (max-width: 860px) {
@@ -1011,6 +1067,14 @@ line-height: 89px;
   .site-footer {
     padding: 50px;
   }
+
+  .game-logo {
+    max-width: 100px;
+}
+
+.game-wrapper {
+  column-gap: 15px;
+}
 
 
   .logo {
@@ -1113,7 +1177,7 @@ line-height: 89px;
 
 @media only screen and (max-width: 700px) {
 
-
+  
   .bottom-header {
     font-size: 32px;
     line-height: 50px;
@@ -1141,6 +1205,17 @@ line-height: 89px;
 }
 
 @media only screen and (max-width: 590px) {
+
+  .game-logo {
+    max-width: 90px;
+}
+
+
+
+.game-wrapper {
+  column-gap: 12px;
+}
+
 
   .raffles-wrapper h1 {
       font-size: 30px;
@@ -1213,6 +1288,7 @@ line-height: 89px;
   .main-nav-wrapper {
     padding: 23px 20px !important;
 }
+
 
   .branded-i img {
     min-width: 23px !important;
@@ -1361,14 +1437,18 @@ branded-u img {
   .hero-logo-wrapper img {
     max-width: 80px;
   }
+  
 
+
+  .mobile-feature-desc,
+.mobile-icon-text,
   .features-desc,
   .nft-text,
   .raffles-wrapper p,
   .motoGp-desc p,
   .promo-desc,
   .hero-subhead {
-    font-size: 14px;
+    font-size: 14px !important;
     line-height: 24px;
   }
 
