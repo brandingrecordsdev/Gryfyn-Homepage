@@ -13,6 +13,7 @@ import Hero from './components/Hero';
 import SVG from './components/SVG'
 import Carousel from './components/Carousel'
 import VideoScroll from './components/VideoScroll'
+import LoadingScreen from './components/LoadingScreen'
 import PromoVidMobile from './videos/kvmobile.mp4';
 
 import NFTvidMobile from './videos/nftmobile.mp4';
@@ -275,57 +276,39 @@ function App() {
     initGSAPVideo(gsap, {
       vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=150% bottom', scrub: 2,
       onLeave: () => {
-        document.getElementById('diamond-desc').classList.toggle('opacity-0')
+        document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
-      onLeaveBack: () => {
-        document.getElementById('diamond-desc').classList.toggle('opacity-0')
-      }
     })
     initGSAPVideo(gsap, {
       vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 2,
       onLeave: () => {
-        document.getElementById('diamond-desc-mobile').classList.toggle('opacity-0')
-      }, 
-      onLeaveBack: () => {
-        document.getElementById('diamond-desc-mobile').classList.toggle('opacity-0')
-      }      
+        document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
+      },   
     })
 
     initGSAPVideo(gsap, {
       vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
       onLeave: () => {
-        document.getElementById('sun-desc').classList.toggle('opacity-0')
-      }, 
-      onLeaveBack: () => {
-        document.getElementById('sun-desc').classList.toggle('opacity-0')
-      }      
+        document.getElementById('sun-desc').classList.remove('opacity-0')
+      },      
     })
     initGSAPVideo(gsap, {
       vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
       onLeave: () => {
-        document.getElementById('sun-desc-mobile').classList.toggle('opacity-0')
-      }, 
-      onLeaveBack: () => {
-        document.getElementById('sun-desc-mobile').classList.toggle('opacity-0')
-      }         
+        document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
+      },        
     })
     initGSAPVideo(gsap, {
       vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
       onLeave: () => {
-        document.getElementById('eye-desc').classList.toggle('opacity-0')
-      }, 
-      onLeaveBack: () => {
-        document.getElementById('eye-desc').classList.toggle('opacity-0')
-      }       
+        document.getElementById('eye-desc').classList.remove('opacity-0')
+      },       
     })
     initGSAPVideo(gsap, {
       vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 3,
       onLeave: () => {
-        document.getElementById('eye-desc-mobile').classList.toggle('opacity-0')
-      }, 
-      onLeaveBack: () => {
-        document.getElementById('eye-desc-mobile').classList.toggle('opacity-0')
-      }      
+        document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
+      },    
     })
     initVideoScrollGsap('video-1', '.features')
     initVideoScrollGsap('video-1-mobile', '.features-mobile')
@@ -344,7 +327,8 @@ function App() {
       <meta id="meta-description" name="description" content="An NFT wallet by Animoca Brands & Hex Trust - Find new ways to connect and interact through NFT's across a variety of Web3 experiences. Store your NFT's in one secure non custodian digital wallet." />
     </Helmet>
     <div className="overflow-x-hidden App">
-        <Nav />
+      <LoadingScreen/>
+      <Nav />
       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
       <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
       <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile}webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
