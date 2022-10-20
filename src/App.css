@@ -398,6 +398,11 @@ min-width: 1200px;
   /* overflow: hidden; */
 }
 
+.motoGpBanner-wrapper {
+  height: 100%;
+  min-height: 500px;
+}
+
 .gallery-header,
 .motoGp-header {
   font-family: 'Neue Metana';
