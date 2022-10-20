@@ -264,6 +264,11 @@ function App() {
 
     };
 
+
+    $(document).ready(function(){
+      initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=50% bottom', scrub: 2})
+    })
+
     window.addEventListener('scroll', handleScroll);
     
     initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=50% bottom', scrub: 2})
