@@ -182,7 +182,7 @@ const initPromoVideo = () => {
       trigger: '.promo-hero-section',
       pin: true,
       start: "top top",
-      end: "+=1000",
+      end: "+=500",
       scrub: 2,
       toggleActions: "play reset none reset"
     }
@@ -274,13 +274,13 @@ function App() {
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section')
     initServiceSectionGsap()
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=250% bottom', scrub: 2,
+      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=250', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=250% bottom', scrub: 2,
+      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=250', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
       },   
