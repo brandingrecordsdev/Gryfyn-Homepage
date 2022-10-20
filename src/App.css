@@ -394,13 +394,13 @@ min-width: 1200px;
 } */
 
 .motoGp-section {
-  height: 130vh;
+  height: auto;
   /* overflow: hidden; */
 }
 
 .motoGpBanner-wrapper {
   height: 100%;
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .gallery-header,
