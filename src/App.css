@@ -152,9 +152,32 @@ nav {
 line-height: 115px;
 }
 
+.features-desc,
 .nft-desc {
   font-size: 25px;
   line-height: 35px;
+}
+
+.supported-head {
+  font-family: 'Neue Metana';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 22px;
+margin-bottom: 30px;
+}
+
+.brand-logo {
+  width: 100%;
+  max-width: 180px;
+}
+
+.support-networks-wrapper {
+  column-gap: 50px;
+}
+
+.features-desc {
+  margin-bottom: 80px;
 }
 
 .nft-text {
@@ -666,11 +689,6 @@ text-align: center;
 line-height: 70px;
 }
 
-.features-desc {
-  font-size: 15px;
-line-height: 25px;
-}
-
 .svg-mw{
   max-width: 150px;
 }
@@ -689,6 +707,22 @@ line-height: 25px;
   max-width: 256px;
 }
 
+.features-header {
+  font-size: 65px;
+line-height: 89px;
+}
+
+.diamond-wrapper {
+  max-width: 1400px;
+}
+
+.sun-desc {
+  max-width: 725px;
+}
+
+.video-4-section {
+  height: 150vh !important;
+}
 
 /* .vector-mw{
   max-width: 1024px;
