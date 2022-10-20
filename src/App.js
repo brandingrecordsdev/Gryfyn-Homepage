@@ -69,14 +69,17 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
     el.addEventListener(event, onceFn, opts);
     return onceFn;
   }
+
+  if(id === 'promo-vid-mobile'){
+    console.log('match promo vid mobile')
+    video.play();
+  }
+  
   once(document.documentElement, "touchstart", function (e) {
     video.play();
     video.pause();
   });
 
-  if(id === 'promo-vid-mobile'){
-  video.play();
-  }
   /* ---------------------------------- */
   /* Scroll Control! */
   let vidTL = gsap.timeline({
