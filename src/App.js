@@ -74,7 +74,9 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
     video.pause();
   });
 
+  if(id === 'promo-vid-mobile'){
   video.play();
+  }
   /* ---------------------------------- */
   /* Scroll Control! */
   let vidTL = gsap.timeline({
