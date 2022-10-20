@@ -428,7 +428,7 @@ function App() {
           </section>
         <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[200vh] h-full video-nft-mobile-section '>
           <video src={NFTvidMobile} id="nft-mobile-video" className="z-index nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted='muted'></video>        
-          <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full mobile-below:text-[3vw]'>
+          <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full mobile-below:text-[3vw] nft-mobile-content'>
             <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[6vw] mobile-nft-header'>
               All your favorite NFTs in one secure location.          
             </h2>

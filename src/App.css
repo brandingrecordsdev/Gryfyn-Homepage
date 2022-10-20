@@ -980,11 +980,15 @@ line-height: 89px;
 
 @media only screen and (max-width: 1100px) {
 
-  .gallery-section {
+  /* .gallery-section {
     padding: 0 50px;
-  }
+  } */
 
-.video-nft-mobile-section {
+/* .video-nft-mobile-section {
+  padding: 0 50px;
+} */
+
+.nft-mobile-content {
   padding: 0 50px;
 }
 
@@ -1172,6 +1176,16 @@ line-height: 89px;
   .hero-logo-wrapper img {
     max-width: 130px;
   }
+
+  .mobile-feature-desc, .mobile-icon-text, .features-desc, .nft-text, .raffles-wrapper p, .motoGp-desc p, .promo-desc, .hero-subhead {
+    font-size: 14px !important;
+    line-height: 30px;
+}
+
+.nft-video {
+  width: 100vw;
+    height: 100%;
+}
 
 
 }
