@@ -1068,10 +1068,6 @@ line-height: 89px;
 
 @media only screen and (max-width: 860px) {
 
-  .video-4-section-mobile {
-    padding: 50px;
-  }
-
   .game-wrapper,
   .gallery-header {
     padding: 0 50px;
@@ -1264,9 +1260,6 @@ line-height: 89px;
     line-height: 44px;
   }
 
-  .video-4-section-mobile {
-    padding: 20px !important;
-  }
 
 
   .game-logo {
@@ -1399,6 +1392,11 @@ line-height: 89px;
 }
 
 
+.game-logo {
+  max-width: 60px;
+}
+
+
 .social-icon img {
   max-width: 20px;
 }
@@ -1518,7 +1516,7 @@ branded-u img {
   .motoGp-desc p,
   .promo-desc,
   .hero-subhead {
-    font-size: 14px !important;
+    font-size: 13px !important;
     line-height: 24px;
   }
 
