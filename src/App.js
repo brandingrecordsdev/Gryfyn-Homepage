@@ -374,14 +374,13 @@ function App() {
             <h2 className=' text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw] nft-header'>
               All your favorite NFTs in one secure location.          
             </h2>
-            <p className='max-w-3xl font-body nft-text'>
-              As an intuitive, integrated and open solution, Gryfyn is the key to connect the curious minds 
-              to navigate across the virtual realms. You are promised with absolute freedom in where you are going, 
-              and have total control in who you are becoming.        
+            <p className='font-body nft-text'>
+            An intuitive, fully integrated and original solution to your Web3.0 experience.  <br></br>
+          Gryfyn is the key to connecting curious minds to limitless virtual possibilities. <br></br>
+          Experience the absolute freedom to spread your wings and  make your wildest dreams a reality.  
             </p>
             <p className="nft-text">
-              The world is within your reach. Open the door, 
-              and let the experiences come to you.             
+            A new world is at your fingertips. Open the door and seize the opportunity.          
             </p>
           </section>
         </section>
