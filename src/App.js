@@ -26,7 +26,7 @@ import EyeVideo from './videos/eye.mp4';
 import EyeVideoMobile from './videos/gryfyn_eye_mobile.mp4';
 import PromoVid from './videos/promoVideo.mp4';
 import DiamondVideo from './videos/diamond.mp4';
-import DiamondVideoMobile from './videos/gryfyn_diamond_mobile.mp4';
+import DiamondVideoMobile from './videos/diamondmobile.mp4';
 import PhantomLogo from "./images/phantom_logo.png";
 import DustLandLogo from "./images/dustland_logo.png";
 import RevvRacingLogo from "./images/revv_racing_logo.png";
@@ -50,7 +50,7 @@ import MotoGPSticker from './images/MotoGPSticker.png';
 import MotoGPTitle1 from './images/MotoGPTitle1.png';
 import MotoGPTitle2 from './images/MotoGPTitle2.png';
 import MotoGPGraphic from './images/MotoGPBanner.png';
-import { useEffect } from 'react';
+import { useEffect, Script } from 'react';
 import initGSAPVideo from './components/initGSAPVideo'
 import $ from 'jquery';
 
@@ -80,7 +80,7 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       trigger: pinnedSection,
       pin: true,
       start: "top top",
-      end: "+=1000",
+      end: "+=1500",
       scrub: 3,
       toggleActions: "play reset none reset"
     }
@@ -255,7 +255,7 @@ function App() {
 
   
     const handleScroll = event => {
-      if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') || isColliding('nav', '.motoGp-promo-section')  || isColliding('nav', '.icons-section') ) {
+      if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
       $('.main-nav').css('background-color', 'black')
   } else {
     $('.main-nav').css('background-color', 'transparent')
@@ -274,38 +274,38 @@ function App() {
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section')
     initServiceSectionGsap()
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom+=150% bottom', scrub: 2,
+      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=250% bottom', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 2,
+      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=250% bottom', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
       },   
     })
 
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: '+=250% bottom', scrub: 3,
       onLeave: () => {
         document.getElementById('sun-desc').classList.remove('opacity-0')
       },      
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom+=250% bottom', scrub: 3,
       onLeave: () => {
         document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
       },        
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: '+=250% bottom', scrub: 3,
       onLeave: () => {
         document.getElementById('eye-desc').classList.remove('opacity-0')
       },       
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: 'bottom+=150% bottom', scrub: 3,
+      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=250% bottom', scrub: 3,
       onLeave: () => {
         document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
       },    
@@ -322,6 +322,15 @@ function App() {
 
   return (
     <>
+    {/* <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=G-D5110NJXS5`}/>
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D5110NJXS5')
+      `}
+    </Script>  */}
     <Helmet>
       <title>Gryfyn | Your key to the (un)known</title>
       <meta id="meta-description" name="description" content="An NFT wallet by Animoca Brands & Hex Trust - Find new ways to connect and interact through NFT's across a variety of Web3 experiences. Store your NFT's in one secure non custodian digital wallet." />
@@ -378,7 +387,7 @@ function App() {
           <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex items-start justify-center w-full px-24 tablet-below:flex-col tablet-below:items-center icons-section'>
             <div className="icons-wrapper flex items-start justify-between">
               <div className='flex flex-col items-center icon-col'>
-                <SVG name='star' classes='svg-mw start'/>
+                <SVG name='star' classes='svg-mw star'/>
                 <h2 className='font-title icon-header'>Create</h2>
                 <p className='font-body max-w-[13rem] text-center'>
                   The world of the future, and witness the boundless possibilities of your mind.
@@ -388,8 +397,8 @@ function App() {
                 <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
                 <h2 className='font-title icon-header'>Play</h2>
                 <p className='flex flex-col items-center font-body text-center'>
-                Any roles of your desire,
-                fulfill your fantasies and bring utility to its full potential.
+                Any roles of your desire, fulfill your fantasies.
+                Bring utility to its full potential.
                 </p>
               </div>
               <div className='flex flex-col items-center icon-col'>
@@ -474,7 +483,7 @@ function App() {
             <div className='flex justify-start w-full items-end'>
               <video className='w-full' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex flex-col items-end w-full font-body top-[-44vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
+            <div className='relative flex flex-col items-end w-full font-body top-[-48vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
               <div className={`w-[44rem]`}>
                 <h2 className='mb-8 text-4xl text-black font-title features-header'>Manage <br />your portfolio</h2>
                 <p className="features-desc">
@@ -612,7 +621,7 @@ function App() {
         <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gallery-section'>
-        <div className='flex flex-col items-center gallery-wrapper'>
+        <div className='flex flex-col items-center'>
         <h2 className='text-4xl max-w-[30rem] gallery-header'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
         <div className="flex flex-row items-center game-wrapper">
             <img alt="" src={PhantomLogo} className='object-cover game-logo' />

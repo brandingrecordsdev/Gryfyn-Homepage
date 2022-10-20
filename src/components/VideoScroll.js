@@ -1,8 +1,7 @@
-import { useRef, useEffect } from "react";
+import { useRef} from "react";
 
 const VideoScroll = ({ vid, pin, id }) => {
   let video = vid;
-  let pinnedSection = pin;
   const videoRef = useRef(null);
   return(
   <>
