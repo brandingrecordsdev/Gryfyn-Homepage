@@ -494,6 +494,7 @@ line-height: 45px;
   padding: 0 100px;
 }
 
+
 .nft-header-section {
   max-width: 1280px;
 }
@@ -739,6 +740,7 @@ line-height: 89px;
 
 .diamond-wrapper {
   max-width: 1400px;
+  padding-top: 100px;
 }
 
 .sun-desc {
@@ -750,7 +752,7 @@ line-height: 89px;
 }
 
 .video-4-section {
-  height: 100vh !important;
+  height: 170vh !important;
 }
 
 .animoca-logo {
@@ -773,6 +775,28 @@ line-height: 89px;
     right: 30vh;
   }
 
+  .diamond-wrapper {
+    max-width: 1200px;
+    padding-top: 50px;
+}
+
+.eye-wrapper {
+  max-width: 1200px;
+}
+
+
+}
+
+@media only screen and (max-width: 1280px) {
+ 
+  .diamond-wrapper {
+    padding-right: 100px;
+    padding-top: 150px;
+  }
+
+  .eye-wrapper {
+    padding-right: 100px;
+}
 
 }
 
@@ -782,6 +806,63 @@ line-height: 89px;
   .promo-hero-section {
     height: 150vh;
   }
+
+  .eye-wrapper {
+    max-width: 1000px;
+}
+
+.square-1,
+.square-2 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.eyes {
+  width: 6rem;
+}
+
+.squares-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.negative-marg {
+  margin-top: 5px;
+}
+
+.icon-col {
+  max-width: 200px;
+  min-width: 120px;
+}
+
+.svg-mw {
+  max-width: 100px;
+}
+
+.game-logo {
+  width: 100%;
+  max-width: 150px;
+}
+
+.icon-col p {
+  font-size: 14px;
+}
+
+.icon-header {
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.gallery-header {
+  max-width: 800px;
+}
+
+  .diamond-wrapper {
+    max-width: 1100px;
+    padding-top: 150px;
+    padding-right: 50px;
+}
 
   .motoGPSticker {
     position: absolute;
@@ -802,6 +883,8 @@ line-height: 89px;
     font-size: 40px;
   }
 
+  .features-header,
+  .nft-header,
   .gallery-header,
   .bottom-header,
   .motoGp-header,
@@ -835,6 +918,8 @@ line-height: 89px;
     max-width: 37px;
   }
 
+  .features-desc,
+  .nft-text,
   .raffles-wrapper p,
   .motoGp-desc p,
   .promo-desc,
@@ -877,7 +962,7 @@ line-height: 89px;
   }
 
   .stickerMobile {
-    top: 20vh;
+    top: 30vh;
     right: 10vh;
   }
 
@@ -956,6 +1041,8 @@ line-height: 89px;
     max-width: 500px;
   }
 
+  .features-header,
+  .nft-header,
   .gallery-header,
   .bottom-header,
   .motoGp-header,
@@ -1106,6 +1193,8 @@ line-height: 89px;
     max-width: 450px;
   }
 
+  .features-header,
+  .nft-header,
   .gallery-header,
   .motoGp-header,
   .hero-header {
@@ -1269,6 +1358,8 @@ branded-u img {
     max-width: 80px;
   }
 
+  .features-desc,
+  .nft-text,
   .raffles-wrapper p,
   .motoGp-desc p,
   .promo-desc,

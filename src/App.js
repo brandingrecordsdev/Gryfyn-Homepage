@@ -400,8 +400,8 @@ function App() {
                 Any roles of your desire, fulfill your fantasies and bring utility to its full potential.
                 </p>
               </div>
-              <div className='flex flex-col items-center icon-col'>
-                <div className='flex justify-center gap-2 py-12'>
+              <div className='flex flex-col items-center icon-col social-col'>
+                <div className='flex justify-center gap-2 py-12 squares-container'>
                   <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
                   <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
                 </div>
@@ -412,8 +412,8 @@ function App() {
               </div>
               <div className='flex flex-col items-center icon-col'>
                 <div className='relative'>
-                  <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
-                  <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
+                  <SVG name='eye' classes='w-40 eyes' fill_1='#FFFFFF'/>
+                  <SVG name='eye' classes='w-40 absolute top-0 eye-lid eyes' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
                 </div>
                 <h2 className='font-title icon-header negative-marg'>Explore</h2>
                 <p className='font-body max-w-[16rem] text-center'>
@@ -570,7 +570,7 @@ function App() {
             <div className='flex justify-start w-full'>
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex justify-end w-full top-[-38vw] desktop-2-above-new:top-[-40rem] eye-wrapper'>
+            <div className='relative flex justify-end w-full top-[-40vw] desktop-2-above-new:top-[-40rem] eye-wrapper'>
               <div id='eye-desc' className=''>
                 <h2 className='mb-12 text-4xl font-title features-header'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
                 <p className='font-body features-desc'>
