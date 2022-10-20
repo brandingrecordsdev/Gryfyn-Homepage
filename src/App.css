@@ -137,7 +137,7 @@ nav {
   align-items: center;
   justify-content: center;
   height: auto;
-  min-height: 1100px;
+  min-height: 100vh;
   overflow: hidden;
   isolation: isolate;
 }
@@ -721,6 +721,7 @@ line-height: 70px;
 .promo-vid-mobile {
   width: 100vw;
   z-index: -1;
+  height: 100%;
 }
 
 .icon-col {
