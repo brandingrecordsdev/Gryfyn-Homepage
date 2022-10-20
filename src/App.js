@@ -405,8 +405,8 @@ function App() {
                 <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
                 <h2 className='font-title icon-header'>Play</h2>
                 <p className='flex flex-col items-center font-body text-center'>
-                Any roles of your desire, fulfill your fantasies.
-                Bring utility to its full potential.
+                Any roles of your desire,
+                fulfill your fantasies and bring utility to its full potential.
                 </p>
               </div>
               <div className='flex flex-col items-center icon-col'>
