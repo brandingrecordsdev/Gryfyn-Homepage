@@ -566,7 +566,7 @@ function App() {
             </div>
         </section> 
 
-        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-screen py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section h-screen h-full'>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-[160vw] py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section h-screen h-full'>
           <div className='flex flex-col w-full max-w-[1500px]'>
             <div className='flex justify-start w-full'>
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
