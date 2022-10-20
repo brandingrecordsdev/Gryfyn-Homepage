@@ -1225,6 +1225,12 @@ line-height: 89px;
     max-width: 90px;
 }
 
+.nft-mobile-content,
+.mobile-feature-wrapper {
+  padding: 0 20px;
+}
+
+
 
 
 .game-wrapper {
