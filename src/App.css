@@ -957,6 +957,10 @@ line-height: 89px;
     max-width: 800px !important;
   }
 
+  .icon-col p {
+    max-width: 150px;
+  }
+
   .motoGp-section {
     height: 90vh;
   }

@@ -21,7 +21,7 @@ import NFTvid from './videos/NFTv1.mp4'
 import vidGallery from './videos/game.mp4';
 import vidGalleryMobile from './videos/gryfyn_gallery_mobile.mp4';
 import SunVideo from './videos/sun.mp4';
-import SunVideoMobile from './videos/gryfyn_sun_mobile.mp4';
+import SunVideoMobile from './videos/sunmobilev2.mp4';
 import EyeVideo from './videos/eye.mp4';
 import EyeVideoMobile from './videos/gryfyn_eye_mobile.mp4';
 import PromoVid from './videos/promoVideo.mp4';
