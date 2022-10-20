@@ -841,15 +841,15 @@ line-height: 89px;
     max-width: 1000px;
 }
 
-.square-1,
+/* .square-1,
 .square-2 {
   height: 2rem;
   width: 2rem;
-}
+} */
 
-.eyes {
+/* .eyes {
   width: 6rem;
-}
+} */
 
 .squares-container {
   padding-top: 2rem;
@@ -865,9 +865,9 @@ line-height: 89px;
   min-width: 120px;
 }
 
-.svg-mw {
+/* .svg-mw {
   max-width: 100px;
-}
+} */
 
 .game-logo {
   width: 100%;
