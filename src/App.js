@@ -321,7 +321,7 @@ function App() {
     })
     initVideoScrollGsap('video-1', '.features', 'bottom bottom')
     initVideoScrollGsap('video-1-mobile', '.features-mobile', 'bottom bottom')
-    initMotoGPGsap('.motoGp-section', 'top top', '+=2000')
+    initMotoGPGsap('.motoGp-section', 'top top', '+=1500')
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
