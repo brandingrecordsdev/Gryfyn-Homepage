@@ -29,10 +29,10 @@ export default function initGSAPVideo(gsap, settings){
             start: settings.start ? settings.start : 'top top',
             end: settings.end ? settings.end : 'bottom bottom',
             scrub: settings.scrub ? settings.scrub : true,
-            anticipatePin: 1,
+            // anticipatePin: 1,
             onLeave: settings.onLeave ? settings.onLeave : () => {},
             onLeaveBack: settings.onLeaveBack ? settings.onLeaveBack : () => {},
-            toggleActions: "play reset none reset"
+            toggleActions: "play reset none reset",
         }
     });
     
