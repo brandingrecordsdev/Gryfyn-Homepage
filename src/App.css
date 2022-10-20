@@ -304,7 +304,6 @@ margin-bottom: 30px;
   background-color: black;
 } */
 
-
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
     -webkit-transform: rotate(0deg);
@@ -689,6 +688,7 @@ text-align: center;
 
 .hero-container {
   padding: 100px;
+  padding-top: 200px;
 }
 
 .nft-content-section {
@@ -1192,7 +1192,7 @@ branded-u img {
 }
 
 .motoGp-section {
-  height: 65vh;
+  height: 70vh;
 }
 
 .gallery-header,
