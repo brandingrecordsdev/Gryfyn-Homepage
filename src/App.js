@@ -79,7 +79,7 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
     scrollTrigger: {
       trigger: pinnedSection,
       pin: true,
-      start: "top top",
+      start: "top",
       end: end,
       scrub: 3,
       toggleActions: "play reset none reset"
