@@ -377,57 +377,59 @@ function App() {
       <div className='bg-[#E3DDD4]'>
         <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[100vh] h-full video-nft-section'>
           <video src={NFTvid} id="nft-video" className="nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>        
-          <section className='flex flex-col items-center gap-10 py-16 text-center bg-[#E3DDD4] text-body w-full'>
-            <h2 className='max-w-xl text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw]'>
+          <section className='flex flex-col items-center gap-10 pb-16 text-center bg-[#E3DDD4] text-body w-full nft-header-section nft-desc'>
+            <h2 className=' text-4xl font-title tablet-below:text-[2rem] mobile-below:text-[5vw] nft-header'>
               All your favorite NFTs in one secure location.          
             </h2>
-            <p className='max-w-3xl font-body'>
+            <p className='max-w-3xl font-body nft-text'>
               As an intuitive, integrated and open solution, Gryfyn is the key to connect the curious minds 
               to navigate across the virtual realms. You are promised with absolute freedom in where you are going, 
               and have total control in who you are becoming.        
             </p>
-            <p>
+            <p className="nft-text">
               The world is within your reach. Open the door, 
               and let the experiences come to you.             
             </p>
           </section>
         </section>
           <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex items-start justify-center w-full px-24 tablet-below:flex-col tablet-below:items-center icons-section'>
-            <div className='flex flex-col items-center px-14'>
-              <SVG name='star' classes='svg-mw star'/>
-              <h2 className='text-4xl font-title'>Create</h2>
-              <p className='font-body max-w-[13rem]'>
-                The world of the future, and witness the boundless possibilities of your mind.
-              </p>
-            </div>
-            <div className='flex flex-col items-center px-14'>
-              <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
-              <h2 className='text-4xl font-title'>Play</h2>
-              <p className='flex flex-col items-center font-body'>
-                <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
-                <span>Bring utility to its full potential.</span>
-              </p>
-            </div>
-            <div className='flex flex-col items-center px-14'>
-              <div className='flex justify-center gap-2 py-12'>
-                <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
-                <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
+            <div className="icons-wrapper flex items-start justify-between">
+              <div className='flex flex-col items-center icon-col'>
+                <SVG name='star' classes='svg-mw start'/>
+                <h2 className='font-title icon-header'>Create</h2>
+                <p className='font-body max-w-[13rem] text-center'>
+                  The world of the future, and witness the boundless possibilities of your mind.
+                </p>
               </div>
-              <h2 className='text-4xl font-title'>Socialise</h2>
-              <p className='font-body max-w-[19rem]'>
-                Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
-              </p>
-            </div>
-            <div className='flex flex-col items-center px-14'>
-              <div className='relative'>
-                <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
-                <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
+              <div className='flex flex-col items-center icon-col'>
+                <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
+                <h2 className='font-title icon-header'>Play</h2>
+                <p className='flex flex-col items-center font-body text-center'>
+                Any roles of your desire, fulfill your fantasies.
+                Bring utility to its full potential.
+                </p>
               </div>
-              <h2 className='text-4xl font-title'>Explore</h2>
-              <p className='font-body max-w-[16rem]'>
-                Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
-              </p>
-            </div>  
+              <div className='flex flex-col items-center icon-col'>
+                <div className='flex justify-center gap-2 py-12'>
+                  <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
+                  <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
+                </div>
+                <h2 className='font-title icon-header'>Socialise</h2>
+                <p className='font-body max-w-[19rem] negative-marg text-center'>
+                  Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
+                </p>
+              </div>
+              <div className='flex flex-col items-center icon-col'>
+                <div className='relative'>
+                  <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
+                  <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
+                </div>
+                <h2 className='font-title icon-header negative-marg'>Explore</h2>
+                <p className='font-body max-w-[16rem] text-center'>
+                  Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
+                </p>
+              </div>  
+            </div>
           </section>
         <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] min-h-[200vh] h-full video-nft-mobile-section '>
           <video src={NFTvidMobile} id="nft-mobile-video" className="z-index nft-video video-background"  webkit-playsinline="true" playsInline={true} preload="auto" muted='muted'></video>        
