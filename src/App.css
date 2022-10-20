@@ -732,6 +732,8 @@ line-height: 70px;
   width: 100vw;
   z-index: -1;
   height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .icon-col {
