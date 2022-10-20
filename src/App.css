@@ -986,6 +986,11 @@ line-height: 89px;
 
 @media only screen and (max-width: 1100px) {
 
+  .motoGpBanner-promo {
+    max-height: 50vh !important;
+    transform: scale(2);
+}
+
   /* .gallery-section {
     padding: 0 50px;
   } */
