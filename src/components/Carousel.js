@@ -12,7 +12,7 @@ const DemoCarousel = () => {
 
     return(
       <>
-                <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true}>
+                <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true}>
                 <div>
                     <img alt="" src={SliderImg1} />
                 </div>

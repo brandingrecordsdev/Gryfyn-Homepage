@@ -724,7 +724,7 @@ line-height: 70px;
 }
 
 .icon-col {
-  max-width: 256px;
+  max-width: 280px;
 }
 
 .features-header {
@@ -755,6 +755,11 @@ line-height: 89px;
 .hex-logo {
   max-width: 250px !important;
 }
+
+.gallery-section {
+  padding-top: 150px !important;
+}
+
 
 /* .vector-mw{
   max-width: 1024px;
@@ -803,10 +808,6 @@ line-height: 89px;
   .hero-header {
     font-size: 54px;
     line-height: 72px;
-  }
-
-  .gallery-section {
-    padding-top: 150px !important;
   }
 
   .branded-i-sm img {

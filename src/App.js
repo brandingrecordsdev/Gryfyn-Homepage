@@ -255,7 +255,7 @@ function App() {
 
   
     const handleScroll = event => {
-      if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
+      if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') || isColliding('nav', '.motoGp-promo-section')  || isColliding('nav', '.icons-section') ) {
       $('.main-nav').css('background-color', 'black')
   } else {
     $('.main-nav').css('background-color', 'transparent')
@@ -389,8 +389,8 @@ function App() {
                 <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
                 <h2 className='font-title icon-header'>Play</h2>
                 <p className='flex flex-col items-center font-body text-center'>
-                Any roles of your desire, fulfill your fantasies.
-                Bring utility to its full potential.
+                Any roles of your desire,
+                fulfill your fantasies and bring utility to its full potential.
                 </p>
               </div>
               <div className='flex flex-col items-center icon-col'>
@@ -475,7 +475,7 @@ function App() {
             <div className='flex justify-start w-full items-end'>
               <video className='w-full' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex flex-col items-end w-full font-body top-[-48vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
+            <div className='relative flex flex-col items-end w-full font-body top-[-44vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
               <div className={`w-[44rem]`}>
                 <h2 className='mb-8 text-4xl text-black font-title features-header'>Manage <br />your portfolio</h2>
                 <p className="features-desc">
@@ -613,7 +613,7 @@ function App() {
         <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
       <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gallery-section'>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center gallery-wrapper'>
         <h2 className='text-4xl max-w-[30rem] gallery-header'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
         <div className="flex flex-row items-center game-wrapper">
             <img alt="" src={PhantomLogo} className='object-cover game-logo' />
