@@ -72,9 +72,9 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
 
   if(id === 'promo-vid-mobile'){
     console.log('match promo vid mobile')
+    video.play();
     video.autoplay = true;
     video.load();
-        video.play();
 //vid.play()
   }
 
@@ -353,7 +353,7 @@ function App() {
       <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
       </section>
       <section className="promo-hero-section">
-      <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="true" muted="muted"></video>
         <img alt="" className="motoGPSticker stickerDesktop" src={MotoGPSticker} />
         <div className="promo-hero-wrapper">
           <img alt="" className="motoGP-title-1" src={MotoGPTitle1} />
