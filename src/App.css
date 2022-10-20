@@ -699,7 +699,7 @@ text-align: center;
 }
 
 #video-1, #video-1-mobile {
-  height: 100%;
+  height: auto;
   width: 100vw;
 }
 
@@ -769,7 +769,7 @@ line-height: 89px;
 }
 
 .animoca-logo {
-  max-width: 160px;
+  max-width: 163px;
 }
 
 .hex-logo {
@@ -1006,15 +1006,12 @@ line-height: 89px;
 
 
 
-
-
-
   .animoca-logo-mobile {
-    max-width: 100px;
+    min-width: 150px;
   }
 
   .hex-logo-mobile {
-    max-width: 180px;
+    min-width: 250px;
   }
   
 
@@ -1238,6 +1235,12 @@ line-height: 89px;
     margin-right: -5px;
   }
 
+  .icon-col-mobile {
+    gap: 0.5rem !important;
+    margin-bottom: 30px;
+
+  }
+
 }
 
 @media only screen and (max-width: 590px) {
@@ -1245,6 +1248,16 @@ line-height: 89px;
   .game-wrapper,
   .gallery-header {
     padding: 0 20px;
+  }
+
+  .features-header,
+  .nft-header,
+  .gallery-header,
+  .bottom-header,
+  .motoGp-header,
+  .hero-header {
+    font-size: 28px;
+    line-height: 44px;
   }
 
 

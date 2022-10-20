@@ -442,14 +442,14 @@ function App() {
               and let the experiences come to you.             
             </p>
             <div className='flex items-start justify-center w-full px-20 gap-28 tablet-below:flex-col tablet-below:items-center mobile-below:px-2 mobile-below:gap-10'>
-              <div className='flex flex-col items-center gap-7'>
+              <div className='flex flex-col items-center gap-7 icon-col-mobile'>
                 <SVG name='star' classes='w-40 star'/>
                 <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Create</h2>
                 <p className='font-body max-w-[13rem] mobile-icon-text'>
                   The world of the future, and witness the boundless possibilities of your mind.
                 </p>
               </div>
-              <div className='flex flex-col items-center gap-7'>
+              <div className='flex flex-col items-center gap-7 icon-col-mobile'>
                 <SVG name='sun' classes='w-40 sun' fill_1='#FFCC31' fill_2='#F16B37'/>
                 <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Play</h2>
                 <p className='flex flex-col items-center font-body mobile-icon-text'>
@@ -457,7 +457,7 @@ function App() {
                   <span>Bring utility to its full potential.</span>
                 </p>
               </div>
-              <div className='flex flex-col items-center gap-7'>
+              <div className='flex flex-col items-center gap-7 icon-col-mobile'>
                 <div className='flex justify-center gap-2 py-12'>
                   <div className='w-16 h-16 bg-[#0167A2] square-1'></div>
                   <div className='w-16 h-16 bg-[#FFCC31] square-2'></div>
@@ -467,7 +467,7 @@ function App() {
                   Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
                 </p>
               </div>
-              <div className='flex flex-col items-center gap-7'>
+              <div className='flex flex-col items-center gap-7 icon-col-mobile'>
                 <div className='relative'>
                   <SVG name='eye' classes='w-40' fill_1='#FFFFFF'/>
                   <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
