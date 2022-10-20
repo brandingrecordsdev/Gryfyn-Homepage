@@ -129,15 +129,15 @@ const initHeroGsap = () => {
   )
 }
 
-const initMotoGPGsap = (pinnedSection) => {
+const initMotoGPGsap = (pinnedSection, start, end) => {
   const banner1 = document.querySelectorAll(`${pinnedSection} .banner-1`)
   const banner2 = document.querySelectorAll(`${pinnedSection} .banner-2`)
   let motoGPtl = gsap.timeline({
     scrollTrigger: {
       trigger: pinnedSection,
       pin: true,
-      start: "top top",
-      end: "+=500",
+      start: start,
+      end: end,
       scrub: 1,
       toggleActions: "play reset none reset"
     }
@@ -272,7 +272,7 @@ function App() {
     
     initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "bottom+=100% bottom")
     initPromoVideo()
-    initMotoGPGsap('.motoGp-promo-section')
+    initMotoGPGsap('.motoGp-promo-section', 'top +=50%', '+=1000')
     initHeroGsap()
     initVideoScrollGsap('nft-video', '.video-nft-section', "bottom+=100% bottom")
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', "bottom+=100% bottom")
@@ -316,7 +316,7 @@ function App() {
     })
     initVideoScrollGsap('video-1', '.features', 'bottom bottom')
     initVideoScrollGsap('video-1-mobile', '.features-mobile', 'bottom bottom')
-    initMotoGPGsap('.motoGp-section')
+    initMotoGPGsap('.motoGp-section', 'top top', '+=500')
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
