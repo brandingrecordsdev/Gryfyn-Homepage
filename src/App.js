@@ -266,7 +266,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     
-    initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=50% bottom', scrub: 2})
+    initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "bottom+=100% bottom")
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
@@ -338,7 +338,6 @@ function App() {
     <div className="overflow-x-hidden App">
       <LoadingScreen/>
       <Nav />
-      <section className="empty-section"></section>
       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
       <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
       <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="true" muted="muted"></video>
