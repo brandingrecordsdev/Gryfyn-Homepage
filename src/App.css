@@ -388,7 +388,7 @@ min-width: 1200px;
   height: 200vh;
 }
 .features-1{
-  height: 150vh;
+  height: 180vh;
 }
 /* 
 .nft-video-section {
@@ -400,6 +400,7 @@ min-width: 1200px;
   overflow: hidden;
 }
 
+.gallery-header,
 .motoGp-header {
   font-family: 'Neue Metana';
 font-style: normal;
@@ -411,6 +412,24 @@ text-align: center;
 color: #E3DDD4 !important;
 max-width: 1000px;
 
+}
+
+.gallery-header {
+  margin-bottom: 100px;
+}
+
+.game-logo {
+  width: 100%;
+  max-width: 200px;
+}
+
+.gallery-scroll-section {
+  height: 100vh;
+}
+
+.game-wrapper {
+  column-gap: 80px;
+  margin-bottom: 80px;
 }
 
 .motoGp-Banner {
@@ -480,6 +499,7 @@ line-height: 45px;
 .nft-header-section {
   max-width: 1280px;
 }
+
 
 .motoGp-desc {
   padding: 100px 50px;
@@ -720,8 +740,20 @@ line-height: 89px;
   max-width: 725px;
 }
 
+.eye-wrapper {
+  max-width: 1400px;
+}
+
 .video-4-section {
-  height: 150vh !important;
+  height: 170vh !important;
+}
+
+.animoca-logo {
+  max-width: 160px;
+}
+
+.hex-logo {
+  max-width: 250px !important;
 }
 
 /* .vector-mw{
@@ -765,11 +797,16 @@ line-height: 89px;
     font-size: 40px;
   }
 
+  .gallery-header,
   .bottom-header,
   .motoGp-header,
   .hero-header {
     font-size: 54px;
     line-height: 72px;
+  }
+
+  .gallery-section {
+    padding-top: 150px !important;
   }
 
   .branded-i-sm img {
@@ -918,6 +955,7 @@ line-height: 89px;
     max-width: 500px;
   }
 
+  .gallery-header,
   .bottom-header,
   .motoGp-header,
   .hero-header {
@@ -1067,6 +1105,7 @@ line-height: 89px;
     max-width: 450px;
   }
 
+  .gallery-header,
   .motoGp-header,
   .hero-header {
     font-size: 36px;
@@ -1156,6 +1195,7 @@ branded-u img {
   height: 65vh;
 }
 
+.gallery-header,
  .motoGp-header {
   font-size: 28px;
     line-height: 40px;

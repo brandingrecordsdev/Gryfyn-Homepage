@@ -579,19 +579,19 @@ function App() {
             <div className='flex justify-start w-full'>
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex justify-end w-full top-[-44vw] desktop-2-above-new:top-[-40rem]'>
-              <div id='eye-desc' className=' transition-opacity duration-300 opacity-0'>
+            <div className='relative flex justify-end w-full top-[-38vw] desktop-2-above-new:top-[-40rem] eye-wrapper'>
+              <div id='eye-desc' className=''>
                 <h2 className='mb-12 text-4xl font-title features-header'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
-                <p className='font-body'>
+                <p className='font-body features-desc'>
                   Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
                   With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
                   xperience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
                 </p>     <br/>
                 <div className='flex flex-col gap-2'>
-                  <span className='text-black'>Powered By</span>
-                  <div className='flex items-center gap-4'>
-                    <img alt="" src={AnimocaLogo} className='object-contain w-[6.2rem]'/>
-                    <img alt="" src={HexLogo} className='object-contain w-[7.2rem]'/>                  
+                  <span className='text-black supported-head'>Powered By</span>
+                  <div className='flex items-center support-networks-wrapper'>
+                    <img alt="" src={AnimocaLogo} className='object-contain brand-logo animoca-logo'/>
+                    <img alt="" src={HexLogo} className='object-contain brand-logo hex-logo'/>                  
                   </div>
                 </div>  
               </div>          
@@ -628,19 +628,23 @@ function App() {
       <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent rounded-section'>
         <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
-      <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gap-12'>
-        <h2 className='text-4xl max-w-[30rem]'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
-        <div className='flex flex-wrap items-center justify-center gap-4'>
-          <img alt="" src={PhantomLogo} className='object-cover w-32' />
-          <img alt="" src={SandboxLogo} className='object-cover w-32' />
-          <img alt="" src={DustLandLogo} className='object-cover w-32' />
-          <img alt="" src={RevvRacingLogo} className='object-cover w-32' />
-          <div className='tablet-below:hidden tablet-below:h-[1px] features'>
-            <VideoScroll id='video-1' vid={vidGallery} pin={'.features'} />
-          </div>
-          <div className='tablet-above:hidden tablet-above:h-[1px] features-mobile'>
-            <VideoScroll id='video-1-mobile' vid={vidGalleryMobile} pin={'.features-mobile'} />
-          </div>
+      <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gallery-section'>
+        <div className='flex flex-col items-center'>
+        <h2 className='text-4xl max-w-[30rem] gallery-header'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
+        <div className="flex flex-row items-center game-wrapper">
+            <img alt="" src={PhantomLogo} className='object-cover game-logo' />
+              <img alt="" src={SandboxLogo} className='object-cover game-logo' />
+              <img alt="" src={DustLandLogo} className='object-cover game-logo' />
+              <img alt="" src={RevvRacingLogo} className='object-cover game-logo' />
+        </div>
+        </div>
+        <div className='flex flex-wrap items-center justify-center gap-4 gallery-scroll-section'>
+              <div className='tablet-below:hidden tablet-below:h-[1px] features'>
+                <VideoScroll id='video-1' vid={vidGallery} pin={'.features'} />
+              </div>
+              <div className='tablet-above:hidden tablet-above:h-[1px] features-mobile'>
+                <VideoScroll id='video-1-mobile' vid={vidGalleryMobile} pin={'.features-mobile'} />
+              </div>
         </div>
       </section>
       <section>
