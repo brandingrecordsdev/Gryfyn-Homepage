@@ -74,7 +74,7 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
     console.log('match promo vid mobile')
     video.play();
   }
-  
+
   once(document.documentElement, "touchstart", function (e) {
     video.play();
     video.pause();
@@ -588,7 +588,7 @@ function App() {
                   Experience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
                 </p>     <br/>
                 <div className='flex flex-col gap-2'>
-                  <span className='text-black supported-head'>Powered By</span>
+                  <p className='text-black supported-head'>Powered By</p>
                   <div className='flex items-center support-networks-wrapper'>
                     <img alt="" src={AnimocaLogo} className='object-contain brand-logo animoca-logo'/>
                     <img alt="" src={HexLogo} className='object-contain brand-logo hex-logo'/>                  
