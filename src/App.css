@@ -598,6 +598,11 @@ text-align: center;
   max-width: 180px;
 }
 
+.gallery-section {
+  padding-top: 150px !important;
+}
+
+
 .footer-wrapper {
   padding: 60px 0;
   border-top: 3px solid #E3DDD4;
@@ -803,10 +808,6 @@ line-height: 89px;
   .hero-header {
     font-size: 54px;
     line-height: 72px;
-  }
-
-  .gallery-section {
-    padding-top: 150px !important;
   }
 
   .branded-i-sm img {
