@@ -454,6 +454,9 @@ max-width: 1000px;
   transform: scale(1.2)
 }
 
+.empty-section {
+  height: 100px;
+}
 
 .motoGp-highlight {
   color: #FFCC31 !important;

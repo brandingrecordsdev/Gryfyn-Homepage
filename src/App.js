@@ -338,6 +338,7 @@ function App() {
     <div className="overflow-x-hidden App">
       <LoadingScreen/>
       <Nav />
+      <section className="empty-section"></section>
       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
       <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
       <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="true" muted="muted"></video>
