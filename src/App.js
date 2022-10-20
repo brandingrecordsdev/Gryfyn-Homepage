@@ -57,7 +57,7 @@ import $ from 'jquery';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const initVideoScrollGsap = (id, pinnedSection) => {
+const initVideoScrollGsap = (id, pinnedSection, end) => {
   const el = document.getElementById(id);
   let video = el;
   /* Make sure the video is 'activated' on iOS */
@@ -80,7 +80,7 @@ const initVideoScrollGsap = (id, pinnedSection) => {
       trigger: pinnedSection,
       pin: true,
       start: "top top",
-      end: "+=1500",
+      end: end,
       scrub: 3,
       toggleActions: "play reset none reset"
     }
@@ -132,7 +132,7 @@ const initMotoGPGsap = (pinnedSection) => {
     scrollTrigger: {
       trigger: pinnedSection,
       pin: true,
-      start: "top +=50%",
+      start: "top top",
       end: "+=500",
       scrub: 1,
       toggleActions: "play reset none reset"
@@ -255,7 +255,7 @@ function App() {
 
   
     const handleScroll = event => {
-      if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider') ) {
+      if (isColliding('nav', '.hero-section') || isColliding('nav', '.video-nft-section') || isColliding('nav', '.video-sun-section') || isColliding('nav', '.video-2-section') || isColliding('nav', '.video-4-section') || isColliding('nav', '.rounded-section') || isColliding('nav', '.image-slider')  || isColliding('nav', '.icons-section') ) {
       $('.main-nav').css('background-color', 'black')
   } else {
     $('.main-nav').css('background-color', 'transparent')
@@ -266,52 +266,52 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     
-    initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=150% bottom', scrub: 2})
+    initGSAPVideo(gsap, {vidSelector: '#promo-vid-mobile', trigger: '.promo-vid-mobile-section', pin: true, end: 'bottom+=50% bottom', scrub: 2})
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section')
     initHeroGsap()
-    initVideoScrollGsap('nft-video', '.video-nft-section')
-    initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section')
+    initVideoScrollGsap('nft-video', '.video-nft-section', "bottom+=100% bottom")
+    initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', "bottom+=100% bottom")
     initServiceSectionGsap()
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=250', scrub: 2,
+      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=250', scrub: 2,
+      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
       },   
     })
 
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: '+=250% bottom', scrub: 3,
+      vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: '+=3000', scrub: 2,
       onLeave: () => {
         document.getElementById('sun-desc').classList.remove('opacity-0')
       },      
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom+=250% bottom', scrub: 3,
+      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: '+=3000', scrub: 2,
       onLeave: () => {
         document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
       },        
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: '+=250% bottom', scrub: 3,
+      vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
         document.getElementById('eye-desc').classList.remove('opacity-0')
       },       
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=250% bottom', scrub: 3,
+      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
         document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
       },    
     })
-    initVideoScrollGsap('video-1', '.features')
-    initVideoScrollGsap('video-1-mobile', '.features-mobile')
+    initVideoScrollGsap('video-1', '.features', 'bottom bottom')
+    initVideoScrollGsap('video-1-mobile', '.features-mobile', 'bottom bottom')
     initMotoGPGsap('.motoGp-section')
 
     return () => {
@@ -390,15 +390,14 @@ function App() {
                 <SVG name='star' classes='svg-mw star'/>
                 <h2 className='font-title icon-header'>Create</h2>
                 <p className='font-body max-w-[13rem] text-center'>
-                  The world of the future, and witness the boundless possibilities of your mind.
+                The world of the future, and witness the boundless possibilities of your mind.
                 </p>
               </div>
               <div className='flex flex-col items-center icon-col'>
                 <SVG name='sun' classes='svg-mw sun' fill_1='#FFCC31' fill_2='#F16B37'/>
                 <h2 className='font-title icon-header'>Play</h2>
                 <p className='flex flex-col items-center font-body text-center'>
-                Any roles of your desire, fulfill your fantasies.
-                Bring utility to its full potential.
+                Any roles of your desire, fulfill your fantasies and bring utility to its full potential.
                 </p>
               </div>
               <div className='flex flex-col items-center icon-col'>
@@ -408,7 +407,7 @@ function App() {
                 </div>
                 <h2 className='font-title icon-header'>Socialise</h2>
                 <p className='font-body max-w-[19rem] negative-marg text-center'>
-                  Communicate with those who inspire us to explore the boundaries of imagination from a new perspective.
+                Communicate with those who inspire us to explore the boundaries of imagination.
                 </p>
               </div>
               <div className='flex flex-col items-center icon-col'>
@@ -418,7 +417,7 @@ function App() {
                 </div>
                 <h2 className='font-title icon-header negative-marg'>Explore</h2>
                 <p className='font-body max-w-[16rem] text-center'>
-                  Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
+                Go on a journey that is unique to you, and watch Web 3 grow as you grow with it.
                 </p>
               </div>  
             </div>
@@ -566,7 +565,7 @@ function App() {
             </div>
         </section> 
 
-        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-[160vw] py-16 overflow-hidden bg-[#E3DDD4] text-black video-4-section h-screen h-full'>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-[90vw] py-16 overflow-hidden bg-[#E3DDD4] video-4-section text-black h-screen h-full'>
           <div className='flex flex-col w-full max-w-[1500px]'>
             <div className='flex justify-start w-full'>
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
@@ -577,7 +576,7 @@ function App() {
                 <p className='font-body features-desc'>
                   Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
                   With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
-                  xperience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
+                  Experience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.            
                 </p>     <br/>
                 <div className='flex flex-col gap-2'>
                   <span className='text-black supported-head'>Powered By</span>

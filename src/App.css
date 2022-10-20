@@ -729,7 +729,7 @@ line-height: 70px;
 }
 
 .icon-col {
-  max-width: 256px;
+  max-width: 280px;
 }
 
 .features-header {
@@ -750,7 +750,7 @@ line-height: 89px;
 }
 
 .video-4-section {
-  height: 170vh !important;
+  height: 100vh !important;
 }
 
 .animoca-logo {
