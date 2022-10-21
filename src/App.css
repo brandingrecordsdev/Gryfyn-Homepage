@@ -652,7 +652,7 @@ text-align: center;
 
 .motoGP-title-1 {
   width: 45%;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .motoGP-title-2 {
@@ -1103,6 +1103,11 @@ line-height: 89px;
     padding: 0 50px;
   }
 
+  .motoGP-title-1 {
+    width: 45%;
+    margin-bottom: 40px;
+  }
+
   
   .bottom-banner {
     padding: 60px 50px;
@@ -1293,6 +1298,7 @@ line-height: 89px;
   .motoGp-promo-section {
     padding-top: 200px;
   }
+
 
   .motoGpBanner-promo {
     max-height: 50vh !important;
