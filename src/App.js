@@ -594,7 +594,7 @@ function App() {
             <div className='flex justify-start w-full'>
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex justify-end w-full top-[-40vw] desktop-2-above-new:top-[-40rem] eye-wrapper '>
+            <div className='relative flex justify-end w-full top-[-44vw] desktop-2-above-new:top-[-40rem] eye-wrapper '>
               <div id='eye-desc' className=''>
                 <h2 className='mb-12 text-4xl font-title features-header'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
                 <p className='font-body features-desc'>
