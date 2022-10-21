@@ -319,7 +319,7 @@ function App() {
       },       
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=1500', scrub: 1.5,
+      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: 'bottom bottom', scrub: 1.5,
       onLeave: () => {
         // document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
       },    
@@ -620,7 +620,7 @@ function App() {
               <video className='w-full' id={'video-4-mobile'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='flex justify-center w-full font-body relative top-[-26vw]'>
-              <div id='eye-desc-mobile' className='mobile-below:text-[3vw] mobile-feature-wrapper'>
+              <div id='eye-desc-mobile' className='mobile-below:text-[3vw] mobile-feature-wrapper eye'>
                 <h2 className='mobile-feature-header mb-12 text-4xl font-title mobile-below:text-[6.2vw]'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
                 <p className="mobile-feature-desc">
                 Gryfyn gives you unparalleled access to the Animoca Brands Ecosystem. <br/><br/>
