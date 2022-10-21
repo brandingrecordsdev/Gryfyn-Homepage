@@ -1291,6 +1291,13 @@ line-height: 89px;
     transform: scale(3.3);
   }
 
+  .motoGP-title-1 {
+    margin-bottom: 20px;
+}
+
+.motoGP-title-2 {
+  margin-bottom: 40px;
+}
   .game-wrapper,
   .gallery-header {
     padding: 0 20px;
