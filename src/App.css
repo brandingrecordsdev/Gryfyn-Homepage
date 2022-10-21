@@ -812,7 +812,7 @@ line-height: 89px;
  
   .diamond-wrapper {
     padding-right: 100px;
-    padding-top: 150px;
+    padding-top: 220px;
   }
 
   .eye-wrapper {
@@ -894,7 +894,7 @@ line-height: 89px;
 
   .diamond-wrapper {
     max-width: 1100px;
-    padding-top: 150px;
+    padding-top: 180px;
     padding-right: 50px;
 }
 
@@ -991,13 +991,13 @@ line-height: 89px;
 
   .motoGpBanner-promo {
     max-height: 50vh !important;
-    transform: scale(1.8);
+    transform: scale(1.5);
 }
 
 .motoGp-Banner {
   position: relative;
   margin-top: 30px;
-  transform: scale(1.8);
+  transform: scale(1.5);
 }
 
 
@@ -1023,6 +1023,7 @@ line-height: 89px;
   padding: 0 50px;
 } */
 
+.nft-header-section,
 .nft-mobile-content {
   padding: 0 50px;
 }
@@ -1242,7 +1243,7 @@ line-height: 89px;
 
 .motoGpBanner-promo {
   max-height: 50vh !important;
-  transform: scale(1.6);
+  transform: scale(1.5);
 }
 
 
@@ -1309,6 +1310,8 @@ line-height: 89px;
 .video-4-section-mobile {
   padding-bottom: 0 !important;
 }
+
+.nft-header-section,
   .game-wrapper,
   .gallery-header {
     padding: 0 20px;
