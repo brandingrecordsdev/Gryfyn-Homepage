@@ -242,6 +242,11 @@ function App() {
 
   useEffect(() => {
 
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
+
+
     var isColliding = function(el1, el2) {
       let $div1 = $(el1);
       let $div2 = $(el2);
