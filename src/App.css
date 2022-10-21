@@ -991,12 +991,23 @@ line-height: 89px;
 
   .motoGpBanner-promo {
     max-height: 50vh !important;
-    transform: scale(1.5);
+    transform: scale(1.8);
 }
+
+.motoGp-Banner {
+  position: relative;
+  margin-top: 30px;
+  transform: scale(1.8);
+}
+
 
 .promo-hero-wrapper { 
   max-width: none !important;
   padding: 0 50px !important;
+}
+
+.promo-hero-wrapper {
+  bottom: 20%;
 }
 
 .promo-hero-section {
@@ -1231,14 +1242,10 @@ line-height: 89px;
 
 .motoGpBanner-promo {
   max-height: 50vh !important;
-  transform: scale(2.3);
+  transform: scale(1.6);
 }
 
 
-.motoGp-Banner {
-  position: relative;
-  margin-top: 30px;
-}
 
 .promo-hero-wrapper { 
   max-width: none !important;
@@ -1288,7 +1295,7 @@ line-height: 89px;
 
   .motoGpBanner-promo {
     max-height: 50vh !important;
-    transform: scale(3.3);
+    transform: scale(1.8);
   }
 
   .motoGP-title-1 {
@@ -1297,6 +1304,10 @@ line-height: 89px;
 
 .motoGP-title-2 {
   margin-bottom: 40px;
+}
+
+.video-4-section-mobile {
+  padding-bottom: 0 !important;
 }
   .game-wrapper,
   .gallery-header {
