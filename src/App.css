@@ -572,6 +572,12 @@ line-height: 100px;
   align-items: center;
 }
 
+.mobile-feature-wrapper {
+  min-height: 150vh;
+}
+
+
+
 .raffles-wrapper h1 {
   font-family: 'Neue Metana';
   margin-bottom: 40px;
@@ -699,8 +705,8 @@ text-align: center;
 }
 
 #video-1, #video-1-mobile {
-  height: auto;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .hero-container {
@@ -957,8 +963,8 @@ line-height: 89px;
   .motoGp-desc p,
   .promo-desc,
   .hero-subhead {
-    font-size: 16px !important;
-    line-height: 30px;
+    font-size: 20px !important;
+    line-height: 33px;
   }
 
   .hero-subhead {
@@ -989,6 +995,15 @@ line-height: 89px;
   .motoGpBanner-promo {
     max-height: 50vh !important;
     transform: scale(2);
+}
+
+.promo-hero-wrapper { 
+  max-width: none !important;
+  padding: 0 50px !important;
+}
+
+.promo-hero-section {
+  display: none;
 }
 
 
@@ -1079,6 +1094,7 @@ line-height: 89px;
     padding: 0 50px;
   }
 
+  
   .bottom-banner {
     padding: 60px 50px;
   }
@@ -1196,8 +1212,8 @@ line-height: 89px;
   }
 
   .mobile-feature-desc, .mobile-icon-text, .features-desc, .nft-text, .raffles-wrapper p, .motoGp-desc p, .promo-desc, .hero-subhead {
-    font-size: 14px !important;
-    line-height: 30px;
+    font-size: 20px !important;
+    line-height: 33px;
 }
 
 .nft-video {
@@ -1220,6 +1236,12 @@ line-height: 89px;
   position: relative;
   margin-top: 30px;
 }
+
+.promo-hero-wrapper { 
+  max-width: none !important;
+  padding: 0 20px !important;
+}
+
 
   
   .bottom-header {

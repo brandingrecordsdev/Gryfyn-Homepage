@@ -280,7 +280,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     
-    initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "bottom+=100% bottom")
+    initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "bottom bottom")
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1500')
     initHeroGsap()
@@ -307,7 +307,7 @@ function App() {
       },      
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: '+=2000', scrub: 1.5,
+      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom bottom', scrub: 1.5,
       onLeave: () => {
         // document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
       },        
@@ -355,6 +355,14 @@ function App() {
       <section className="promo-vid-mobile-section tablet-above:hidden tablet-above:h-[1px]">
       <img alt="" className="motoGPSticker stickerMobile" src={MotoGPSticker} />
       <video className='promo-vid-mobile' id="promo-vid-mobile" src={PromoVidMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
+      <div className="promo-hero-wrapper">
+          <img alt="" className="motoGP-title-1" src={MotoGPTitle1} />
+          <img alt="" className="motoGP-title-2" src={MotoGPTitle2} />
+          <p className="promo-desc">
+            Join the Gryfyn community and win endless experiences both online & offline.
+          </p>
+          <button className="motogp-cta-btn connect-btn">Enter The Raffle</button>
+        </div>
       </section>
       <section className="promo-hero-section">
       <video className='tablet-below:hidden tablet-below:h-[1px] promo-vid' id="promo-vid" src={PromoVid} webkit-playsinline="true" playsInline={true} preload="true" muted="muted"></video>
@@ -620,7 +628,7 @@ function App() {
                   Experience the ever-growing ecosystem of Animoca Brands offline through our groundbreaking partnerships.               
                 </p><br/>
                 <div className='flex flex-col items-center gap-2'>
-                  <span className='text-black pb-4'>Powered By</span>
+                  <p className='text-black supported-head'>Powered By</p>
                   <div className='flex justify-center gap-4'>
                     <img alt="" src={AnimocaLogo} className='object-contain w-[20vw] animoca-logo-mobile'/>
                     <img alt="" src={HexLogo} className='object-contain w-[26vw] hex-logo-mobile'/>
