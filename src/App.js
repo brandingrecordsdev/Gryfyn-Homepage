@@ -90,7 +90,7 @@ const initVideoScrollGsap = (id, pinnedSection, end) => {
       pin: true,
       start: "top",
       end: end,
-      scrub: 3,
+      scrub: 1.5,
       toggleActions: "play reset none reset"
     }
   });
