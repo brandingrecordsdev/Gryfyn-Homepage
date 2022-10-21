@@ -991,6 +991,7 @@ line-height: 89px;
     transform: scale(2);
 }
 
+
   /* .gallery-section {
     padding: 0 50px;
   } */
@@ -1213,6 +1214,11 @@ line-height: 89px;
 .mobile-nft-header {
   font-size: 28px;
   line-height: 44px;
+}
+
+.motoGp-Banner {
+  position: relative;
+  margin-top: 30px;
 }
 
   
