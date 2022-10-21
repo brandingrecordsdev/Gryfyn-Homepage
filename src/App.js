@@ -285,7 +285,7 @@ function App() {
     initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1500')
     initHeroGsap()
     initVideoScrollGsap('nft-video', '.video-nft-section', "bottom+=100% bottom")
-    initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', '+=5000')
+    initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', '+=2000')
     initServiceSectionGsap()
     initGSAPVideo(gsap, {
       vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=2000', scrub: 2,
