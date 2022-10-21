@@ -280,7 +280,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     
-    initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "bottom bottom")
+    initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "+=1000")
     initPromoVideo()
     initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1500')
     initHeroGsap()
