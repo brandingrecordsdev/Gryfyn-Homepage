@@ -561,7 +561,7 @@ function App() {
           <div className='flex justify-end w-full max-w-[1500px]'>
             <video className='relative object-cover w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
-          <div className='relative top-[-44vw] w-full max-w-[1500px] pl-[6vw] desktop-2-above-new:pl-[3rem] desktop-2-above-new:top-[-52rem]'>
+          <div className='relative top-[-42vw] w-full max-w-[1500px] pl-[6vw] desktop-2-above-new:pl-[3rem] desktop-2-above-new:top-[-52rem]'>
             <h2 className='mb-12 text-4xl text-black max-w-7xl font-title features-header'>
               Seamless <br /> access to your <br /> gaming experience
             </h2>
