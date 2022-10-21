@@ -504,7 +504,7 @@ function App() {
             <div className='flex justify-start w-full items-end'>
               <video className='w-full' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex flex-col items-end w-full font-body top-[-53vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
+            <div className='relative flex flex-col items-end w-full font-body top-[-44vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
               <div className={`w-[44rem]`}>
                 <h2 className='mb-8 text-4xl text-black font-title features-header'>Manage <br />your portfolio</h2>
                 <p className="features-desc">
