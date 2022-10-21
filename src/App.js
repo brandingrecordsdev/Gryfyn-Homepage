@@ -285,29 +285,29 @@ function App() {
     initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1500')
     initHeroGsap()
     initVideoScrollGsap('nft-video', '.video-nft-section', "bottom+=100% bottom")
-    initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', '+=2000')
+    initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', '+=1000')
     initServiceSectionGsap()
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=2000', scrub: 2,
+      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=1000', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=2000', scrub: 2,
+      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=1000', scrub: 2,
       onLeave: () => {
         document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
       },   
     })
 
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: '+=3000', scrub: 2,
+      vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
         document.getElementById('sun-desc').classList.remove('opacity-0')
       },      
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: '+=3000', scrub: 2,
+      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
         document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
       },        
