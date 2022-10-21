@@ -282,7 +282,7 @@ function App() {
     
     initVideoScrollGsap('promo-vid-mobile', '.promo-vid-mobile-section', "+=1000")
     initPromoVideo()
-    initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1500')
+    initMotoGPGsap('.motoGp-promo-section', 'top top', '+=1000')
     initHeroGsap()
     initVideoScrollGsap('nft-video', '.video-nft-section', "bottom+=100% bottom")
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', 'bottom bottom')

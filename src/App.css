@@ -453,12 +453,6 @@ max-width: 1000px;
   padding-top: 100px;
 }
 
-.banner-1,
-.banner-2 {
-  width: 120vw;
-  transform: scale(1.2)
-}
-
 .motoGp-highlight {
   color: #FFCC31 !important;
 }
@@ -993,7 +987,7 @@ line-height: 89px;
 
   .motoGpBanner-promo {
     max-height: 50vh !important;
-    transform: scale(2);
+    transform: scale(1.5);
 }
 
 .promo-hero-wrapper { 
@@ -1231,6 +1225,12 @@ line-height: 89px;
   line-height: 44px;
 }
 
+.motoGpBanner-promo {
+  max-height: 50vh !important;
+  transform: scale(2.3);
+}
+
+
 .motoGp-Banner {
   position: relative;
   margin-top: 30px;
@@ -1280,6 +1280,11 @@ line-height: 89px;
 
   .motoGp-promo-section {
     padding-top: 200px;
+  }
+
+  .motoGpBanner-promo {
+    max-height: 50vh !important;
+    transform: scale(3.3);
   }
 
   .game-wrapper,
