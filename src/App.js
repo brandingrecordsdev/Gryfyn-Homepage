@@ -294,7 +294,7 @@ function App() {
       }, 
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=2000', scrub: 1,
+      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=1500', scrub: 1,
       onLeave: () => {
         // document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
       },   
@@ -307,7 +307,7 @@ function App() {
       },      
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: '+=2000', scrub: 1,
+      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: '+=1500', scrub: 1,
       onLeave: () => {
         // document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
       },        
@@ -319,7 +319,7 @@ function App() {
       },       
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=2000', scrub: 1,
+      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=1500', scrub: 1,
       onLeave: () => {
         // document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
       },    
