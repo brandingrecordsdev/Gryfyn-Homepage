@@ -463,7 +463,7 @@ function App() {
               <div className='flex flex-col items-center gap-7 icon-col-mobile'>
                 <SVG name='star' classes='w-40 star'/>
                 <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Create</h2>
-                <p className='font-body max-w-[13rem] mobile-icon-text'>
+                <p className='font-body max-w-[17rem] mobile-icon-text'>
                   The world of the future, and witness the boundless possibilities of your mind.
                 </p>
               </div>
@@ -471,7 +471,7 @@ function App() {
                 <SVG name='sun' classes='w-40 sun' fill_1='#FFCC31' fill_2='#F16B37'/>
                 <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Play</h2>
                 <p className='flex flex-col items-center font-body mobile-icon-text'>
-                  <span className='max-w-[12rem]'>Any roles of your desire, fulfill your fantasies. </span>
+                  <span className='max-w-[17rem]'>Any roles of your desire, fulfill your fantasies. </span>
                   <span>Bring utility to its full potential.</span>
                 </p>
               </div>
@@ -491,7 +491,7 @@ function App() {
                   <SVG name='eye' classes='w-40 absolute top-0 eye-lid' fill_1='#E3DDD4' fill_2='#E3DDD4'/>
                 </div>
                 <h2 className='text-4xl font-title mobile-below:text-[6vw] icon-header'>Explore</h2>
-                <p className='font-body max-w-[16rem] mobile-icon-text'>
+                <p className='font-body max-w-[19rem] mobile-icon-text'>
                   Go on the journey that is unique to you, and watch Web 3 grow as you grow with it.
                 </p>
               </div>  
@@ -573,7 +573,7 @@ function App() {
           </div>
         </section>
 
-        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center tablet-below-new:h-[180vw] mobile-below-new:h-[180vh] py-16 bg-[#E3DDD4] text-black video-sun-mobile-section text-center h-screen'>
+        <section className='tablet-above-new:hidden tablet-above-new:h-[1px] flex flex-col items-center tablet-below-new:h-[200vw] mobile-below-new:h-[180vh] py-16 bg-[#E3DDD4] text-black video-sun-mobile-section text-center h-screen'>
           <div className='flex justify-center'>
             <video className='object-cover w-full' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div> 
