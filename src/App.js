@@ -290,38 +290,38 @@ function App() {
     initGSAPVideo(gsap, {
       vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=1000', scrub: 2,
       onLeave: () => {
-        document.getElementById('diamond-desc').classList.remove('opacity-0')
+        // document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: 'bottom bottom', scrub: 1,
+      vidSelector: '#video-2-mobile', trigger: '.video-2-section-mobile', pin: true, end: '+=2000', scrub: 1,
       onLeave: () => {
-        document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
+        // document.getElementById('diamond-desc-mobile').classList.remove('opacity-0')
       },   
     })
 
     initGSAPVideo(gsap, {
       vidSelector: '#video-sun', trigger: '.video-sun-section', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
-        document.getElementById('sun-desc').classList.remove('opacity-0')
+        // document.getElementById('sun-desc').classList.remove('opacity-0')
       },      
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: 'bottom bottom', scrub: 1,
+      vidSelector: '#video-sun-mobile', trigger: '.video-sun-mobile-section', pin: true, end: '+=2000', scrub: 1,
       onLeave: () => {
-        document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
+        // document.getElementById('sun-desc-mobile').classList.remove('opacity-0')
       },        
     })
     initGSAPVideo(gsap, {
       vidSelector: '#video-4', trigger: '.video-4-section', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
-        document.getElementById('eye-desc').classList.remove('opacity-0')
+        // document.getElementById('eye-desc').classList.remove('opacity-0')
       },       
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: 'bottom bottom', scrub: 1,
+      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=2000', scrub: 1,
       onLeave: () => {
-        document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
+        // document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
       },    
     })
     initVideoScrollGsap('video-1', '.features', 'bottom bottom')
@@ -526,7 +526,7 @@ function App() {
               <video className='w-full' id={'video-2-mobile'} src={DiamondVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='flex flex-col items-center w-full font-body'>
-              <div className={`w-full mobile-below:text-[3vw] transition-opacity duration-300 opacity-0 mobile-feature-wrapper`} id='diamond-desc-mobile'>
+              <div className={`w-full mobile-below:text-[3vw] mobile-feature-wrapper`} id='diamond-desc-mobile'>
               <h2 className='mb-8 text-4xl text-black font-title features-header'>Manage <br />your portfolio</h2>
                 <p className="features-desc">
                 With access to the Polygon and Ethereum blockchains,
@@ -569,7 +569,7 @@ function App() {
           <div className='flex justify-center'>
             <video className='object-cover w-full' id={'video-sun-mobile'} src={SunVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div> 
-          <div id='sun-desc-mobile' className='flex flex-col items-center p-6 mobile-below:text-[3vw] transition-opacity duration-300 opacity-0 mobile-feature-wrapper'>
+          <div id='sun-desc-mobile' className='flex flex-col items-center p-6 mobile-below:text-[3vw] mobile-feature-wrapper'>
               <h2 className='mobile-feature-header mb-12 text-4xl text-black font-title tablet-below-new:text-3xl mobile-below:text-[6.2vw]'>
                 Seamless <br/> access to your <br/> gaming experience              
               </h2>
@@ -612,7 +612,7 @@ function App() {
               <video className='w-full' id={'video-4-mobile'} src={EyeVideoMobile} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
             <div className='flex justify-center w-full font-body relative top-[-26vw]'>
-              <div id='eye-desc-mobile' className='mobile-below:text-[3vw] transition-opacity duration-300 opacity-0  mobile-feature-wrapper'>
+              <div id='eye-desc-mobile' className='mobile-below:text-[3vw] mobile-feature-wrapper'>
                 <h2 className='mobile-feature-header mb-12 text-4xl font-title mobile-below:text-[6.2vw]'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
                 <p className="mobile-feature-desc">
                 Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
