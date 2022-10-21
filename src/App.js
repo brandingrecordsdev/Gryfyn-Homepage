@@ -319,7 +319,7 @@ function App() {
       },       
     })
     initGSAPVideo(gsap, {
-      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=2000', scrub: 1.5,
+      vidSelector: '#video-4-mobile', trigger: '.video-4-section-mobile', pin: true, end: '+=1500', scrub: 1.5,
       onLeave: () => {
         // document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
       },    
