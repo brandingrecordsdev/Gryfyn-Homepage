@@ -615,9 +615,9 @@ function App() {
               <div id='eye-desc-mobile' className='mobile-below:text-[3vw] mobile-feature-wrapper'>
                 <h2 className='mobile-feature-header mb-12 text-4xl font-title mobile-below:text-[6.2vw]'>Access the<br/> Animoca Brands<br/> Ecosystem</h2>
                 <p className="mobile-feature-desc">
-                Gryfyn gives you unparalleled access to the <br/>Animoca Brands Ecosystem. <br/><br/>
-                  With the ability to game without boundaries, and manage<br/> your assets with ease, Gryfyn lets you explore like never<br/> before. <br/><br/>
-                  Experience the ever-growing ecosystem of Animoca Brands <br/>offline through our groundbreaking partnerships.               
+                Gryfyn gives you unparalleled access to the Animoca Brands Ecosystem. <br/><br/>
+                  With the ability to game without boundaries, and manage your assets with ease, Gryfyn lets you explore like never before. <br/><br/>
+                  Experience the ever-growing ecosystem of Animoca Brands offline through our groundbreaking partnerships.               
                 </p><br/>
                 <div className='flex flex-col items-center gap-2'>
                   <span className='text-black pb-4'>Powered By</span>
