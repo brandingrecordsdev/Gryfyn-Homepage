@@ -289,7 +289,7 @@ function App() {
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', 'bottom bottom')
     initServiceSectionGsap()
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=1000', scrub: 2,
+      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom bottom', scrub: 2,
       onLeave: () => {
         // document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
@@ -357,24 +357,7 @@ function App() {
     </Helmet>
     <div className="overflow-x-hidden App">
       <LoadingScreen/>
-      {/* <section className="main-hero-section">
-        <div className="main-hero-wrapper">
-          <h1 className="bottom-header">
-            A w
-            <span className="branded-sun"><img className="rotating" alt="" src={Sun} /></span>
-            rld
-            <br />
-            beyond yo
-            <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond} />u</span>
-            r
-            <br />
-            <span className="branded-i-sm"><img className="anim-world-beyond-o" alt="" src={YellowDiamond} />i</span>
-            <span>magination </span>
-            <span className="branded-a-lower"><img alt="" src={BrandedALower} /></span>
-            waits
-          </h1>
-        </div>
-      </section> */}
+    
       <Hero />
       <div className='bg-[#E3DDD4]'>
         <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center bg-[#E3DDD4] video-nft-section'>
@@ -491,7 +474,7 @@ function App() {
           </section>        
         </section>
 
-        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center py-16 bg-[#E3DDD4] text-body video-2-section h-full'>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center py-16 bg-[#E3DDD4] text-body video-2-section'>
           <div className='flex flex-col w-full max-w-[1500px]'>
             <div className='flex justify-start w-full items-end'>
               <video className='w-full' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
@@ -703,6 +686,24 @@ function App() {
           <button className="motogp-cta-btn connect-btn">Connect Wallet</button>
         </div>
       </section> */}
+      <section className="main-hero-section">
+        <div className="main-hero-wrapper">
+          <h1 className="bottom-header">
+            A w
+            <span className="branded-sun"><img className="rotating" alt="" src={Sun} /></span>
+            rld
+            <br />
+            beyond yo
+            <span className="branded-u"><img className="anim-world-beyond-u" alt="" src={GreenDiamond} />u</span>
+            r
+            <br />
+            <span className="branded-i-sm"><img className="anim-world-beyond-o" alt="" src={YellowDiamond} />i</span>
+            <span>magination </span>
+            <span className="branded-a-lower"><img alt="" src={BrandedALower} /></span>
+            waits
+          </h1>
+        </div>
+      </section>
       <footer className="site-footer">
         <div className="footer-wrapper">
           <img alt="" className="logo footer-logo" src={Logo} />

@@ -145,6 +145,7 @@ nav {
   width: 100%;
   height: auto;
   min-height: 1000px;
+  max-width: 1500px;
 }
 
 .nft-header {
@@ -498,6 +499,7 @@ line-height: 45px;
 
 
 
+
 .motoGp-desc {
   padding: 100px 50px;
   padding-top: 50px;
@@ -708,6 +710,11 @@ text-align: center;
   height: 100%;
 }
 
+.video-sun-section,
+.video-2-section {
+  max-height: 1500px;
+}
+
 .hero-container {
   padding: 100px;
   padding-top: 200px;
@@ -786,19 +793,12 @@ line-height: 89px;
 
 
 .main-hero-section {
-  height: 100vh;
-  padding: 100px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 100px;
 }
 
 .main-hero-wrapper {
   width: 100%;
   max-width: 1500px;
-  display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .icon-container {
