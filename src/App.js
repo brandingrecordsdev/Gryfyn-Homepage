@@ -289,7 +289,7 @@ function App() {
     initVideoScrollGsap('nft-mobile-video', '.video-nft-mobile-section', 'bottom bottom')
     initServiceSectionGsap()
     initGSAPVideo(gsap, {
-      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: 'bottom bottom', scrub: 2,
+      vidSelector: '#video-2', trigger: '.video-2-section', pin: true, end: '+=2000', scrub: 2,
       onLeave: () => {
         // document.getElementById('diamond-desc').classList.remove('opacity-0')
       }, 
@@ -479,7 +479,7 @@ function App() {
             <div className='flex justify-start w-full items-end'>
               <video className='w-full' id={'video-2'} src={DiamondVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex flex-col items-end w-full font-body top-[-55vw] desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
+            <div className='relative flex flex-col items-end w-full font-body desktop-2-above-new:top-[-50rem] desktop-2-above-new:pr-[16rem] diamond-wrapper'>
               <div className={`w-[44rem]`}>
                 <h2 className='mb-8 text-4xl text-black font-title features-header'>Manage <br />your portfolio</h2>
                 <p className="features-desc">
@@ -532,11 +532,11 @@ function App() {
           </div>
         </section>       
 
-        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-[70rem] py-16 bg-[#E3DDD4] text-black video-sun-section  h-full'>
+        <section className='tablet-below-new:hidden tablet-below-new:h-[1px] flex flex-col items-center min-h-[70rem] py-16 bg-[#E3DDD4] text-black video-sun-section'>
           <div className='flex justify-end w-full max-w-[1500px]'>
             <video className='relative object-cover w-full' id={'video-sun'} src={SunVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
           </div>
-          <div className='relative top-[-44vw] w-full max-w-[1500px] pl-[6vw] desktop-2-above-new:pl-[3rem] desktop-2-above-new:top-[-52rem]'>
+          <div className='relative w-full max-w-[1500px] pl-[6vw] desktop-2-above-new:pl-[3rem] desktop-2-above-new:top-[-52rem] sun-content-wrapper'>
             <h2 className='mb-12 text-4xl text-black max-w-7xl font-title features-header'>
               Seamless <br /> access to your <br /> gaming experience
             </h2>
@@ -569,7 +569,7 @@ function App() {
             <div className='flex justify-start w-full'>
               <video className='relative w-full px-2' id={'video-4'} src={EyeVideo} webkit-playsinline="true" playsInline={true} preload="auto" muted="muted"></video>
             </div>
-            <div className='relative flex justify-end w-full top-[-38vw] desktop-2-above-new:top-[-40rem] eye-wrapper '>
+            <div className='relative flex justify-end w-full desktop-2-above-new:top-[-40rem] eye-wrapper '>
               <div id='eye-desc' className=''>
                 <h2 className='mb-12 text-4xl font-title features-header'>Access the<br /> Animoca Brands<br /> Ecosystem</h2>
                 <p className='font-body features-desc'>

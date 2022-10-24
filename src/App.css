@@ -765,7 +765,17 @@ line-height: 89px;
 .diamond-wrapper {
   max-width: 1400px;
   padding-top: 100px;
+  top: -70vh;
 }
+
+.sun-content-wrapper {
+  top: -54vh;
+}
+
+.eye-wrapper {
+  top: -50vh;
+}
+
 
 .sun-desc {
   max-width: 725px;
@@ -776,7 +786,7 @@ line-height: 89px;
 }
 
 .video-4-section {
-  height: 170vh !important;
+  height: 130vh !important;
 }
 
 .animoca-logo {
