@@ -58,6 +58,7 @@ import $ from 'jquery';
 gsap.registerPlugin(ScrollTrigger);
 
 const initVideoScrollGsap = (id, pinnedSection, end) => {
+  console.log(pinnedSection)
   const el = document.getElementById(id);
   let video = el;
   /* Make sure the video is 'activated' on iOS */
@@ -324,7 +325,13 @@ function App() {
         // document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
       },    
     })
-    initVideoScrollGsap('video-1', '.features', '+=2500')
+    initGSAPVideo(gsap, {
+      vidSelector: '#video-1', trigger: '.features', pin: '.gallery-scroll-section', end: '+=5000', scrub: 1.5,
+      onLeave: () => {
+        // document.getElementById('eye-desc-mobile').classList.remove('opacity-0')
+      },    
+    })
+    // initVideoScrollGsap('video-1', '.features', 'bottom bottom')
     initVideoScrollGsap('video-1-mobile', '.features-mobile', 'bottom bottom')
 
     return () => {
@@ -628,7 +635,7 @@ function App() {
       <div className='overflow-hidden h-[16rem] relative rotate-180 mt-[-1px] bg-transparent rounded-section'>
         <div className='rounded-full bg-[#E3DDD4] w-[184vw] h-[184vw] relative left-[-42vw]'></div>
       </div>
-      <section className='flex flex-col items-center h-screen py-16 text-center text-[#E3DDD4] gallery-section'>
+      <section className='flex flex-col items-center py-16 text-center text-[#E3DDD4] gallery-section'>
         <div className='flex flex-col items-center'>
         <h2 className='text-4xl max-w-[30rem] gallery-header'>Gryfyn is everything you need to unlock <span className='text-[#FFCC31]'>endless possibilities</span>.</h2>
         {/* <div className="flex flex-row items-center game-wrapper">
@@ -638,15 +645,15 @@ function App() {
               <img alt="" src={RevvRacingLogo} className='object-cover game-logo' />
         </div> */}
         </div>
-        <div className='flex flex-wrap items-center justify-center gap-4 gallery-scroll-section'>
+      </section>
+      <section className='gallery-scroll-section'>
               <div className='tablet-below:hidden tablet-below:h-[1px] features'>
                 <VideoScroll id='video-1' vid={vidGallery} pin={'.features'} />
               </div>
               <div className='tablet-above:hidden tablet-above:h-[1px] features-mobile'>
                 <VideoScroll id='video-1-mobile' vid={vidGalleryMobile} pin={'.features-mobile'} />
               </div>
-        </div>
-      </section>
+        </section>
       {/* <section className="motoGp-section">
         <div className="motoGpBanner-wrapper">
           <h1 className="motoGp-header">
