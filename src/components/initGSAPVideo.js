@@ -33,6 +33,7 @@ export default function initGSAPVideo(gsap, settings){
             onLeave: settings.onLeave ? settings.onLeave : () => {},
             onLeaveBack: settings.onLeaveBack ? settings.onLeaveBack : () => {},
             toggleActions: "play reset none reset",
+            markers: true,
         }
     });
     
