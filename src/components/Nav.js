@@ -1,7 +1,9 @@
+import MotoGP from '../components/MotoGP'
 import Logo from '../images/logo.svg'
 import Instagram from '../images/instagram.svg';
 import Twitter from '../images/twitter.svg';
 import LinkedIn from '../images/linkedin.svg';
+import { Link } from "react-router-dom";
 
 const Nav = () => {
     return(
@@ -20,8 +22,12 @@ const Nav = () => {
                 </a>
             </div>
         </div>
+        <Link to="/">
         <img alt="" className="logo" src={Logo} />
+        </Link>
+        <Link to="/motoGP">
         <button className="connect-btn">Connect <span className="mobile-connect">Your Wallet</span></button>
+        </Link>
         </div>
     </nav>
     )
